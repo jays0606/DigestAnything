@@ -1,0 +1,11 @@
+{
+  "active": true,
+  "iteration": 1,
+  "max_iterations": 100,
+  "started_at": "2026-03-29T08:46:08.743Z",
+  "prompt": "just one thign. the slide 4 => you should actually modify this yeah ?? the one for the spec of this. and the one for like the how the ralph was done. best practices, the new, claude agent sdk => generator => discriomatr like that pattern. (fancy words, etc) \n\nhttps://www.anthropic.com/engineering/harness-design-long-running-apps\n\nkind of used this i guess yeah ??? \n\n• I wrote the spec (895 lines)\n• Agent read it → built 4 rounds\n• BE + FE, commits after each\n\nspec and like i did write like a bunch of tests as well i guess. adn teh agent sdk is the kick the killer feature. anyways separate. one dedicated for abbout this, etc. yeah ???",
+  "session_id": "7d9d1772-11eb-4c96-bfb0-f9a40302ab51",
+  "project_path": "/Users/jaehoshin/Code/hackathons/ralphthon-seoul-submission/decks/digest/assets",
+  "linked_ultrawork": true,
+  "last_checked_at": "2026-03-29T08:46:08.746Z"
+}

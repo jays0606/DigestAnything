@@ -9,118 +9,98 @@
       height: 405pt;
       font-family: 'Pretendard', sans-serif;
       background: #ffffff;
-      padding: 32pt 40pt;
+      padding: 28pt 40pt;
       display: flex;
       flex-direction: column;
     }
   </style>
 </head>
 <body>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16pt;">
-    <h2 style="font-size: 22pt; font-weight: 600; color: #1a1a1a;">How it's built. How it heals itself.</h2>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12pt;">
+    <div style="display: flex; align-items: center; gap: 10pt;">
+      <p style="display: inline-block; padding: 3pt 8pt; background: #1a1a1a; color: #fff; border-radius: 4pt; font-size: 7pt; font-weight: 600;">RALPH PROCESS</p>
+      <h2 style="font-size: 20pt; font-weight: 600; color: #1a1a1a;">Spec-First. Test-First. Then Walk Away.</h2>
+    </div>
     <p style="font-size: 10pt; color: #999;">04</p>
   </div>
 
-  <div style="flex: 1; display: flex; flex-direction: column; gap: 10pt;">
-    <!-- Top: the pipeline -->
-    <div style="display: flex; align-items: center; gap: 6pt; justify-content: center; background: #f5f5f0; border-radius: 8pt; padding: 12pt;">
-      <div style="background: #fff; border-radius: 6pt; padding: 8pt 14pt; text-align: center;">
-        <p style="font-size: 16pt;">📎</p>
-        <p style="font-size: 8pt; font-weight: 600; color: #1a1a1a;">Any Source</p>
-      </div>
-      <p style="font-size: 14pt; color: #ccc;">→</p>
-      <div style="background: #fff; border-radius: 6pt; padding: 8pt 14pt; text-align: center;">
-        <p style="font-size: 16pt;">🧠</p>
-        <p style="font-size: 8pt; font-weight: 600; color: #1a1a1a;">LLM Analyze</p>
-      </div>
-      <p style="font-size: 14pt; color: #ccc;">→</p>
-      <div style="background: #1a1a1a; border-radius: 6pt; padding: 8pt 14pt; text-align: center;">
-        <p style="font-size: 8pt; font-weight: 600; color: #fff;">⚡ ALL PARALLEL</p>
-        <div style="display: flex; gap: 3pt; margin-top: 4pt;">
-          <p style="font-size: 6pt; background: #333; color: #fff; padding: 2pt 4pt; border-radius: 2pt;">Map</p>
-          <p style="font-size: 6pt; background: #333; color: #fff; padding: 2pt 4pt; border-radius: 2pt;">Quiz</p>
-          <p style="font-size: 6pt; background: #333; color: #fff; padding: 2pt 4pt; border-radius: 2pt;">Cards</p>
-          <p style="font-size: 6pt; background: #333; color: #fff; padding: 2pt 4pt; border-radius: 2pt;">Pod</p>
-        </div>
-      </div>
-      <p style="font-size: 14pt; color: #ccc;">→</p>
-      <div style="background: #fff; border-radius: 6pt; padding: 8pt 14pt; text-align: center;">
-        <p style="font-size: 16pt;">✨</p>
-        <p style="font-size: 8pt; font-weight: 600; color: #1a1a1a;">5 Tabs Ready</p>
-      </div>
-    </div>
+  <div style="flex: 1; display: flex; gap: 14pt;">
+    <!-- Left: What I wrote -->
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 6pt;">
+      <p style="font-size: 9pt; font-weight: 600; color: #666; margin-bottom: 2pt;">WHAT I WROTE (before any code)</p>
 
-    <!-- Bottom: the agent story — two columns -->
-    <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10pt;">
-      <!-- Left: Builder -->
-      <div style="background: #f0f7ff; border-radius: 8pt; padding: 14pt;">
-        <div style="display: flex; align-items: center; gap: 8pt; margin-bottom: 10pt;">
-          <div style="width: 24pt; height: 24pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <p style="color: #fff; font-size: 10pt;">🔨</p>
-          </div>
-          <p style="font-size: 12pt; font-weight: 600; color: #005bbf;">oh-my-claudecode</p>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 6pt;">
-          <div style="display: flex; align-items: center; gap: 6pt;">
-            <div style="width: 6pt; height: 6pt; background: #005bbf; border-radius: 50%;"></div>
-            <p style="font-size: 9pt; color: #444;">I wrote the spec (895 lines)</p>
-          </div>
-          <div style="display: flex; align-items: center; gap: 6pt;">
-            <div style="width: 6pt; height: 6pt; background: #005bbf; border-radius: 50%;"></div>
-            <p style="font-size: 9pt; color: #444;">Agent read it → built 4 rounds</p>
-          </div>
-          <div style="display: flex; align-items: center; gap: 6pt;">
-            <div style="width: 6pt; height: 6pt; background: #005bbf; border-radius: 50%;"></div>
-            <p style="font-size: 9pt; color: #444;">BE + FE, commits after each</p>
-          </div>
+      <div style="background: #f5f5f0; border-radius: 6pt; padding: 10pt 12pt; display: flex; align-items: center; gap: 10pt;">
+        <p style="font-size: 20pt;">📋</p>
+        <div style="flex: 1;">
+          <p style="font-size: 11pt; font-weight: 600; color: #1a1a1a;">SPEC.md — 895 lines</p>
+          <p style="font-size: 8pt; color: #666;">Every prompt, schema, endpoint, build order, design tokens</p>
         </div>
       </div>
 
-      <!-- Right: Healer -->
-      <div style="background: #fff7ed; border-radius: 8pt; padding: 14pt;">
-        <div style="display: flex; align-items: center; gap: 8pt; margin-bottom: 10pt;">
-          <div style="width: 24pt; height: 24pt; background: #c2410c; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <p style="color: #fff; font-size: 10pt;">🔄</p>
-          </div>
-          <p style="font-size: 12pt; font-weight: 600; color: #c2410c;">Claude Agent SDK</p>
+      <div style="background: #f5f5f0; border-radius: 6pt; padding: 10pt 12pt; display: flex; align-items: center; gap: 10pt;">
+        <p style="font-size: 20pt;">🧪</p>
+        <div style="flex: 1;">
+          <p style="font-size: 11pt; font-weight: 600; color: #1a1a1a;">VERIFIED-API.md — 504 lines</p>
+          <p style="font-size: 8pt; color: #666;">Every LLM call tested and passing before build started</p>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 6pt;">
-          <div style="display: flex; align-items: center; gap: 6pt;">
-            <div style="width: 6pt; height: 6pt; background: #c2410c; border-radius: 50%;"></div>
-            <p style="font-size: 9pt; color: #444;">Test fails → Opus reads error + code</p>
-          </div>
-          <div style="display: flex; align-items: center; gap: 6pt;">
-            <div style="width: 6pt; height: 6pt; background: #c2410c; border-radius: 50%;"></div>
-            <p style="font-size: 9pt; color: #444;">Patches fix → retests automatically</p>
-          </div>
-          <div style="display: flex; align-items: center; gap: 6pt;">
-            <div style="width: 6pt; height: 6pt; background: #c2410c; border-radius: 50%;"></div>
-            <p style="font-size: 9pt; color: #444;">Playwright E2E + audio QA</p>
-          </div>
+      </div>
+
+      <div style="background: #f5f5f0; border-radius: 6pt; padding: 10pt 12pt; display: flex; align-items: center; gap: 10pt;">
+        <p style="font-size: 20pt;">✅</p>
+        <div style="flex: 1;">
+          <p style="font-size: 11pt; font-weight: 600; color: #1a1a1a;">17 Test Scripts — 1,500+ lines</p>
+          <p style="font-size: 8pt; color: #666;">API tests, Playwright browser E2E, audio quality checks</p>
+        </div>
+      </div>
+
+      <div style="background: #f5f5f0; border-radius: 6pt; padding: 10pt 12pt; display: flex; align-items: center; gap: 10pt;">
+        <p style="font-size: 20pt;">🎨</p>
+        <div style="flex: 1;">
+          <p style="font-size: 11pt; font-weight: 600; color: #1a1a1a;">Google Stitch Design System</p>
+          <p style="font-size: 8pt; color: #666;">"Cognitive Sanctuary" — UI spec for the agent to follow</p>
         </div>
       </div>
     </div>
 
-    <!-- GAN loop visual -->
-    <div style="background: #1a1a1a; border-radius: 8pt; padding: 10pt; display: flex; align-items: center; justify-content: center; gap: 12pt;">
-      <p style="font-size: 8pt; color: #666;">GAN-inspired (Anthropic Harness Design):</p>
-      <div style="display: flex; align-items: center; gap: 8pt;">
-        <div style="background: #005bbf; border-radius: 4pt; padding: 4pt 10pt;">
-          <p style="font-size: 9pt; font-weight: 600; color: #fff;">Generator</p>
+    <!-- Right: What the agent did -->
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <p style="font-size: 9pt; font-weight: 600; color: #666; margin-bottom: 8pt;">WHAT THE AGENT DID (autonomously)</p>
+
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4pt;">
+        <div style="background: #f0f7ff; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;">
+          <div style="width: 20pt; height: 20pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <p style="color: #fff; font-size: 8pt; font-weight: 700;">1</p>
+          </div>
+          <p style="font-size: 9pt; color: #444;">Read spec → generated build plan</p>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <p style="font-size: 7pt; color: #888;">→ code</p>
-          <p style="font-size: 7pt; color: #c2410c;">← fix</p>
+        <div style="background: #f0f7ff; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;">
+          <div style="width: 20pt; height: 20pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <p style="color: #fff; font-size: 8pt; font-weight: 700;">2</p>
+          </div>
+          <p style="font-size: 9pt; color: #444;">Built 4 rounds — BE + FE, commit after each</p>
         </div>
-        <div style="background: #c2410c; border-radius: 4pt; padding: 4pt 10pt;">
-          <p style="font-size: 9pt; font-weight: 600; color: #fff;">Evaluator</p>
+        <div style="background: #f0f7ff; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;">
+          <div style="width: 20pt; height: 20pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <p style="color: #fff; font-size: 8pt; font-weight: 700;">3</p>
+          </div>
+          <p style="font-size: 9pt; color: #444;">Ran verify scripts → fixed failures → retested</p>
         </div>
-        <p style="font-size: 8pt; color: #666;">→</p>
-        <div style="background: #16a34a; border-radius: 4pt; padding: 4pt 10pt;">
-          <p style="font-size: 9pt; font-weight: 600; color: #fff;">Ship ✓</p>
+        <div style="background: #f0f7ff; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;">
+          <div style="width: 20pt; height: 20pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <p style="color: #fff; font-size: 8pt; font-weight: 700;">4</p>
+          </div>
+          <p style="font-size: 9pt; color: #444;">Shipped working app — 20+ commits, 5K+ lines</p>
         </div>
       </div>
-      <p style="font-size: 8pt; color: #666;">| 20+ commits, 0 manual code</p>
+
+      <div style="background: #1a1a1a; border-radius: 8pt; padding: 10pt 14pt; margin-top: 8pt;">
+        <p style="font-size: 10pt; color: #fff; font-weight: 500; text-align: center;">
+          I wrote the blueprint. The agent built the house.
+        </p>
+        <p style="font-size: 8pt; color: #666; text-align: center; margin-top: 4pt;">
+          Ralph rule: don't touch the laptop while it works.
+        </p>
+      </div>
     </div>
   </div>
 </body>

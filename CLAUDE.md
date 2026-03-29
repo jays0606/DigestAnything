@@ -8,20 +8,17 @@ DigestAnything is a learning platform. Paste any URL/YouTube/PDF → get 5 AI-po
 
 ## Models
 
-ALL stages use `gemini-3-flash-preview` (except TTS audio).
+ALL stages use `gemini-3-flash-preview` (except TTS audio). 2 models total.
 
-| Purpose | Model ID | Config |
-|---------|----------|--------|
-| Source analysis | `gemini-3-flash-preview` | temp=1.0, thinking=LOW, response_mime_type=application/json |
-| Markmap visual | `gemini-3-flash-preview` | temp=1.0, thinking=LOW (plain text output) |
-| Quiz generation | `gemini-3-flash-preview` | temp=1.0, thinking=LOW, response_mime_type=application/json + response_schema |
-| Flashcard generation | `gemini-3-flash-preview` | same as quiz |
-| Podcast script | `gemini-3-flash-preview` | same as quiz |
-| Podcast TTS | `gemini-2.5-flash-preview-tts` | response_modalities=["AUDIO"], MultiSpeakerVoiceConfig |
-| Chat | `gemini-3-flash-preview` | temp=1.0, thinking=LOW, streaming |
-| Tutor | `gemini-3-flash-preview` | temp=1.0, thinking=LOW |
+| Purpose | Model ID |
+|---------|----------|
+| All text gen (ingest, quiz, cards, script, chat, tutor, markmap) | `gemini-3-flash-preview` |
+| Podcast audio (multi-speaker) | `gemini-2.5-flash-preview-tts` |
 
+**Unified config:** `temperature=1.0`, `thinking_level="LOW"`. No `max_output_tokens`.
 All JSON outputs use `response_schema` with enum constraints — enforced at API level, not just prompt.
+
+**Full reference with all prompts, schemas, and verified code:** `docs/gemini/VERIFIED-API.md`
 
 ## Stack
 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Pretendard', sans-serif;
+      background: #f5f5f0;
+      padding: 36pt 44pt;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20pt;">
+    <div style="display: flex; align-items: center; gap: 12pt;">
+      <p style="display: inline-block; padding: 4pt 10pt; background: #1a1a1a; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;">PROGRESS</p>
+      <h2 style="font-size: 22pt; font-weight: 600; color: #1a1a1a;">Current Status</h2>
+    </div>
+    <p style="font-size: 10pt; color: #999;">08</p>
+  </div>
+
+  <div style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16pt; margin-bottom: 16pt;">
+    <div style="background: #1a1a1a; border-radius: 10pt; padding: 20pt; display: flex; flex-direction: column; justify-content: space-between;">
+      <p style="font-size: 9pt; color: #888; text-transform: uppercase; letter-spacing: 0.05em;">Agent Runtime</p>
+      <div>
+        <p style="font-size: 36pt; font-weight: 600; color: #ffffff; letter-spacing: -0.02em;">5h+</p>
+        <p style="font-size: 10pt; color: #666; margin-top: 4pt;">Autonomous build time</p>
+      </div>
+    </div>
+    <div style="background: #ffffff; border-radius: 10pt; padding: 20pt; display: flex; flex-direction: column; justify-content: space-between;">
+      <p style="font-size: 9pt; color: #888; text-transform: uppercase; letter-spacing: 0.05em;">Commits</p>
+      <div>
+        <p style="font-size: 36pt; font-weight: 600; color: #1a1a1a; letter-spacing: -0.02em;">20+</p>
+        <p style="font-size: 10pt; color: #888; margin-top: 4pt;">All agent-authored</p>
+      </div>
+    </div>
+    <div style="background: #ffffff; border-radius: 10pt; padding: 20pt; display: flex; flex-direction: column; justify-content: space-between;">
+      <p style="font-size: 9pt; color: #888; text-transform: uppercase; letter-spacing: 0.05em;">Lines of Code</p>
+      <div>
+        <p style="font-size: 36pt; font-weight: 600; color: #1a1a1a; letter-spacing: -0.02em;">5K+</p>
+        <p style="font-size: 10pt; color: #888; margin-top: 4pt;">Python + TypeScript</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 8pt;">
+    <div style="background: #16a34a; border-radius: 8pt; padding: 10pt; text-align: center;">
+      <p style="font-size: 10pt; font-weight: 600; color: #fff;">Overview</p>
+      <p style="font-size: 8pt; color: rgba(255,255,255,0.7); margin-top: 2pt;">Done</p>
+    </div>
+    <div style="background: #16a34a; border-radius: 8pt; padding: 10pt; text-align: center;">
+      <p style="font-size: 10pt; font-weight: 600; color: #fff;">Quiz</p>
+      <p style="font-size: 8pt; color: rgba(255,255,255,0.7); margin-top: 2pt;">Done</p>
+    </div>
+    <div style="background: #16a34a; border-radius: 8pt; padding: 10pt; text-align: center;">
+      <p style="font-size: 10pt; font-weight: 600; color: #fff;">Cards</p>
+      <p style="font-size: 8pt; color: rgba(255,255,255,0.7); margin-top: 2pt;">Done</p>
+    </div>
+    <div style="background: #16a34a; border-radius: 8pt; padding: 10pt; text-align: center;">
+      <p style="font-size: 10pt; font-weight: 600; color: #fff;">Podcast</p>
+      <p style="font-size: 8pt; color: rgba(255,255,255,0.7); margin-top: 2pt;">Done</p>
+    </div>
+    <div style="background: #ca8a04; border-radius: 8pt; padding: 10pt; text-align: center;">
+      <p style="font-size: 10pt; font-weight: 600; color: #fff;">Tutor</p>
+      <p style="font-size: 8pt; color: rgba(255,255,255,0.7); margin-top: 2pt;">Polishing</p>
+    </div>
+  </div>
+
+  <p style="font-size: 9pt; color: #999; margin-top: 12pt; text-align: center;">
+    Human contribution: SPEC.md (895 lines) + test definitions. Everything else: autonomous agent.
+  </p>
+</body>
+</html>

@@ -9,79 +9,87 @@
       height: 405pt;
       font-family: 'Pretendard', sans-serif;
       background: #ffffff;
-      padding: 40pt 48pt;
+      padding: 36pt 44pt;
       display: flex;
       flex-direction: column;
     }
   </style>
 </head>
 <body>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24pt;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20pt;">
     <div style="display: flex; align-items: center; gap: 12pt;">
       <p style="display: inline-block; padding: 4pt 10pt; background: #005bbf; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;">SOLUTION</p>
-      <h2 style="font-size: 24pt; font-weight: 600; color: #1a1a1a;">5 Learning Experiences, 1 Click</h2>
+      <h2 style="font-size: 22pt; font-weight: 600; color: #1a1a1a;">Paste Anything → Learn Everything</h2>
     </div>
     <p style="font-size: 10pt; color: #999;">03</p>
   </div>
 
-  <p style="font-size: 13pt; color: #666; margin-bottom: 20pt; line-height: 1.5;">
-    Paste any URL, YouTube link, or PDF → get 5 AI-powered experiences grounded in <strong style="color: #1a1a1a;">learning science</strong>.
+  <p style="font-size: 12pt; color: #1a1a1a; margin-bottom: 16pt; font-weight: 500;">
+    URL, YouTube, PDF → 5 experiences grounded in learning science. Not AI gimmicks.
   </p>
 
-  <div style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; gap: 12pt;">
-    <div style="background: #f0f7ff; border-radius: 10pt; padding: 16pt; display: flex; flex-direction: column;">
-      <div style="display: flex; align-items: center; gap: 8pt; margin-bottom: 8pt;">
-        <p style="font-size: 16pt;">🧠</p>
-        <p style="font-size: 11pt; font-weight: 600; color: #005bbf;">Overview</p>
-      </div>
-      <p style="font-size: 10pt; color: #444; line-height: 1.5;">Summary + interactive mindmap</p>
-      <p style="font-size: 8pt; color: #999; margin-top: auto;">Dual Coding Theory</p>
-    </div>
-    <div style="background: #fff7ed; border-radius: 10pt; padding: 16pt; display: flex; flex-direction: column;">
-      <div style="display: flex; align-items: center; gap: 8pt; margin-bottom: 8pt;">
-        <p style="font-size: 16pt;">❓</p>
-        <p style="font-size: 11pt; font-weight: 600; color: #c2410c;">Quiz</p>
-      </div>
-      <p style="font-size: 10pt; color: #444; line-height: 1.5;">10 MCQs with explanations</p>
-      <p style="font-size: 8pt; color: #999; margin-top: auto;">Active Recall</p>
-    </div>
-    <div style="background: #f0fdf4; border-radius: 10pt; padding: 16pt; display: flex; flex-direction: column;">
-      <div style="display: flex; align-items: center; gap: 8pt; margin-bottom: 8pt;">
-        <p style="font-size: 16pt;">🃏</p>
-        <p style="font-size: 11pt; font-weight: 600; color: #16a34a;">Cards</p>
-      </div>
-      <p style="font-size: 10pt; color: #444; line-height: 1.5;">12-15 flip flashcards</p>
-      <p style="font-size: 8pt; color: #999; margin-top: auto;">Spaced Repetition</p>
-    </div>
-    <div style="background: #faf5ff; border-radius: 10pt; padding: 16pt; display: flex; flex-direction: column;">
-      <div style="display: flex; align-items: center; gap: 8pt; margin-bottom: 8pt;">
-        <p style="font-size: 16pt;">🎙️</p>
-        <p style="font-size: 11pt; font-weight: 600; color: #7c3aed;">Podcast</p>
-      </div>
-      <p style="font-size: 10pt; color: #444; line-height: 1.5;">2-host AI podcast with audio</p>
-      <p style="font-size: 8pt; color: #999; margin-top: auto;">Elaborative Interrogation</p>
-    </div>
-    <div style="background: #fefce8; border-radius: 10pt; padding: 16pt; display: flex; flex-direction: column;">
-      <div style="display: flex; align-items: center; gap: 8pt; margin-bottom: 8pt;">
-        <p style="font-size: 16pt;">🎓</p>
-        <p style="font-size: 11pt; font-weight: 600; color: #ca8a04;">Tutor</p>
-      </div>
-      <p style="font-size: 10pt; color: #444; line-height: 1.5;">Socratic Feynman tutor</p>
-      <p style="font-size: 8pt; color: #999; margin-top: auto;">Feynman Technique</p>
-    </div>
-    <div style="background: #f5f5f0; border-radius: 10pt; padding: 16pt; display: flex; flex-direction: column;">
-      <div style="display: flex; align-items: center; gap: 8pt; margin-bottom: 8pt;">
-        <p style="font-size: 16pt;">💬</p>
-        <p style="font-size: 11pt; font-weight: 600; color: #1a1a1a;">Chat</p>
-      </div>
-      <p style="font-size: 10pt; color: #444; line-height: 1.5;">Ask anything, always available</p>
-      <p style="font-size: 8pt; color: #999; margin-top: auto;">On-demand Reinforcement</p>
-    </div>
+  <!-- User flow -->
+  <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 16pt; background: #f5f5f0; border-radius: 8pt; padding: 10pt 14pt;">
+    <p style="font-size: 9pt; color: #666;">Paste URL</p>
+    <p style="font-size: 9pt; color: #ccc;">→</p>
+    <p style="font-size: 9pt; color: #666;">AI analyzes</p>
+    <p style="font-size: 9pt; color: #ccc;">→</p>
+    <p style="font-size: 9pt; font-weight: 600; color: #005bbf;">Overview loads instantly</p>
+    <p style="font-size: 9pt; color: #ccc;">→</p>
+    <p style="font-size: 9pt; color: #666;">Quiz, Cards, Podcast generate in parallel</p>
+    <p style="font-size: 9pt; color: #ccc;">→</p>
+    <p style="font-size: 9pt; font-weight: 600; color: #16a34a;">Tutor says "explain it"</p>
   </div>
 
-  <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 12pt; border-top: 1px solid #eee;">
-    <p style="font-size: 9pt; color: #999;">DigestAnything</p>
-    <p style="font-size: 9pt; color: #999;">Ralphthon Seoul #2</p>
+  <div style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; gap: 8pt;">
+    <div style="background: #f0f7ff; border-radius: 8pt; padding: 12pt; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt;">
+        <p style="font-size: 14pt;">🧠</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #005bbf;">Overview</p>
+      </div>
+      <p style="font-size: 9pt; color: #444; line-height: 1.4;">Summary + interactive mindmap. See the whole structure at once.</p>
+      <p style="font-size: 7pt; color: #999; margin-top: auto;">Dual Coding — visual + verbal = 2x retention</p>
+    </div>
+    <div style="background: #fff7ed; border-radius: 8pt; padding: 12pt; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt;">
+        <p style="font-size: 14pt;">❓</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Quiz</p>
+      </div>
+      <p style="font-size: 9pt; color: #444; line-height: 1.4;">10 MCQs. Wrong answer → explanation. Brain must output to learn.</p>
+      <p style="font-size: 7pt; color: #999; margin-top: auto;">Active Recall — output > input</p>
+    </div>
+    <div style="background: #f0fdf4; border-radius: 8pt; padding: 12pt; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt;">
+        <p style="font-size: 14pt;">🃏</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #16a34a;">Cards</p>
+      </div>
+      <p style="font-size: 9pt; color: #444; line-height: 1.4;">12-15 flashcards. Review right before you forget.</p>
+      <p style="font-size: 7pt; color: #999; margin-top: auto;">Spaced Repetition — beat the forgetting curve</p>
+    </div>
+    <div style="background: #faf5ff; border-radius: 8pt; padding: 12pt; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt;">
+        <p style="font-size: 14pt;">🎙️</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #7c3aed;">Podcast</p>
+      </div>
+      <p style="font-size: 9pt; color: #444; line-height: 1.4;">2-host AI podcast. Learn on your commute.</p>
+      <p style="font-size: 7pt; color: #999; margin-top: auto;">Elaborative Interrogation — why? how?</p>
+    </div>
+    <div style="background: #fefce8; border-radius: 8pt; padding: 12pt; display: flex; flex-direction: column; border: 2pt solid #ca8a04;">
+      <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt;">
+        <p style="font-size: 14pt;">🎓</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #ca8a04;">Tutor (Killer)</p>
+      </div>
+      <p style="font-size: 9pt; color: #444; line-height: 1.4;">"Explain this concept." Finds gaps. Never gives the answer.</p>
+      <p style="font-size: 7pt; color: #999; margin-top: auto;">Feynman + Desirable Difficulty — brain must sweat</p>
+    </div>
+    <div style="background: #f5f5f0; border-radius: 8pt; padding: 12pt; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt;">
+        <p style="font-size: 14pt;">💬</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #1a1a1a;">Chat</p>
+      </div>
+      <p style="font-size: 9pt; color: #444; line-height: 1.4;">Ask anything about the source. Always available.</p>
+      <p style="font-size: 7pt; color: #999; margin-top: auto;">On-demand reinforcement</p>
+    </div>
   </div>
 </body>
 </html>

@@ -16,84 +16,94 @@
   </style>
 </head>
 <body>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24pt;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16pt;">
     <div style="display: flex; align-items: center; gap: 12pt;">
       <p style="display: inline-block; padding: 4pt 10pt; background: #005bbf; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;">RALPH SETUP</p>
-      <h2 style="font-size: 24pt; font-weight: 600; color: #1a1a1a;">Self-Healing Agent Loop</h2>
+      <h2 style="font-size: 22pt; font-weight: 600; color: #1a1a1a;">I Wrote the Spec. The Agent Built Everything.</h2>
     </div>
     <p style="font-size: 10pt; color: #999;">05</p>
   </div>
 
-  <p style="font-size: 11pt; color: #666; margin-bottom: 10pt; line-height: 1.4;">
-    The secret sauce: <strong style="color: #1a1a1a;">spec-first, test-first, then autonomous build with self-correcting agents.</strong>
-  </p>
-
-  <div style="flex: 1; display: flex; gap: 20pt;">
-    <!-- Left: The Loop -->
-    <div style="flex: 1;">
-      <h3 style="font-size: 13pt; font-weight: 600; color: #1a1a1a; margin-bottom: 12pt;">The Loop</h3>
-      <div style="display: flex; flex-direction: column; gap: 6pt;">
-        <div style="background: #f5f5f0; border-radius: 8pt; padding: 10pt 14pt; display: flex; align-items: center; gap: 10pt;">
-          <div style="width: 24pt; height: 24pt; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <p style="color: #fff; font-size: 10pt; font-weight: 600;">1</p>
+  <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 20pt;">
+    <!-- Left: The Process -->
+    <div>
+      <h3 style="font-size: 12pt; font-weight: 600; color: #1a1a1a; margin-bottom: 10pt;">The Ralph Rule: Don't Touch the Laptop</h3>
+      <div style="display: flex; flex-direction: column; gap: 5pt;">
+        <div style="background: #f5f5f0; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;">
+          <div style="width: 20pt; height: 20pt; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <p style="color: #fff; font-size: 8pt; font-weight: 600;">1</p>
           </div>
           <div>
-            <p style="font-size: 10pt; font-weight: 500; color: #1a1a1a;">Write Spec + Tests First</p>
-            <p style="font-size: 8pt; color: #666;">895-line SPEC.md + 17 test files before any code</p>
+            <p style="font-size: 9pt; font-weight: 500; color: #1a1a1a;">Write Spec + Tests First</p>
+            <p style="font-size: 7pt; color: #666;">895-line SPEC.md, 504-line verified API ref, 17 test files</p>
           </div>
         </div>
-        <div style="text-align: center; color: #ccc; font-size: 10pt;">↓</div>
-        <div style="background: #f0f7ff; border-radius: 8pt; padding: 10pt 14pt; display: flex; align-items: center; gap: 10pt;">
-          <div style="width: 24pt; height: 24pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <p style="color: #fff; font-size: 10pt; font-weight: 600;">2</p>
+        <div style="text-align: center; color: #ddd; font-size: 8pt;">↓</div>
+        <div style="background: #f0f7ff; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;">
+          <div style="width: 20pt; height: 20pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <p style="color: #fff; font-size: 8pt; font-weight: 600;">2</p>
           </div>
           <div>
-            <p style="font-size: 10pt; font-weight: 500; color: #1a1a1a;">Autopilot Builds 4 Rounds</p>
-            <p style="font-size: 8pt; color: #666;">Claude Code /autopilot → BE + FE in parallel</p>
+            <p style="font-size: 9pt; font-weight: 500; color: #1a1a1a;">Claude Code /autopilot Builds</p>
+            <p style="font-size: 7pt; color: #666;">4 rounds: BE + FE in parallel. Commits after each round.</p>
           </div>
         </div>
-        <div style="text-align: center; color: #ccc; font-size: 10pt;">↓</div>
-        <div style="background: #fff7ed; border-radius: 8pt; padding: 10pt 14pt; display: flex; align-items: center; gap: 10pt;">
-          <div style="width: 24pt; height: 24pt; background: #c2410c; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <p style="color: #fff; font-size: 10pt; font-weight: 600;">3</p>
+        <div style="text-align: center; color: #ddd; font-size: 8pt;">↓</div>
+        <div style="background: #fff7ed; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;">
+          <div style="width: 20pt; height: 20pt; background: #c2410c; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <p style="color: #fff; font-size: 8pt; font-weight: 600;">3</p>
           </div>
           <div>
-            <p style="font-size: 10pt; font-weight: 500; color: #1a1a1a;">Agent Test Loop (Opus 4.6)</p>
-            <p style="font-size: 8pt; color: #666;">Test → Fail → Opus reads error → Fixes → Retest</p>
+            <p style="font-size: 9pt; font-weight: 500; color: #1a1a1a;">Agent Test Loop (Opus 4.6)</p>
+            <p style="font-size: 7pt; color: #666;">Test → Fail → Agent reads error + code → Fixes → Retest</p>
           </div>
         </div>
-        <div style="text-align: center; color: #ccc; font-size: 10pt;">↓</div>
-        <div style="background: #f0fdf4; border-radius: 8pt; padding: 10pt 14pt; display: flex; align-items: center; gap: 10pt;">
-          <div style="width: 24pt; height: 24pt; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <p style="color: #fff; font-size: 10pt; font-weight: 600;">4</p>
+        <div style="text-align: center; color: #ddd; font-size: 8pt;">↓</div>
+        <div style="background: #f0fdf4; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;">
+          <div style="width: 20pt; height: 20pt; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <p style="color: #fff; font-size: 8pt; font-weight: 600;">4</p>
           </div>
           <div>
-            <p style="font-size: 10pt; font-weight: 500; color: #1a1a1a;">Playwright E2E + Audio QA</p>
-            <p style="font-size: 8pt; color: #666;">Browser test every tab + Gemini validates podcast audio</p>
+            <p style="font-size: 9pt; font-weight: 500; color: #1a1a1a;">Playwright E2E + Audio QA</p>
+            <p style="font-size: 7pt; color: #666;">Browser tests every tab + Gemini validates podcast audio</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Right: What Makes It Ralph -->
-    <div style="flex: 1;">
-      <h3 style="font-size: 13pt; font-weight: 600; color: #1a1a1a; margin-bottom: 12pt;">What Makes It "Ralph"</h3>
-      <div style="display: flex; flex-direction: column; gap: 10pt;">
-        <div style="background: #f5f5f0; border-radius: 8pt; padding: 14pt;">
-          <p style="font-size: 10pt; font-weight: 600; color: #1a1a1a; margin-bottom: 4pt;">Spec-First Architecture</p>
-          <p style="font-size: 9pt; color: #666; line-height: 1.5;">895 lines of spec, 504 lines of verified API reference, Stitch design system — all written BEFORE implementation</p>
+    <!-- Right: Why It's Serious -->
+    <div>
+      <h3 style="font-size: 12pt; font-weight: 600; color: #1a1a1a; margin-bottom: 10pt;">Generator-Evaluator (GAN-Inspired)</h3>
+      <div style="background: #f5f5f0; border-radius: 8pt; padding: 12pt; margin-bottom: 8pt;">
+        <p style="font-size: 9pt; color: #666; line-height: 1.5;">
+          From Anthropic's <strong style="color: #1a1a1a;">Harness Design</strong> blog (this week):
+          separate the builder from the critic. Self-evaluation bias means
+          you can't trust code to judge itself.
+        </p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6pt;">
+        <div style="display: flex; gap: 8pt; align-items: flex-start;">
+          <p style="font-size: 9pt; color: #005bbf; font-weight: 600; flex-shrink: 0;">Generator:</p>
+          <p style="font-size: 9pt; color: #444;">oh-my-claudecode writes all code</p>
         </div>
-        <div style="background: #f5f5f0; border-radius: 8pt; padding: 14pt;">
-          <p style="font-size: 10pt; font-weight: 600; color: #1a1a1a; margin-bottom: 4pt;">Claude Agent SDK Self-Correction</p>
-          <p style="font-size: 9pt; color: #666; line-height: 1.5;">Opus 4.6 agents read test failures + source code → make targeted fixes → retest automatically. No human intervention.</p>
+        <div style="display: flex; gap: 8pt; align-items: flex-start;">
+          <p style="font-size: 9pt; color: #c2410c; font-weight: 600; flex-shrink: 0;">Evaluator:</p>
+          <p style="font-size: 9pt; color: #444;">17 test scripts verify independently</p>
         </div>
-        <div style="background: #f5f5f0; border-radius: 8pt; padding: 14pt;">
-          <p style="font-size: 10pt; font-weight: 600; color: #1a1a1a; margin-bottom: 4pt;">4-Stage Verification</p>
-          <p style="font-size: 9pt; color: #666; line-height: 1.5;">API tests → Agent fix loop → Playwright E2E → Gemini audio analysis. All automated, all in one run.</p>
+        <div style="display: flex; gap: 8pt; align-items: flex-start;">
+          <p style="font-size: 9pt; color: #16a34a; font-weight: 600; flex-shrink: 0;">Self-heal:</p>
+          <p style="font-size: 9pt; color: #444;">Claude Agent SDK (Opus) reads failures, patches code, retests</p>
         </div>
+      </div>
+
+      <div style="background: #1a1a1a; border-radius: 8pt; padding: 12pt; margin-top: 10pt;">
+        <p style="font-size: 9pt; color: #888; margin-bottom: 6pt;">What I Actually Did</p>
+        <p style="font-size: 11pt; color: #fff; font-weight: 500; line-height: 1.5;">
+          Wrote SPEC.md → walked away → agent built, tested, fixed, committed.
+          <span style="color: #888;">XX commits. XX,XXX lines. Zero manual code.</span>
+        </p>
       </div>
     </div>
   </div>
-
 </body>
 </html>

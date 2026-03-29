@@ -1,0 +1,166 @@
+{
+  "context": {
+    "title": "Scaling Agentic Coding with Evaluator Loops",
+    "subtitle": "How multi-agent architectures and context resets enable autonomous full-stack development.",
+    "summary": "This article explores how a three-agent architecture\u2014planner, generator, and evaluator\u2014overcomes traditional AI ceilings in frontend design and autonomous coding. By using context resets and external skepticism, researchers can prevent models from losing coherence or self-praising mediocre work. This approach allows Claude to build complex, high-quality applications over multi-hour sessions without human intervention.",
+    "difficulty": "advanced",
+    "estimated_read_time_minutes": 8,
+    "key_concepts": [
+      {
+        "term": "Agentic Coding",
+        "definition": "The process of using AI models as independent workers that can plan, write, and test code autonomously.",
+        "importance": "high",
+        "related_to": [
+          "Planner Agent",
+          "Generator Agent"
+        ]
+      },
+      {
+        "term": "Context Window",
+        "definition": "The total amount of information an AI can 'remember' and process at one single time.",
+        "importance": "high",
+        "related_to": [
+          "Context Anxiety",
+          "Context Reset"
+        ]
+      },
+      {
+        "term": "Context Anxiety",
+        "definition": "A model's tendency to rush or wrap up work prematurely as it nears its memory limit.",
+        "importance": "medium",
+        "related_to": [
+          "Context Window"
+        ]
+      },
+      {
+        "term": "Context Reset",
+        "definition": "Clearing the AI's memory entirely and starting fresh with a structured summary of progress.",
+        "importance": "high",
+        "related_to": [
+          "Compaction",
+          "Handoff Artifacts"
+        ]
+      },
+      {
+        "term": "Compaction",
+        "definition": "Summarizing previous parts of a conversation to save space without starting a new session.",
+        "importance": "medium",
+        "related_to": [
+          "Context Reset"
+        ]
+      },
+      {
+        "term": "Planner Agent",
+        "definition": "A specific AI role dedicated to breaking down a large project into smaller, manageable tasks.",
+        "importance": "high",
+        "related_to": [
+          "Generator Agent"
+        ]
+      },
+      {
+        "term": "Generator Agent",
+        "definition": "The AI responsible for the actual 'doing'\u2014writing the code or creating the design.",
+        "importance": "high",
+        "related_to": [
+          "Evaluator Agent"
+        ]
+      },
+      {
+        "term": "Evaluator Agent",
+        "definition": "An independent AI that reviews the generator's work against strict criteria to find flaws.",
+        "importance": "high",
+        "related_to": [
+          "Self-Evaluation Bias"
+        ]
+      },
+      {
+        "term": "Handoff Artifacts",
+        "definition": "Structured documents that pass the necessary state and instructions from one agent session to the next.",
+        "importance": "medium",
+        "related_to": [
+          "Context Reset"
+        ]
+      },
+      {
+        "term": "Self-Evaluation Bias",
+        "definition": "The tendency for AI models to confidently praise their own work even when it is mediocre.",
+        "importance": "high",
+        "related_to": [
+          "Evaluator Agent"
+        ]
+      },
+      {
+        "term": "Frontend Design Skill",
+        "definition": "The ability of an AI to create visually appealing and functional user interfaces.",
+        "importance": "medium"
+      },
+      {
+        "term": "Multi-Agent Architecture",
+        "definition": "A system design where different AI instances work together, each handling a specific part of a workflow.",
+        "importance": "high"
+      }
+    ],
+    "hierarchy": {
+      "root": "Autonomous Agent Systems",
+      "children": [
+        {
+          "name": "Solving Performance Ceilings",
+          "children": [
+            "Multi-agent structures",
+            "Generator-evaluator loops",
+            "Criteria-based grading"
+          ],
+          "description": "Moving beyond simple prompt engineering to break through quality plateaus."
+        },
+        {
+          "name": "Managing Context Limits",
+          "children": [
+            "Full context resets",
+            "Structured state handoffs",
+            "Preventing context anxiety"
+          ],
+          "description": "Strategies for keeping agents coherent during long-running tasks."
+        },
+        {
+          "name": "Ensuring Output Quality",
+          "children": [
+            "External skeptical review",
+            "Breaking task decomposition",
+            "Full-stack autonomous builds"
+          ],
+          "description": "Techniques for achieving human-level taste and functional correctness."
+        }
+      ]
+    },
+    "key_insights": [
+      "A clean slate (Context Reset) is often more effective than summarizing history (Compaction) because it removes the 'anxiety' the model feels when its memory is full.",
+      "AI models are naturally bad at grading themselves; they are 'inclined to be generous' toward their own mistakes unless a separate skeptical agent is used.",
+      "Designing a high-quality evaluator is easier than designing a perfect generator, because skepticism is more 'tractable' to tune via prompting.",
+      "Success in long-running autonomous tasks requires shifting focus from prompt engineering to system harness design."
+    ],
+    "analogies": [
+      {
+        "concept": "Evaluator Agent",
+        "analogy": "An editor and an author",
+        "explanation": "An author often misses their own typos or plot holes because they know what they meant to say; a separate editor sees the work with fresh, critical eyes."
+      },
+      {
+        "concept": "Context Reset",
+        "analogy": "Clearing a messy desk",
+        "explanation": "Compaction is like reorganizing a pile of papers to make room, but a Context Reset is like clearing the desk entirely and only bringing back the essential notes you need for the next hour."
+      },
+      {
+        "concept": "Context Anxiety",
+        "analogy": "The end-of-exam scramble",
+        "explanation": "When a student sees there are only 5 minutes left on the clock, they stop doing their best work and start rushing to finish anything just to be done."
+      }
+    ]
+  },
+  "markmap_lines": 16,
+  "quiz_count": 10,
+  "cards_count": 14,
+  "script_turns": 63,
+  "script_words": 1548,
+  "chat_chars": 64,
+  "tutor_words": 6
+}

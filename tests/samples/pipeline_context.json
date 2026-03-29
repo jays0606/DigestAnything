@@ -1,0 +1,23 @@
+{
+  "title": "Novel Agentic Architectures for High-Quality Design and Autonomous Coding",
+  "summary": "Researchers developed a multi-agent system utilizing generator and evaluator roles to overcome performance ceilings in frontend design and long-running coding tasks. By implementing context resets and structured handoffs, the team addressed common failure modes like 'context anxiety' and coherence loss in lengthy sessions. The architecture separates creation from critique, using a skeptical evaluator agent to drive high-quality, iterative improvements that go beyond standard LLM outputs.",
+  "key_concepts": [
+    {
+      "term": "Context Anxiety",
+      "definition": "A behavior where a model prematurely concludes tasks or loses coherence as it perceives its context window limit approaching."
+    },
+    {
+      "term": "Context Reset",
+      "definition": "The process of clearing a model's context window entirely and starting a fresh session while using structured artifacts to hand off state and progress."
+    },
+    {
+      "term": "Multi-Agent Evaluator-Generator Loop",
+      "definition": "A design pattern where a separate, skeptical agent judges the output of a generator agent to overcome the bias of models praising their own mediocre work."
+    }
+  ],
+  "key_insights": [
+    "Context resets are more effective than compaction for long-running tasks because they provide a 'clean slate' that eliminates residual context anxiety.",
+    "Separating the agent doing the work from the agent judging it is essential because LLMs are inherently biased toward praising their own generated content.",
+    "Turning subjective qualities like 'good design' into concrete, gradable criteria allows evaluator agents to reliably drive iterative improvements in aesthetic domains."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "questions": [
+    {
+      "question": "What does the term 'Context Anxiety' refer to in the context of long-running agentic tasks?",
+      "options": [
+        "A) A state where a model becomes overwhelmed by having too many agents in a single system.",
+        "B) A behavior where a model prematurely ends a task or loses coherence as it nears its context window limit.",
+        "C) The user's concern regarding the privacy of data stored within an LLM's context.",
+        "D) A failure mode where an agent forgets the initial system prompt due to a lack of memory."
+      ],
+      "correct": 1,
+      "explanation": "Context anxiety is specifically defined as the behavior where a model prematurely concludes tasks or loses coherence because it perceives its context window limit is approaching."
+    },
+    {
+      "question": "Why did the researchers implement 'Context Resets' instead of mere 'Context Compaction'?",
+      "options": [
+        "A) Compaction is technically impossible for modern transformer architectures.",
+        "B) Resets are faster to process because they require less computation than summarizing history.",
+        "C) Resets provide a clean slate that eliminates residual context anxiety better than compaction.",
+        "D) Resets allow the agent to switch to a different LLM provider mid-task."
+      ],
+      "correct": 2,
+      "explanation": "According to the key insights, context resets are more effective because they eliminate the residual context anxiety that persists when just compacting or summarizing the window."
+    },
+    {
+      "question": "In the Multi-Agent Evaluator-Generator Loop, what is the primary reason for using a separate evaluator agent?",
+      "options": [
+        "A) To ensure that the generator agent doesn't consume too many tokens.",
+        "B) To overcome the inherent bias of LLMs to praise their own mediocre work.",
+        "C) To allow the system to run on two different hardware servers simultaneously.",
+        "D) To provide a backup in case the generator agent fails to produce any output."
+      ],
+      "correct": 1,
+      "explanation": "The architecture separates the roles because LLMs are biased toward their own generated content; a separate, skeptical evaluator is needed to drive high-quality iterative improvements."
+    },
+    {
+      "question": "How does the architecture address subjective qualities like 'good design' to ensure high-quality output?",
+      "options": [
+        "A) By using a human-in-the-loop to approve every design iteration.",
+        "B) By utilizing a generator agent that has been specifically fine-tuned on art history.",
+        "C) By turning subjective qualities into concrete, gradable criteria for the evaluator agent.",
+        "D) By running the generator through a series of random aesthetic filters."
+      ],
+      "correct": 2,
+      "explanation": "The system achieves high-quality design by converting subjective qualities into gradable criteria, allowing the evaluator agent to objectively drive the iterative process."
+    },
+    {
+      "question": "What mechanism is used to maintain progress during a 'Context Reset'?",
+      "options": [
+        "A) Structured artifacts used to hand off state and progress to a fresh session.",
+        "B) A complete log of every chat message from the previous session.",
+        "C) A shared database that all agents write to in real-time.",
+        "D) Manual intervention where a user re-enters the current status of the project."
+      ],
+      "correct": 0,
+      "explanation": "A context reset involves clearing the window entirely and starting fresh while using structured artifacts to hand off the necessary state and progress information."
+    }
+  ]
+}

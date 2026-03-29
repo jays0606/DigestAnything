@@ -1,0 +1,11 @@
+[project]
+name = "ralphthon-seoul-submission"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "google-genai>=1.69.0",
+    "httpx>=0.28.1",
+    "trafilatura>=2.0.0",
+    "youtube-transcript-api>=1.2.4",
+]

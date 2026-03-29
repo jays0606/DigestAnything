@@ -1,0 +1,44 @@
+{
+  "cards": [
+    {
+      "front": "What is 'Context Anxiety' in the context of large language models?",
+      "back": "A behavior where a model prematurely ends tasks or loses coherence because it perceives it is reaching its context window limit.",
+      "type": "definition"
+    },
+    {
+      "front": "How does a 'Context Reset' differ from context compaction?",
+      "back": "Unlike compaction, a reset completely clears the context window and starts a fresh session, using structured artifacts to hand off the state to prevent coherence loss.",
+      "type": "comparison"
+    },
+    {
+      "front": "In a multi-agent architecture, why should the Generator and Evaluator be separate agents?",
+      "back": "Because LLMs are inherently biased toward praising their own work; a separate skeptical evaluator is needed to objectively critique and drive quality.",
+      "type": "application"
+    },
+    {
+      "front": "What is the primary function of a Multi-Agent Evaluator-Generator Loop?",
+      "back": "To overcome performance ceilings by having a skeptical agent judge the generator's output, forcing iterative improvements through objective critique.",
+      "type": "definition"
+    },
+    {
+      "front": "How can subjective qualities like 'good design' be optimized by autonomous agents?",
+      "back": "By converting subjective qualities into concrete, gradable criteria that an evaluator agent can use to provide structured feedback.",
+      "type": "application"
+    },
+    {
+      "front": "What is the benefit of a 'clean slate' provided by context resets for long-running coding tasks?",
+      "back": "It eliminates residual context anxiety and prevents the performance degradation that occurs as the window fills up.",
+      "type": "application"
+    },
+    {
+      "front": "What failure mode occurs when a model 'perceives' its context window is almost full?",
+      "back": "Context Anxiety, leading to premature task conclusion or loss of logical flow.",
+      "type": "definition"
+    },
+    {
+      "front": "True or False: LLMs are effective at identifying mediocre elements in their own immediate outputs.",
+      "back": "False. They are biased toward praising their own content, necessitating a separate evaluator agent.",
+      "type": "definition"
+    }
+  ]
+}

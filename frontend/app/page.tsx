@@ -139,18 +139,21 @@ export default function Home() {
           {!data && !loading && (
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               {[
-                { label: "Blog Post", icon: "article", url: "https://www.anthropic.com/engineering/harness-design-long-running-apps" },
-                { label: "YouTube", icon: "play_circle", url: "https://www.youtube.com/watch?v=zjkBMFhNj_g" },
-                { label: "Wikipedia", icon: "public", url: "https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)" },
+                { label: "Agentic Design Patterns", sub: "Anthropic Engineering Blog", icon: "article", url: "https://www.anthropic.com/engineering/harness-design-long-running-apps" },
+                { label: "Andrej Karpathy on LLMs", sub: "YouTube Talk", icon: "play_circle", url: "https://www.youtube.com/watch?v=zjkBMFhNj_g" },
+                { label: "Transformer Architecture", sub: "Wikipedia", icon: "public", url: "https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)" },
               ].map((s) => (
                 <button
                   key={s.label}
                   onClick={() => handleSubmit(s.url)}
-                  className="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest rounded-full text-sm font-headline font-semibold text-on-surface-variant hover:text-primary hover:bg-primary-fixed/30 transition-all card-shadow"
+                  className="flex items-center gap-3 px-5 py-3 bg-surface-container-lowest rounded-xl text-left font-body hover:bg-primary-fixed/30 transition-all card-shadow"
                   data-preset={s.label.toLowerCase()}
                 >
-                  <span className="material-symbols-outlined text-base">{s.icon}</span>
-                  {s.label}
+                  <span className="material-symbols-outlined text-xl text-primary">{s.icon}</span>
+                  <div>
+                    <p className="text-sm font-headline font-semibold text-on-surface">{s.label}</p>
+                    <p className="text-xs text-on-surface-variant">{s.sub}</p>
+                  </div>
                 </button>
               ))}
             </div>

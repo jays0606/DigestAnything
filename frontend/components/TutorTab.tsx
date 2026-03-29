@@ -48,7 +48,7 @@ export default function TutorTab({ sessionId, concepts }: TutorTabProps) {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/tutor", {
+      const res = await fetch("http://localhost:8000/api/tutor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

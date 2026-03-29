@@ -11,6 +11,8 @@ import TutorTab from "../components/TutorTab";
 import FloatingChat from "../components/FloatingChat";
 import PodcastPlayer from "../components/PodcastPlayer";
 
+const API = "http://localhost:8000";
+
 type DigestData = {
   context: any;
   markmap: string | null;
@@ -34,29 +36,74 @@ export default function Home() {
     setActiveTab("overview");
 
     try {
-      const res = await fetch("/api/digest", {
+      // Step 1: Ingest — get context
+      const ingestRes = await fetch(`${API}/api/ingest`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ source }),
       });
+      if (!ingestRes.ok) throw new Error(`Ingest failed: ${ingestRes.status}`);
+      const context = await ingestRes.json();
 
-      if (!res.ok) {
-        throw new Error(`API error: ${res.status}`);
-      }
+      // Step 2: Get markmap immediately (fast)
+      const visualRes = await fetch(`${API}/api/visual`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(context),
+      });
+      const visual = await visualRes.json();
 
-      const result = await res.json();
-      setData(result);
+      // Show overview immediately
+      const initial: DigestData = {
+        context,
+        markmap: visual.markdown || null,
+        quiz: null,
+        cards: null,
+        podcast: null,
+      };
+      setData(initial);
+      setLoading(false);
+      setReadyTabs(new Set(["overview", "tutor"]));
 
-      const ready = new Set<string>();
-      ready.add("overview");
-      if (result.quiz) ready.add("quiz");
-      if (result.cards) ready.add("cards");
-      if (result.podcast) ready.add("podcast");
-      ready.add("tutor"); // tutor is always ready (it's a chat)
-      setReadyTabs(ready);
+      // Step 3: Fire quiz, cards, podcast in parallel
+      const [quizRes, cardsRes, podcastRes] = await Promise.allSettled([
+        fetch(`${API}/api/quiz`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(context),
+        }).then(r => r.json()),
+        fetch(`${API}/api/cards`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(context),
+        }).then(r => r.json()),
+        fetch(`${API}/api/podcast`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(context),
+        }).then(r => r.json()),
+      ]);
+
+      setData(prev => {
+        if (!prev) return prev;
+        return {
+          ...prev,
+          quiz: quizRes.status === "fulfilled" ? quizRes.value : null,
+          cards: cardsRes.status === "fulfilled" ? cardsRes.value : null,
+          podcast: podcastRes.status === "fulfilled" ? podcastRes.value : null,
+        };
+      });
+
+      setReadyTabs(prev => {
+        const next = new Set(prev);
+        if (quizRes.status === "fulfilled") next.add("quiz");
+        if (cardsRes.status === "fulfilled") next.add("cards");
+        if (podcastRes.status === "fulfilled") next.add("podcast");
+        return next;
+      });
+
     } catch (err: any) {
       setError(err.message || "Something went wrong");
-    } finally {
       setLoading(false);
     }
   }, []);
@@ -104,7 +151,7 @@ export default function Home() {
           )}
 
           {/* Results */}
-          {data && !loading && (
+          {data && (
             <div className="space-y-6">
               <TabBar activeTab={activeTab} onTabChange={setActiveTab} readyTabs={readyTabs} />
 
@@ -130,7 +177,7 @@ export default function Home() {
                   readyTabs.has("podcast") && data.podcast ? (
                     <PodcastPlayer podcast={data.podcast} />
                   ) : (
-                    <LoadingState message="Generating podcast..." />
+                    <LoadingState message="Generating podcast... this takes 2-3 minutes" />
                   )
                 )}
                 {activeTab === "tutor" && data.context && (
@@ -146,7 +193,7 @@ export default function Home() {
       </main>
 
       {/* Floating Chat */}
-      {data && !loading && (
+      {data && (
         <FloatingChat sessionId={data.context?.session_id || "default"} />
       )}
     </div>

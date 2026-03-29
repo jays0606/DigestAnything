@@ -105,7 +105,6 @@ The issues could be:
             system_prompt=FIXER_SYSTEM_PROMPT,
             model=MODEL,
             max_turns=MAX_TURNS_FIXER,
-            max_budget_usd=MAX_BUDGET_PER_CYCLE,
             setting_sources=["project"],
         ),
     ):

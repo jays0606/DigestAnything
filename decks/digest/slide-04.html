@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Pretendard', sans-serif;
+      background: #ffffff;
+      padding: 40pt 48pt;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24pt;">
+    <div style="display: flex; align-items: center; gap: 12pt;">
+      <p style="display: inline-block; padding: 4pt 10pt; background: #1a1a1a; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;">ARCHITECTURE</p>
+      <h2 style="font-size: 24pt; font-weight: 600; color: #1a1a1a;">One Ingest, Parallel Everything</h2>
+    </div>
+    <p style="font-size: 10pt; color: #999;">04</p>
+  </div>
+
+  <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 28pt;">
+    <!-- Left: Pipeline -->
+    <div>
+      <h3 style="font-size: 14pt; font-weight: 600; color: #1a1a1a; margin-bottom: 16pt;">Pipeline</h3>
+      <div style="display: flex; flex-direction: column; gap: 8pt;">
+        <div style="background: #f0f7ff; border-radius: 8pt; padding: 12pt 16pt; display: flex; align-items: center; gap: 12pt;">
+          <p style="font-size: 12pt; font-weight: 600; color: #005bbf;">1</p>
+          <div>
+            <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Source Input</p>
+            <p style="font-size: 9pt; color: #666;">URL / YouTube / PDF</p>
+          </div>
+        </div>
+        <div style="text-align: center; color: #ccc; font-size: 14pt;">↓</div>
+        <div style="background: #f0f7ff; border-radius: 8pt; padding: 12pt 16pt; display: flex; align-items: center; gap: 12pt;">
+          <p style="font-size: 12pt; font-weight: 600; color: #005bbf;">2</p>
+          <div>
+            <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Gemini 3 Flash Analysis</p>
+            <p style="font-size: 9pt; color: #666;">→ context.json (concepts, hierarchy, insights)</p>
+          </div>
+        </div>
+        <div style="text-align: center; color: #ccc; font-size: 14pt;">↓</div>
+        <div style="background: #1a1a1a; border-radius: 8pt; padding: 12pt 16pt;">
+          <p style="font-size: 11pt; font-weight: 600; color: #fff;">asyncio.gather() — ALL PARALLEL</p>
+          <div style="display: flex; gap: 6pt; margin-top: 8pt; flex-wrap: wrap;">
+            <p style="font-size: 9pt; background: #333; color: #fff; padding: 3pt 8pt; border-radius: 4pt;">Visual</p>
+            <p style="font-size: 9pt; background: #333; color: #fff; padding: 3pt 8pt; border-radius: 4pt;">Quiz</p>
+            <p style="font-size: 9pt; background: #333; color: #fff; padding: 3pt 8pt; border-radius: 4pt;">Cards</p>
+            <p style="font-size: 9pt; background: #333; color: #fff; padding: 3pt 8pt; border-radius: 4pt;">Podcast</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Stack -->
+    <div>
+      <h3 style="font-size: 14pt; font-weight: 600; color: #1a1a1a; margin-bottom: 16pt;">Stack</h3>
+      <div style="display: flex; flex-direction: column; gap: 10pt;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;">
+          <p style="font-size: 11pt; color: #666;">Frontend</p>
+          <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Next.js 14 + Tailwind</p>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;">
+          <p style="font-size: 11pt; color: #666;">Backend</p>
+          <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">FastAPI (async)</p>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;">
+          <p style="font-size: 11pt; color: #666;">AI</p>
+          <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Gemini 3 Flash + TTS</p>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;">
+          <p style="font-size: 11pt; color: #666;">Design</p>
+          <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Google Stitch</p>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;">
+          <p style="font-size: 11pt; color: #666;">Diagrams</p>
+          <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Markmap</p>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10pt 0;">
+          <p style="font-size: 11pt; color: #666;">Agent</p>
+          <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Claude Code + oh-my-claudecode</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 12pt; border-top: 1px solid #eee;">
+    <p style="font-size: 9pt; color: #999;">DigestAnything</p>
+    <p style="font-size: 9pt; color: #999;">Ralphthon Seoul #2</p>
+  </div>
+</body>
+</html>

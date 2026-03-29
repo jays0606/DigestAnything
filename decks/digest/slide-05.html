@@ -16,80 +16,91 @@
   </style>
 </head>
 <body>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14pt;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12pt;">
     <div style="display: flex; align-items: center; gap: 10pt;">
-      <p style="display: inline-block; padding: 3pt 8pt; background: #1a1a1a; color: #fff; border-radius: 4pt; font-size: 7pt; font-weight: 600;">UNDER THE HOOD</p>
-      <h2 style="font-size: 20pt; font-weight: 600; color: #1a1a1a;">One Source → Five Outputs → All Parallel</h2>
+      <p style="display: inline-block; padding: 3pt 8pt; background: #1a1a1a; color: #fff; border-radius: 4pt; font-size: 7pt; font-weight: 600;">RALPH PROCESS</p>
+      <h2 style="font-size: 20pt; font-weight: 600; color: #1a1a1a;">Spec-First. Test-First. Then Walk Away.</h2>
     </div>
     <p style="font-size: 10pt; color: #999;">04</p>
   </div>
 
-  <!-- Big flow diagram -->
-  <div style="flex: 1; display: flex; flex-direction: column; gap: 8pt;">
-    <!-- Row 1: Source types -->
-    <div style="display: flex; gap: 6pt; justify-content: center;">
-      <div style="background: #f5f5f0; border-radius: 6pt; padding: 8pt 16pt; text-align: center;">
-        <p style="font-size: 14pt;">📝</p>
-        <p style="font-size: 8pt; font-weight: 600;">Blog URL</p>
+  <div style="flex: 1; display: flex; gap: 14pt;">
+    <!-- Left: What I wrote -->
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 6pt;">
+      <p style="font-size: 9pt; font-weight: 600; color: #666; margin-bottom: 2pt;">WHAT I WROTE (before any code)</p>
+
+      <div style="background: #f5f5f0; border-radius: 6pt; padding: 10pt 12pt; display: flex; align-items: center; gap: 10pt;">
+        <p style="font-size: 20pt;">📋</p>
+        <div style="flex: 1;">
+          <p style="font-size: 11pt; font-weight: 600; color: #1a1a1a;">SPEC.md — 895 lines</p>
+          <p style="font-size: 8pt; color: #666;">Every prompt, schema, endpoint, build order, design tokens</p>
+        </div>
       </div>
-      <div style="background: #f5f5f0; border-radius: 6pt; padding: 8pt 16pt; text-align: center;">
-        <p style="font-size: 14pt;">🎬</p>
-        <p style="font-size: 8pt; font-weight: 600;">YouTube</p>
+
+      <div style="background: #f5f5f0; border-radius: 6pt; padding: 10pt 12pt; display: flex; align-items: center; gap: 10pt;">
+        <p style="font-size: 20pt;">🧪</p>
+        <div style="flex: 1;">
+          <p style="font-size: 11pt; font-weight: 600; color: #1a1a1a;">VERIFIED-API.md — 504 lines</p>
+          <p style="font-size: 8pt; color: #666;">Every LLM call tested and passing before build started</p>
+        </div>
       </div>
-      <div style="background: #f5f5f0; border-radius: 6pt; padding: 8pt 16pt; text-align: center;">
-        <p style="font-size: 14pt;">📄</p>
-        <p style="font-size: 8pt; font-weight: 600;">PDF</p>
+
+      <div style="background: #f5f5f0; border-radius: 6pt; padding: 10pt 12pt; display: flex; align-items: center; gap: 10pt;">
+        <p style="font-size: 20pt;">✅</p>
+        <div style="flex: 1;">
+          <p style="font-size: 11pt; font-weight: 600; color: #1a1a1a;">17 Test Scripts — 1,500+ lines</p>
+          <p style="font-size: 8pt; color: #666;">API tests, Playwright browser E2E, audio quality checks</p>
+        </div>
       </div>
-    </div>
 
-    <p style="text-align: center; color: #ccc; font-size: 10pt;">↓</p>
-
-    <!-- Row 2: LLM Analysis -->
-    <div style="background: #f0f7ff; border-radius: 8pt; padding: 10pt; text-align: center;">
-      <p style="font-size: 11pt; font-weight: 600; color: #005bbf;">Gemini 3 Flash — Structured Analysis</p>
-      <p style="font-size: 8pt; color: #666;">Concepts, hierarchy, insights, analogies → context.json</p>
-    </div>
-
-    <p style="text-align: center; color: #ccc; font-size: 10pt;">↓</p>
-
-    <!-- Row 3: Parallel outputs -->
-    <div style="background: #1a1a1a; border-radius: 8pt; padding: 10pt;">
-      <p style="font-size: 8pt; color: #888; text-align: center; margin-bottom: 8pt;">asyncio.gather() — ALL AT ONCE</p>
-      <div style="display: flex; gap: 6pt; justify-content: center;">
-        <div style="background: #252525; border-radius: 6pt; padding: 8pt 12pt; text-align: center; flex: 1;">
-          <p style="font-size: 12pt;">🗺️</p>
-          <p style="font-size: 8pt; font-weight: 600; color: #fff;">Mindmap</p>
-          <p style="font-size: 6pt; color: #888;">Gemini 3 Flash</p>
-        </div>
-        <div style="background: #252525; border-radius: 6pt; padding: 8pt 12pt; text-align: center; flex: 1;">
-          <p style="font-size: 12pt;">❓</p>
-          <p style="font-size: 8pt; font-weight: 600; color: #fff;">Quiz</p>
-          <p style="font-size: 6pt; color: #888;">Gemini 3 Flash</p>
-        </div>
-        <div style="background: #252525; border-radius: 6pt; padding: 8pt 12pt; text-align: center; flex: 1;">
-          <p style="font-size: 12pt;">🃏</p>
-          <p style="font-size: 8pt; font-weight: 600; color: #fff;">Cards</p>
-          <p style="font-size: 6pt; color: #888;">Gemini 3 Flash</p>
-        </div>
-        <div style="background: #252525; border-radius: 6pt; padding: 8pt 12pt; text-align: center; flex: 1;">
-          <p style="font-size: 12pt;">🎙️</p>
-          <p style="font-size: 8pt; font-weight: 600; color: #fff;">Podcast</p>
-          <p style="font-size: 6pt; color: #888;">Flash + TTS</p>
-        </div>
-        <div style="background: #252525; border-radius: 6pt; padding: 8pt 12pt; text-align: center; flex: 1;">
-          <p style="font-size: 12pt;">🎓</p>
-          <p style="font-size: 8pt; font-weight: 600; color: #fff;">Tutor</p>
-          <p style="font-size: 6pt; color: #888;">Gemini 3 Flash</p>
+      <div style="background: #f5f5f0; border-radius: 6pt; padding: 10pt 12pt; display: flex; align-items: center; gap: 10pt;">
+        <p style="font-size: 20pt;">🎨</p>
+        <div style="flex: 1;">
+          <p style="font-size: 11pt; font-weight: 600; color: #1a1a1a;">Google Stitch Design System</p>
+          <p style="font-size: 8pt; color: #666;">"Cognitive Sanctuary" — UI spec for the agent to follow</p>
         </div>
       </div>
     </div>
 
-    <!-- Bottom: Stack -->
-    <div style="display: flex; gap: 16pt; justify-content: center; padding-top: 4pt;">
-      <p style="font-size: 8pt; color: #999;"><strong style="color: #666;">Frontend:</strong> Next.js + Tailwind</p>
-      <p style="font-size: 8pt; color: #999;"><strong style="color: #666;">Backend:</strong> FastAPI (async)</p>
-      <p style="font-size: 8pt; color: #999;"><strong style="color: #666;">Design:</strong> Google Stitch</p>
-      <p style="font-size: 8pt; color: #999;"><strong style="color: #666;">TTS:</strong> Gemini 2.5 Flash multi-speaker</p>
+    <!-- Right: What the agent did -->
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <p style="font-size: 9pt; font-weight: 600; color: #666; margin-bottom: 8pt;">WHAT THE AGENT DID (autonomously)</p>
+
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4pt;">
+        <div style="background: #f0f7ff; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;">
+          <div style="width: 20pt; height: 20pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <p style="color: #fff; font-size: 8pt; font-weight: 700;">1</p>
+          </div>
+          <p style="font-size: 9pt; color: #444;">Read spec → generated build plan</p>
+        </div>
+        <div style="background: #f0f7ff; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;">
+          <div style="width: 20pt; height: 20pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <p style="color: #fff; font-size: 8pt; font-weight: 700;">2</p>
+          </div>
+          <p style="font-size: 9pt; color: #444;">Built 4 rounds — BE + FE, commit after each</p>
+        </div>
+        <div style="background: #f0f7ff; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;">
+          <div style="width: 20pt; height: 20pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <p style="color: #fff; font-size: 8pt; font-weight: 700;">3</p>
+          </div>
+          <p style="font-size: 9pt; color: #444;">Ran verify scripts → fixed failures → retested</p>
+        </div>
+        <div style="background: #f0f7ff; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;">
+          <div style="width: 20pt; height: 20pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <p style="color: #fff; font-size: 8pt; font-weight: 700;">4</p>
+          </div>
+          <p style="font-size: 9pt; color: #444;">Shipped working app — 20+ commits, 5K+ lines</p>
+        </div>
+      </div>
+
+      <div style="background: #1a1a1a; border-radius: 8pt; padding: 10pt 14pt; margin-top: 8pt;">
+        <p style="font-size: 10pt; color: #fff; font-weight: 500; text-align: center;">
+          I wrote the blueprint. The agent built the house.
+        </p>
+        <p style="font-size: 8pt; color: #666; text-align: center; margin-top: 4pt;">
+          Ralph rule: don't touch the laptop while it works.
+        </p>
+      </div>
     </div>
   </div>
 </body>

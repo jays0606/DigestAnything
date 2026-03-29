@@ -360,60 +360,38 @@
       width: 720pt;
       height: 405pt;
       font-family: 'Pretendard', sans-serif;
-      background: #ffffff;
+      background: #1a1a1a;
       padding: 40pt 48pt;
       display: flex;
       flex-direction: column;
+      justify-content: center;
     }
   </style>
 </head>
 <body>
-  <div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 28pt;&quot;>
-    <div style=&quot;display: flex; align-items: center; gap: 12pt;&quot;>
-      <p style=&quot;display: inline-block; padding: 4pt 10pt; background: #ba1a1a; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;&quot;>PROBLEM</p>
-      <h2 style=&quot;font-size: 24pt; font-weight: 600; color: #1a1a1a;&quot;>Passive Learning Doesn't Stick</h2>
-    </div>
-    <p style=&quot;font-size: 10pt; color: #999;&quot;>02</p>
-  </div>
+  <div style=&quot;max-width: 560pt;&quot;>
+    <p style=&quot;font-size: 13pt; color: #888; margin-bottom: 20pt; text-transform: uppercase; letter-spacing: 0.1em;&quot;>The Forgetting Problem</p>
 
-  <div style=&quot;flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 32pt;&quot;>
-    <div>
-      <div style=&quot;background: #f5f5f0; border-radius: 12pt; padding: 24pt; margin-bottom: 16pt;&quot;>
-        <p style=&quot;font-size: 48pt; font-weight: 600; color: #ba1a1a; letter-spacing: -0.02em;&quot;>80%</p>
-        <p style=&quot;font-size: 12pt; color: #666; margin-top: 4pt;&quot;>of content forgotten within 24 hours</p>
-        <p style=&quot;font-size: 9pt; color: #999; margin-top: 4pt;&quot;>— Ebbinghaus Forgetting Curve</p>
-      </div>
-      <p style=&quot;font-size: 13pt; color: #666; line-height: 1.7;&quot;>
-        Every day, millions read articles, watch videos, skim papers. <strong style=&quot;color: #1a1a1a;&quot;>Feels productive. Almost nothing retained.</strong>
-      </p>
-    </div>
-    <div>
-      <h3 style=&quot;font-size: 16pt; font-weight: 600; color: #1a1a1a; margin-bottom: 12pt;&quot;>The Real Pain</h3>
-      <div style=&quot;display: flex; flex-direction: column; gap: 12pt;&quot;>
-        <div style=&quot;display: flex; gap: 10pt; align-items: flex-start;&quot;>
-          <p style=&quot;font-size: 14pt; color: #ba1a1a;&quot;>✗</p>
-          <p style=&quot;font-size: 12pt; color: #444; line-height: 1.6;&quot;>No active recall — just highlighting and scrolling</p>
-        </div>
-        <div style=&quot;display: flex; gap: 10pt; align-items: flex-start;&quot;>
-          <p style=&quot;font-size: 14pt; color: #ba1a1a;&quot;>✗</p>
-          <p style=&quot;font-size: 12pt; color: #444; line-height: 1.6;&quot;>No self-testing — can't explain what you just read</p>
-        </div>
-        <div style=&quot;display: flex; gap: 10pt; align-items: flex-start;&quot;>
-          <p style=&quot;font-size: 14pt; color: #ba1a1a;&quot;>✗</p>
-          <p style=&quot;font-size: 12pt; color: #444; line-height: 1.6;&quot;>No reinforcement — content consumed once, forgotten forever</p>
-        </div>
-      </div>
-      <div style=&quot;background: #fff8f6; border-left: 3pt solid #ba1a1a; padding: 12pt 16pt; margin-top: 16pt; border-radius: 0 8pt 8pt 0;&quot;>
-        <p style=&quot;font-size: 11pt; color: #666; font-style: italic; line-height: 1.5;&quot;>
-          &quot;I watched a 1-hour Karpathy lecture. Next day, I couldn't explain a single concept to a colleague.&quot;
-        </p>
-      </div>
-    </div>
-  </div>
+    <h1 style=&quot;font-size: 36pt; font-weight: 600; color: #ffffff; line-height: 1.3; margin-bottom: 24pt;&quot;>
+      You read a 30-page paper yesterday.<br>
+      How much can you explain right now?
+    </h1>
 
-  <div style=&quot;display: flex; justify-content: space-between; align-items: center; padding-top: 12pt; border-top: 1px solid #eee;&quot;>
-    <p style=&quot;font-size: 9pt; color: #999;&quot;>DigestAnything</p>
-    <p style=&quot;font-size: 9pt; color: #999;&quot;>Ralphthon Seoul #2</p>
+    <div style=&quot;display: flex; gap: 32pt; margin-bottom: 28pt;&quot;>
+      <div>
+        <p style=&quot;font-size: 56pt; font-weight: 700; color: #ba1a1a;&quot;>10%</p>
+        <p style=&quot;font-size: 11pt; color: #888;&quot;>retained from reading</p>
+      </div>
+      <div style=&quot;border-left: 1pt solid #333; padding-left: 32pt;&quot;>
+        <p style=&quot;font-size: 56pt; font-weight: 700; color: #16a34a;&quot;>90%</p>
+        <p style=&quot;font-size: 11pt; color: #888;&quot;>retained from explaining</p>
+      </div>
+    </div>
+
+    <p style=&quot;font-size: 14pt; color: #b0b0b0; line-height: 1.6; font-style: italic;&quot;>
+      &quot;If you can't explain it simply, you don't understand it.&quot;
+      <span style=&quot;color: #666;&quot;>— Richard Feynman</span>
+    </p>
   </div>
 </body>
 </html>
@@ -519,79 +497,64 @@
   </style>
 </head>
 <body>
-  <div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 20pt;&quot;>
-    <div style=&quot;display: flex; align-items: center; gap: 12pt;&quot;>
-      <p style=&quot;display: inline-block; padding: 4pt 10pt; background: #005bbf; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;&quot;>SOLUTION</p>
-      <h2 style=&quot;font-size: 22pt; font-weight: 600; color: #1a1a1a;&quot;>Paste Anything → Learn Everything</h2>
-    </div>
+  <div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 16pt;&quot;>
+    <h2 style=&quot;font-size: 22pt; font-weight: 600; color: #1a1a1a;&quot;>The problem isn't access. It's the last mile.</h2>
     <p style=&quot;font-size: 10pt; color: #999;&quot;>03</p>
   </div>
 
-  <p style=&quot;font-size: 12pt; color: #1a1a1a; margin-bottom: 16pt; font-weight: 500;&quot;>
-    URL, YouTube, PDF → 5 experiences grounded in learning science. Not AI gimmicks.
-  </p>
-
-  <!-- User flow -->
-  <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 16pt; background: #f5f5f0; border-radius: 8pt; padding: 10pt 14pt;&quot;>
-    <p style=&quot;font-size: 9pt; color: #666;&quot;>Paste URL</p>
-    <p style=&quot;font-size: 9pt; color: #ccc;&quot;>→</p>
-    <p style=&quot;font-size: 9pt; color: #666;&quot;>AI analyzes</p>
-    <p style=&quot;font-size: 9pt; color: #ccc;&quot;>→</p>
-    <p style=&quot;font-size: 9pt; font-weight: 600; color: #005bbf;&quot;>Overview loads instantly</p>
-    <p style=&quot;font-size: 9pt; color: #ccc;&quot;>→</p>
-    <p style=&quot;font-size: 9pt; color: #666;&quot;>Quiz, Cards, Podcast generate in parallel</p>
-    <p style=&quot;font-size: 9pt; color: #ccc;&quot;>→</p>
-    <p style=&quot;font-size: 9pt; font-weight: 600; color: #16a34a;&quot;>Tutor says &quot;explain it&quot;</p>
-  </div>
-
-  <div style=&quot;flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; gap: 8pt;&quot;>
-    <div style=&quot;background: #f0f7ff; border-radius: 8pt; padding: 12pt; display: flex; flex-direction: column;&quot;>
-      <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt;&quot;>
-        <p style=&quot;font-size: 14pt;&quot;>🧠</p>
-        <p style=&quot;font-size: 10pt; font-weight: 600; color: #005bbf;&quot;>Overview</p>
+  <div style=&quot;flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 24pt;&quot;>
+    <div>
+      <div style=&quot;background: #f0fdf4; border-radius: 10pt; padding: 16pt; margin-bottom: 12pt;&quot;>
+        <p style=&quot;font-size: 10pt; color: #16a34a; font-weight: 600; margin-bottom: 6pt;&quot;>ACCESS IS SOLVED</p>
+        <p style=&quot;font-size: 12pt; color: #444; line-height: 1.5;&quot;>
+          MIT OCW. YouTube. arXiv. The best lectures in human history are <strong style=&quot;color: #1a1a1a;&quot;>free</strong>.
+        </p>
       </div>
-      <p style=&quot;font-size: 9pt; color: #444; line-height: 1.4;&quot;>Summary + interactive mindmap. See the whole structure at once.</p>
-      <p style=&quot;font-size: 7pt; color: #999; margin-top: auto;&quot;>Dual Coding — visual + verbal = 2x retention</p>
+      <div style=&quot;background: #fff7ed; border-radius: 10pt; padding: 16pt; margin-bottom: 12pt;&quot;>
+        <p style=&quot;font-size: 10pt; color: #c2410c; font-weight: 600; margin-bottom: 6pt;&quot;>UNDERSTANDING IS NOT</p>
+        <p style=&quot;font-size: 12pt; color: #444; line-height: 1.5;&quot;>
+          Reading ≠ learning. Watching ≠ understanding. You need someone to ask: <em>&quot;explain it back to me.&quot;</em>
+        </p>
+      </div>
+      <div style=&quot;background: #f5f5f0; border-radius: 10pt; padding: 16pt;&quot;>
+        <p style=&quot;font-size: 10pt; color: #1a1a1a; font-weight: 600; margin-bottom: 6pt;&quot;>THE BOTTLENECK</p>
+        <p style=&quot;font-size: 12pt; color: #444; line-height: 1.5;&quot;>
+          A professor can't ask 300 students to explain one by one. But AI can. <strong style=&quot;color: #1a1a1a;&quot;>Every student. Every concept. Infinitely.</strong>
+        </p>
+      </div>
     </div>
-    <div style=&quot;background: #fff7ed; border-radius: 8pt; padding: 12pt; display: flex; flex-direction: column;&quot;>
-      <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt;&quot;>
-        <p style=&quot;font-size: 14pt;&quot;>❓</p>
-        <p style=&quot;font-size: 10pt; font-weight: 600; color: #c2410c;&quot;>Quiz</p>
+    <div>
+      <p style=&quot;font-size: 11pt; color: #666; margin-bottom: 12pt; font-weight: 500;&quot;>What cognitive science says works:</p>
+      <div style=&quot;display: flex; flex-direction: column; gap: 8pt;&quot;>
+        <div style=&quot;display: flex; gap: 10pt; align-items: center; background: #f0f7ff; border-radius: 8pt; padding: 10pt 14pt;&quot;>
+          <p style=&quot;font-size: 20pt;&quot;>👁️</p>
+          <div>
+            <p style=&quot;font-size: 10pt; font-weight: 600; color: #005bbf;&quot;>Dual Coding</p>
+            <p style=&quot;font-size: 9pt; color: #666;&quot;>Visual + verbal together = 2x retention</p>
+          </div>
+        </div>
+        <div style=&quot;display: flex; gap: 10pt; align-items: center; background: #fff7ed; border-radius: 8pt; padding: 10pt 14pt;&quot;>
+          <p style=&quot;font-size: 20pt;&quot;>🧠</p>
+          <div>
+            <p style=&quot;font-size: 10pt; font-weight: 600; color: #c2410c;&quot;>Active Recall</p>
+            <p style=&quot;font-size: 9pt; color: #666;&quot;>Output > input. Brain must retrieve to remember.</p>
+          </div>
+        </div>
+        <div style=&quot;display: flex; gap: 10pt; align-items: center; background: #f0fdf4; border-radius: 8pt; padding: 10pt 14pt;&quot;>
+          <p style=&quot;font-size: 20pt;&quot;>🔄</p>
+          <div>
+            <p style=&quot;font-size: 10pt; font-weight: 600; color: #16a34a;&quot;>Spaced Repetition</p>
+            <p style=&quot;font-size: 9pt; color: #666;&quot;>Review right before you forget = long-term memory</p>
+          </div>
+        </div>
+        <div style=&quot;display: flex; gap: 10pt; align-items: center; background: #fefce8; border-radius: 8pt; padding: 10pt 14pt; border: 1.5pt solid #ca8a04;&quot;>
+          <p style=&quot;font-size: 20pt;&quot;>💪</p>
+          <div>
+            <p style=&quot;font-size: 10pt; font-weight: 600; color: #ca8a04;&quot;>Desirable Difficulty</p>
+            <p style=&quot;font-size: 9pt; color: #666;&quot;>Struggle = learning. The brain must sweat.</p>
+          </div>
+        </div>
       </div>
-      <p style=&quot;font-size: 9pt; color: #444; line-height: 1.4;&quot;>10 MCQs. Wrong answer → explanation. Brain must output to learn.</p>
-      <p style=&quot;font-size: 7pt; color: #999; margin-top: auto;&quot;>Active Recall — output > input</p>
-    </div>
-    <div style=&quot;background: #f0fdf4; border-radius: 8pt; padding: 12pt; display: flex; flex-direction: column;&quot;>
-      <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt;&quot;>
-        <p style=&quot;font-size: 14pt;&quot;>🃏</p>
-        <p style=&quot;font-size: 10pt; font-weight: 600; color: #16a34a;&quot;>Cards</p>
-      </div>
-      <p style=&quot;font-size: 9pt; color: #444; line-height: 1.4;&quot;>12-15 flashcards. Review right before you forget.</p>
-      <p style=&quot;font-size: 7pt; color: #999; margin-top: auto;&quot;>Spaced Repetition — beat the forgetting curve</p>
-    </div>
-    <div style=&quot;background: #faf5ff; border-radius: 8pt; padding: 12pt; display: flex; flex-direction: column;&quot;>
-      <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt;&quot;>
-        <p style=&quot;font-size: 14pt;&quot;>🎙️</p>
-        <p style=&quot;font-size: 10pt; font-weight: 600; color: #7c3aed;&quot;>Podcast</p>
-      </div>
-      <p style=&quot;font-size: 9pt; color: #444; line-height: 1.4;&quot;>2-host AI podcast. Learn on your commute.</p>
-      <p style=&quot;font-size: 7pt; color: #999; margin-top: auto;&quot;>Elaborative Interrogation — why? how?</p>
-    </div>
-    <div style=&quot;background: #fefce8; border-radius: 8pt; padding: 12pt; display: flex; flex-direction: column; border: 2pt solid #ca8a04;&quot;>
-      <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt;&quot;>
-        <p style=&quot;font-size: 14pt;&quot;>🎓</p>
-        <p style=&quot;font-size: 10pt; font-weight: 600; color: #ca8a04;&quot;>Tutor (Killer)</p>
-      </div>
-      <p style=&quot;font-size: 9pt; color: #444; line-height: 1.4;&quot;>&quot;Explain this concept.&quot; Finds gaps. Never gives the answer.</p>
-      <p style=&quot;font-size: 7pt; color: #999; margin-top: auto;&quot;>Feynman + Desirable Difficulty — brain must sweat</p>
-    </div>
-    <div style=&quot;background: #f5f5f0; border-radius: 8pt; padding: 12pt; display: flex; flex-direction: column;&quot;>
-      <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt;&quot;>
-        <p style=&quot;font-size: 14pt;&quot;>💬</p>
-        <p style=&quot;font-size: 10pt; font-weight: 600; color: #1a1a1a;&quot;>Chat</p>
-      </div>
-      <p style=&quot;font-size: 9pt; color: #444; line-height: 1.4;&quot;>Ask anything about the source. Always available.</p>
-      <p style=&quot;font-size: 7pt; color: #999; margin-top: auto;&quot;>On-demand reinforcement</p>
     </div>
   </div>
 </body>
@@ -691,89 +654,83 @@
       height: 405pt;
       font-family: 'Pretendard', sans-serif;
       background: #ffffff;
-      padding: 40pt 48pt;
+      padding: 36pt 44pt;
       display: flex;
       flex-direction: column;
     }
   </style>
 </head>
 <body>
-  <div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 24pt;&quot;>
+  <div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 14pt;&quot;>
     <div style=&quot;display: flex; align-items: center; gap: 12pt;&quot;>
-      <p style=&quot;display: inline-block; padding: 4pt 10pt; background: #1a1a1a; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;&quot;>ARCHITECTURE</p>
-      <h2 style=&quot;font-size: 24pt; font-weight: 600; color: #1a1a1a;&quot;>One Ingest, Parallel Everything</h2>
+      <p style=&quot;display: inline-block; padding: 4pt 10pt; background: #005bbf; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;&quot;>SOLUTION</p>
+      <h2 style=&quot;font-size: 22pt; font-weight: 600; color: #1a1a1a;&quot;>Paste Anything. Understand Everything.</h2>
     </div>
     <p style=&quot;font-size: 10pt; color: #999;&quot;>04</p>
   </div>
 
-  <div style=&quot;flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 28pt;&quot;>
-    <!-- Left: Pipeline -->
-    <div>
-      <h3 style=&quot;font-size: 14pt; font-weight: 600; color: #1a1a1a; margin-bottom: 16pt;&quot;>Pipeline</h3>
-      <div style=&quot;display: flex; flex-direction: column; gap: 8pt;&quot;>
-        <div style=&quot;background: #f0f7ff; border-radius: 8pt; padding: 12pt 16pt; display: flex; align-items: center; gap: 12pt;&quot;>
-          <p style=&quot;font-size: 12pt; font-weight: 600; color: #005bbf;&quot;>1</p>
-          <div>
-            <p style=&quot;font-size: 11pt; font-weight: 500; color: #1a1a1a;&quot;>Source Input</p>
-            <p style=&quot;font-size: 9pt; color: #666;&quot;>URL / YouTube / PDF</p>
-          </div>
-        </div>
-        <div style=&quot;text-align: center; color: #ccc; font-size: 14pt;&quot;>↓</div>
-        <div style=&quot;background: #f0f7ff; border-radius: 8pt; padding: 12pt 16pt; display: flex; align-items: center; gap: 12pt;&quot;>
-          <p style=&quot;font-size: 12pt; font-weight: 600; color: #005bbf;&quot;>2</p>
-          <div>
-            <p style=&quot;font-size: 11pt; font-weight: 500; color: #1a1a1a;&quot;>Gemini 3 Flash Analysis</p>
-            <p style=&quot;font-size: 9pt; color: #666;&quot;>→ context.json (concepts, hierarchy, insights)</p>
-          </div>
-        </div>
-        <div style=&quot;text-align: center; color: #ccc; font-size: 14pt;&quot;>↓</div>
-        <div style=&quot;background: #1a1a1a; border-radius: 8pt; padding: 12pt 16pt;&quot;>
-          <p style=&quot;font-size: 11pt; font-weight: 600; color: #fff;&quot;>asyncio.gather() — ALL PARALLEL</p>
-          <div style=&quot;display: flex; gap: 6pt; margin-top: 8pt; flex-wrap: wrap;&quot;>
-            <p style=&quot;font-size: 9pt; background: #333; color: #fff; padding: 3pt 8pt; border-radius: 4pt;&quot;>Visual</p>
-            <p style=&quot;font-size: 9pt; background: #333; color: #fff; padding: 3pt 8pt; border-radius: 4pt;&quot;>Quiz</p>
-            <p style=&quot;font-size: 9pt; background: #333; color: #fff; padding: 3pt 8pt; border-radius: 4pt;&quot;>Cards</p>
-            <p style=&quot;font-size: 9pt; background: #333; color: #fff; padding: 3pt 8pt; border-radius: 4pt;&quot;>Podcast</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right: Stack -->
-    <div>
-      <h3 style=&quot;font-size: 14pt; font-weight: 600; color: #1a1a1a; margin-bottom: 16pt;&quot;>Stack</h3>
-      <div style=&quot;display: flex; flex-direction: column; gap: 10pt;&quot;>
-        <div style=&quot;display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;&quot;>
-          <p style=&quot;font-size: 11pt; color: #666;&quot;>Frontend</p>
-          <p style=&quot;font-size: 11pt; font-weight: 500; color: #1a1a1a;&quot;>Next.js 14 + Tailwind</p>
-        </div>
-        <div style=&quot;display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;&quot;>
-          <p style=&quot;font-size: 11pt; color: #666;&quot;>Backend</p>
-          <p style=&quot;font-size: 11pt; font-weight: 500; color: #1a1a1a;&quot;>FastAPI (async)</p>
-        </div>
-        <div style=&quot;display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;&quot;>
-          <p style=&quot;font-size: 11pt; color: #666;&quot;>AI</p>
-          <p style=&quot;font-size: 11pt; font-weight: 500; color: #1a1a1a;&quot;>Gemini 3 Flash + TTS</p>
-        </div>
-        <div style=&quot;display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;&quot;>
-          <p style=&quot;font-size: 11pt; color: #666;&quot;>Design</p>
-          <p style=&quot;font-size: 11pt; font-weight: 500; color: #1a1a1a;&quot;>Google Stitch</p>
-        </div>
-        <div style=&quot;display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;&quot;>
-          <p style=&quot;font-size: 11pt; color: #666;&quot;>Diagrams</p>
-          <p style=&quot;font-size: 11pt; font-weight: 500; color: #1a1a1a;&quot;>Markmap</p>
-        </div>
-        <div style=&quot;display: flex; justify-content: space-between; align-items: center; padding: 10pt 0;&quot;>
-          <p style=&quot;font-size: 11pt; color: #666;&quot;>Agent</p>
-          <p style=&quot;font-size: 11pt; font-weight: 500; color: #1a1a1a;&quot;>Claude Code + oh-my-claudecode</p>
-        </div>
-      </div>
-    </div>
+  <!-- Flow -->
+  <div style=&quot;display: flex; align-items: center; gap: 4pt; margin-bottom: 14pt; background: #f5f5f0; border-radius: 8pt; padding: 8pt 12pt;&quot;>
+    <p style=&quot;font-size: 9pt; font-weight: 500; color: #1a1a1a;&quot;>Paste URL</p>
+    <p style=&quot;font-size: 9pt; color: #ccc;&quot;>→</p>
+    <p style=&quot;font-size: 9pt; color: #666;&quot;>LLM analyzes</p>
+    <p style=&quot;font-size: 9pt; color: #ccc;&quot;>→</p>
+    <p style=&quot;font-size: 9pt; font-weight: 600; color: #005bbf;&quot;>See it</p>
+    <p style=&quot;font-size: 9pt; color: #ccc;&quot;>→</p>
+    <p style=&quot;font-size: 9pt; font-weight: 600; color: #c2410c;&quot;>Test it</p>
+    <p style=&quot;font-size: 9pt; color: #ccc;&quot;>→</p>
+    <p style=&quot;font-size: 9pt; font-weight: 600; color: #16a34a;&quot;>Prove it</p>
   </div>
 
-  <div style=&quot;display: flex; justify-content: space-between; align-items: center; padding-top: 12pt; border-top: 1px solid #eee;&quot;>
-    <p style=&quot;font-size: 9pt; color: #999;&quot;>DigestAnything</p>
-    <p style=&quot;font-size: 9pt; color: #999;&quot;>Ralphthon Seoul #2</p>
+  <div style=&quot;flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; gap: 8pt;&quot;>
+    <div style=&quot;background: #f0f7ff; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column;&quot;>
+      <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;&quot;>
+        <p style=&quot;font-size: 14pt;&quot;>🗺️</p>
+        <p style=&quot;font-size: 10pt; font-weight: 600; color: #005bbf;&quot;>Overview</p>
+      </div>
+      <p style=&quot;font-size: 9pt; color: #444; line-height: 1.4;&quot;>Interactive mindmap. See the whole structure at once.</p>
+      <p style=&quot;font-size: 7pt; color: #999; margin-top: auto;&quot;>SEE IT — Dual Coding</p>
+    </div>
+    <div style=&quot;background: #fff7ed; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column;&quot;>
+      <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;&quot;>
+        <p style=&quot;font-size: 14pt;&quot;>❓</p>
+        <p style=&quot;font-size: 10pt; font-weight: 600; color: #c2410c;&quot;>Quiz</p>
+      </div>
+      <p style=&quot;font-size: 9pt; color: #444; line-height: 1.4;&quot;>10 MCQs. Wrong = explanation. Brain must output.</p>
+      <p style=&quot;font-size: 7pt; color: #999; margin-top: auto;&quot;>TEST IT — Active Recall</p>
+    </div>
+    <div style=&quot;background: #f0fdf4; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column;&quot;>
+      <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;&quot;>
+        <p style=&quot;font-size: 14pt;&quot;>🃏</p>
+        <p style=&quot;font-size: 10pt; font-weight: 600; color: #16a34a;&quot;>Cards</p>
+      </div>
+      <p style=&quot;font-size: 9pt; color: #444; line-height: 1.4;&quot;>15 flashcards. Review right before you forget.</p>
+      <p style=&quot;font-size: 7pt; color: #999; margin-top: auto;&quot;>TEST IT — Spaced Repetition</p>
+    </div>
+    <div style=&quot;background: #faf5ff; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column;&quot;>
+      <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;&quot;>
+        <p style=&quot;font-size: 14pt;&quot;>🎙️</p>
+        <p style=&quot;font-size: 10pt; font-weight: 600; color: #7c3aed;&quot;>Podcast</p>
+      </div>
+      <p style=&quot;font-size: 9pt; color: #444; line-height: 1.4;&quot;>2-host AI conversation. Learn on your commute.</p>
+      <p style=&quot;font-size: 7pt; color: #999; margin-top: auto;&quot;>SEE IT — Elaborative Interrogation</p>
+    </div>
+    <div style=&quot;background: #fefce8; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column; border: 2pt solid #ca8a04;&quot;>
+      <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;&quot;>
+        <p style=&quot;font-size: 14pt;&quot;>🎓</p>
+        <p style=&quot;font-size: 10pt; font-weight: 600; color: #ca8a04;&quot;>Tutor ★</p>
+      </div>
+      <p style=&quot;font-size: 9pt; color: #444; line-height: 1.4;&quot;>&quot;Explain this.&quot; Finds your gaps. Never gives the answer.</p>
+      <p style=&quot;font-size: 7pt; color: #999; margin-top: auto;&quot;>PROVE IT — Feynman Technique</p>
+    </div>
+    <div style=&quot;background: #f5f5f0; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column;&quot;>
+      <div style=&quot;display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;&quot;>
+        <p style=&quot;font-size: 14pt;&quot;>💬</p>
+        <p style=&quot;font-size: 10pt; font-weight: 600; color: #1a1a1a;&quot;>Chat</p>
+      </div>
+      <p style=&quot;font-size: 9pt; color: #444; line-height: 1.4;&quot;>Ask anything about the source. Always there.</p>
+      <p style=&quot;font-size: 7pt; color: #999; margin-top: auto;&quot;>On-demand reinforcement</p>
+    </div>
   </div>
 </body>
 </html>
@@ -872,99 +829,78 @@
       height: 405pt;
       font-family: 'Pretendard', sans-serif;
       background: #ffffff;
-      padding: 28pt 40pt;
+      padding: 32pt 40pt;
       display: flex;
       flex-direction: column;
     }
   </style>
 </head>
 <body>
-  <div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 16pt;&quot;>
+  <div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 14pt;&quot;>
     <div style=&quot;display: flex; align-items: center; gap: 12pt;&quot;>
-      <p style=&quot;display: inline-block; padding: 4pt 10pt; background: #005bbf; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;&quot;>RALPH SETUP</p>
-      <h2 style=&quot;font-size: 22pt; font-weight: 600; color: #1a1a1a;&quot;>I Wrote the Spec. The Agent Built Everything.</h2>
+      <p style=&quot;display: inline-block; padding: 4pt 10pt; background: #1a1a1a; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;&quot;>HOW IT'S BUILT</p>
+      <h2 style=&quot;font-size: 20pt; font-weight: 600; color: #1a1a1a;&quot;>One LLM Call → Everything in Parallel</h2>
     </div>
     <p style=&quot;font-size: 10pt; color: #999;&quot;>05</p>
   </div>
 
-  <div style=&quot;flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 20pt;&quot;>
-    <!-- Left: The Process -->
+  <div style=&quot;flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 24pt;&quot;>
+    <!-- Left: Pipeline -->
     <div>
-      <h3 style=&quot;font-size: 12pt; font-weight: 600; color: #1a1a1a; margin-bottom: 10pt;&quot;>The Ralph Rule: Don't Touch the Laptop</h3>
-      <div style=&quot;display: flex; flex-direction: column; gap: 5pt;&quot;>
-        <div style=&quot;background: #f5f5f0; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;&quot;>
-          <div style=&quot;width: 20pt; height: 20pt; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;&quot;>
-            <p style=&quot;color: #fff; font-size: 8pt; font-weight: 600;&quot;>1</p>
-          </div>
-          <div>
-            <p style=&quot;font-size: 9pt; font-weight: 500; color: #1a1a1a;&quot;>Write Spec + Tests First</p>
-            <p style=&quot;font-size: 7pt; color: #666;&quot;>895-line SPEC.md, 504-line verified API ref, 17 test files</p>
-          </div>
+      <p style=&quot;font-size: 10pt; color: #666; margin-bottom: 10pt;&quot;>Any source → one analysis → all outputs simultaneously</p>
+      <div style=&quot;display: flex; flex-direction: column; gap: 6pt;&quot;>
+        <div style=&quot;background: #f5f5f0; border-radius: 6pt; padding: 10pt 14pt;&quot;>
+          <p style=&quot;font-size: 10pt; font-weight: 500; color: #1a1a1a;&quot;>① Source Input</p>
+          <p style=&quot;font-size: 8pt; color: #666;&quot;>URL, YouTube, PDF — any content type</p>
         </div>
-        <div style=&quot;text-align: center; color: #ddd; font-size: 8pt;&quot;>↓</div>
-        <div style=&quot;background: #f0f7ff; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;&quot;>
-          <div style=&quot;width: 20pt; height: 20pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;&quot;>
-            <p style=&quot;color: #fff; font-size: 8pt; font-weight: 600;&quot;>2</p>
-          </div>
-          <div>
-            <p style=&quot;font-size: 9pt; font-weight: 500; color: #1a1a1a;&quot;>Claude Code /autopilot Builds</p>
-            <p style=&quot;font-size: 7pt; color: #666;&quot;>4 rounds: BE + FE in parallel. Commits after each round.</p>
-          </div>
+        <div style=&quot;text-align: center; color: #ccc; font-size: 10pt;&quot;>↓</div>
+        <div style=&quot;background: #f0f7ff; border-radius: 6pt; padding: 10pt 14pt;&quot;>
+          <p style=&quot;font-size: 10pt; font-weight: 500; color: #1a1a1a;&quot;>② LLM Analysis</p>
+          <p style=&quot;font-size: 8pt; color: #666;&quot;>Structured extraction: concepts, hierarchy, insights, analogies</p>
         </div>
-        <div style=&quot;text-align: center; color: #ddd; font-size: 8pt;&quot;>↓</div>
-        <div style=&quot;background: #fff7ed; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;&quot;>
-          <div style=&quot;width: 20pt; height: 20pt; background: #c2410c; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;&quot;>
-            <p style=&quot;color: #fff; font-size: 8pt; font-weight: 600;&quot;>3</p>
+        <div style=&quot;text-align: center; color: #ccc; font-size: 10pt;&quot;>↓</div>
+        <div style=&quot;background: #1a1a1a; border-radius: 6pt; padding: 10pt 14pt;&quot;>
+          <p style=&quot;font-size: 10pt; font-weight: 600; color: #fff;&quot;>③ Parallel Generation</p>
+          <div style=&quot;display: flex; gap: 4pt; margin-top: 6pt; flex-wrap: wrap;&quot;>
+            <p style=&quot;font-size: 8pt; background: #333; color: #fff; padding: 2pt 6pt; border-radius: 3pt;&quot;>Mindmap</p>
+            <p style=&quot;font-size: 8pt; background: #333; color: #fff; padding: 2pt 6pt; border-radius: 3pt;&quot;>Quiz</p>
+            <p style=&quot;font-size: 8pt; background: #333; color: #fff; padding: 2pt 6pt; border-radius: 3pt;&quot;>Cards</p>
+            <p style=&quot;font-size: 8pt; background: #333; color: #fff; padding: 2pt 6pt; border-radius: 3pt;&quot;>Podcast</p>
           </div>
-          <div>
-            <p style=&quot;font-size: 9pt; font-weight: 500; color: #1a1a1a;&quot;>Agent Test Loop (Opus 4.6)</p>
-            <p style=&quot;font-size: 7pt; color: #666;&quot;>Test → Fail → Agent reads error + code → Fixes → Retest</p>
-          </div>
-        </div>
-        <div style=&quot;text-align: center; color: #ddd; font-size: 8pt;&quot;>↓</div>
-        <div style=&quot;background: #f0fdf4; border-radius: 6pt; padding: 8pt 12pt; display: flex; align-items: center; gap: 8pt;&quot;>
-          <div style=&quot;width: 20pt; height: 20pt; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;&quot;>
-            <p style=&quot;color: #fff; font-size: 8pt; font-weight: 600;&quot;>4</p>
-          </div>
-          <div>
-            <p style=&quot;font-size: 9pt; font-weight: 500; color: #1a1a1a;&quot;>Playwright E2E + Audio QA</p>
-            <p style=&quot;font-size: 7pt; color: #666;&quot;>Browser tests every tab + Gemini validates podcast audio</p>
-          </div>
+          <p style=&quot;font-size: 7pt; color: #888; margin-top: 4pt;&quot;>asyncio.gather() — all at once, not sequential</p>
         </div>
       </div>
     </div>
 
-    <!-- Right: Why It's Serious -->
+    <!-- Right: Stack + Design Philosophy -->
     <div>
-      <h3 style=&quot;font-size: 12pt; font-weight: 600; color: #1a1a1a; margin-bottom: 10pt;&quot;>Generator-Evaluator (GAN-Inspired)</h3>
-      <div style=&quot;background: #f5f5f0; border-radius: 8pt; padding: 12pt; margin-bottom: 8pt;&quot;>
-        <p style=&quot;font-size: 9pt; color: #666; line-height: 1.5;&quot;>
-          From Anthropic's <strong style=&quot;color: #1a1a1a;&quot;>Harness Design</strong> blog (this week):
-          separate the builder from the critic. Self-evaluation bias means
-          you can't trust code to judge itself.
-        </p>
-      </div>
-      <div style=&quot;display: flex; flex-direction: column; gap: 6pt;&quot;>
-        <div style=&quot;display: flex; gap: 8pt; align-items: flex-start;&quot;>
-          <p style=&quot;font-size: 9pt; color: #005bbf; font-weight: 600; flex-shrink: 0;&quot;>Generator:</p>
-          <p style=&quot;font-size: 9pt; color: #444;&quot;>oh-my-claudecode writes all code</p>
+      <p style=&quot;font-size: 10pt; color: #666; margin-bottom: 10pt;&quot;>Stack</p>
+      <div style=&quot;display: flex; flex-direction: column; gap: 6pt; margin-bottom: 14pt;&quot;>
+        <div style=&quot;display: flex; justify-content: space-between; padding: 6pt 0; border-bottom: 1px solid #f0f0f0;&quot;>
+          <p style=&quot;font-size: 10pt; color: #666;&quot;>Frontend</p>
+          <p style=&quot;font-size: 10pt; font-weight: 500;&quot;>Next.js + Tailwind</p>
         </div>
-        <div style=&quot;display: flex; gap: 8pt; align-items: flex-start;&quot;>
-          <p style=&quot;font-size: 9pt; color: #c2410c; font-weight: 600; flex-shrink: 0;&quot;>Evaluator:</p>
-          <p style=&quot;font-size: 9pt; color: #444;&quot;>17 test scripts verify independently</p>
+        <div style=&quot;display: flex; justify-content: space-between; padding: 6pt 0; border-bottom: 1px solid #f0f0f0;&quot;>
+          <p style=&quot;font-size: 10pt; color: #666;&quot;>Backend</p>
+          <p style=&quot;font-size: 10pt; font-weight: 500;&quot;>FastAPI (async Python)</p>
         </div>
-        <div style=&quot;display: flex; gap: 8pt; align-items: flex-start;&quot;>
-          <p style=&quot;font-size: 9pt; color: #16a34a; font-weight: 600; flex-shrink: 0;&quot;>Self-heal:</p>
-          <p style=&quot;font-size: 9pt; color: #444;&quot;>Claude Agent SDK (Opus) reads failures, patches code, retests</p>
+        <div style=&quot;display: flex; justify-content: space-between; padding: 6pt 0; border-bottom: 1px solid #f0f0f0;&quot;>
+          <p style=&quot;font-size: 10pt; color: #666;&quot;>AI</p>
+          <p style=&quot;font-size: 10pt; font-weight: 500;&quot;>LLM (text + TTS)</p>
+        </div>
+        <div style=&quot;display: flex; justify-content: space-between; padding: 6pt 0; border-bottom: 1px solid #f0f0f0;&quot;>
+          <p style=&quot;font-size: 10pt; color: #666;&quot;>Design</p>
+          <p style=&quot;font-size: 10pt; font-weight: 500;&quot;>Google Stitch</p>
+        </div>
+        <div style=&quot;display: flex; justify-content: space-between; padding: 6pt 0;&quot;>
+          <p style=&quot;font-size: 10pt; color: #666;&quot;>Mindmap</p>
+          <p style=&quot;font-size: 10pt; font-weight: 500;&quot;>Markmap (interactive)</p>
         </div>
       </div>
 
-      <div style=&quot;background: #1a1a1a; border-radius: 8pt; padding: 12pt; margin-top: 10pt;&quot;>
-        <p style=&quot;font-size: 9pt; color: #888; margin-bottom: 6pt;&quot;>What I Actually Did</p>
-        <p style=&quot;font-size: 11pt; color: #fff; font-weight: 500; line-height: 1.5;&quot;>
-          Wrote SPEC.md → walked away → agent built, tested, fixed, committed.
-          <span style=&quot;color: #888;&quot;>XX commits. XX,XXX lines. Zero manual code.</span>
-        </p>
+      <div style=&quot;background: #f5f5f0; border-radius: 8pt; padding: 12pt;&quot;>
+        <p style=&quot;font-size: 9pt; font-weight: 600; color: #1a1a1a; margin-bottom: 4pt;&quot;>Design: &quot;Cognitive Sanctuary&quot;</p>
+        <p style=&quot;font-size: 8pt; color: #666; line-height: 1.4;&quot;>No borders. No clutter. Tonal depth instead of lines. A quiet space designed for thinking — not another generic AI dashboard.</p>
       </div>
     </div>
   </div>
@@ -1064,7 +1000,7 @@
       width: 720pt;
       height: 405pt;
       font-family: 'Pretendard', sans-serif;
-      background: #1a1a1a;
+      background: #ffffff;
       padding: 28pt 40pt;
       display: flex;
       flex-direction: column;
@@ -1072,45 +1008,84 @@
   </style>
 </head>
 <body>
-  <div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 24pt;&quot;>
+  <div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 12pt;&quot;>
     <div style=&quot;display: flex; align-items: center; gap: 12pt;&quot;>
-      <p style=&quot;display: inline-block; padding: 4pt 10pt; background: #005bbf; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;&quot;>DEMO</p>
-      <h2 style=&quot;font-size: 24pt; font-weight: 600; color: #ffffff;&quot;>Let's Digest Something</h2>
+      <p style=&quot;display: inline-block; padding: 4pt 10pt; background: #005bbf; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;&quot;>RALPH</p>
+      <h2 style=&quot;font-size: 20pt; font-weight: 600; color: #1a1a1a;&quot;>895 Lines of Spec. Zero Lines of Manual Code.</h2>
     </div>
-    <p style=&quot;font-size: 10pt; color: #666;&quot;>06</p>
+    <p style=&quot;font-size: 10pt; color: #999;&quot;>06</p>
   </div>
 
-  <div style=&quot;flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 24pt;&quot;>
-    <div style=&quot;background: #252525; border-radius: 16pt; padding: 32pt 48pt; text-align: center; max-width: 480pt;&quot;>
-      <p style=&quot;font-size: 14pt; color: #888; margin-bottom: 16pt;&quot;>Try it with</p>
-      <div style=&quot;display: flex; flex-direction: column; gap: 12pt;&quot;>
-        <div style=&quot;background: #333; border-radius: 8pt; padding: 12pt 20pt;&quot;>
-          <p style=&quot;font-size: 12pt; color: #fff;&quot;>📝 Anthropic Engineering Blog</p>
-          <p style=&quot;font-size: 9pt; color: #888; margin-top: 4pt;&quot;>anthropic.com/engineering/harness-design</p>
+  <div style=&quot;flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16pt;&quot;>
+    <!-- Left: What I wrote -->
+    <div>
+      <h3 style=&quot;font-size: 11pt; font-weight: 600; color: #1a1a1a; margin-bottom: 8pt;&quot;>What I Wrote (the spec)</h3>
+      <div style=&quot;background: #f5f5f0; border-radius: 8pt; padding: 10pt; margin-bottom: 6pt;&quot;>
+        <div style=&quot;display: flex; justify-content: space-between; margin-bottom: 4pt;&quot;>
+          <p style=&quot;font-size: 9pt; font-weight: 600; color: #1a1a1a;&quot;>SPEC.md</p>
+          <p style=&quot;font-size: 8pt; color: #999;&quot;>895 lines</p>
         </div>
-        <div style=&quot;background: #333; border-radius: 8pt; padding: 12pt 20pt;&quot;>
-          <p style=&quot;font-size: 12pt; color: #fff;&quot;>🎬 Karpathy YouTube Talk</p>
-          <p style=&quot;font-size: 9pt; color: #888; margin-top: 4pt;&quot;>youtube.com/watch?v=kwSVtQ7dziU</p>
+        <p style=&quot;font-size: 8pt; color: #666; line-height: 1.4;&quot;>Every prompt, API structure, build order, verification criteria, fallback strategy</p>
+      </div>
+      <div style=&quot;background: #f5f5f0; border-radius: 8pt; padding: 10pt; margin-bottom: 6pt;&quot;>
+        <div style=&quot;display: flex; justify-content: space-between; margin-bottom: 4pt;&quot;>
+          <p style=&quot;font-size: 9pt; font-weight: 600; color: #1a1a1a;&quot;>VERIFIED-API.md</p>
+          <p style=&quot;font-size: 8pt; color: #999;&quot;>504 lines</p>
         </div>
+        <p style=&quot;font-size: 8pt; color: #666; line-height: 1.4;&quot;>Every LLM call tested and passing before implementation started</p>
+      </div>
+      <div style=&quot;background: #f5f5f0; border-radius: 8pt; padding: 10pt; margin-bottom: 6pt;&quot;>
+        <div style=&quot;display: flex; justify-content: space-between; margin-bottom: 4pt;&quot;>
+          <p style=&quot;font-size: 9pt; font-weight: 600; color: #1a1a1a;&quot;>17 Test Scripts</p>
+          <p style=&quot;font-size: 8pt; color: #999;&quot;>1,500+ lines</p>
+        </div>
+        <p style=&quot;font-size: 8pt; color: #666; line-height: 1.4;&quot;>API tests, browser E2E (Playwright), audio quality verification — all written before code</p>
+      </div>
+      <div style=&quot;background: #1a1a1a; border-radius: 8pt; padding: 10pt;&quot;>
+        <p style=&quot;font-size: 9pt; color: #fff; font-weight: 500;&quot;>Then I walked away.</p>
+        <p style=&quot;font-size: 8pt; color: #888; margin-top: 4pt;&quot;>Ralph rule: don't touch the laptop while the agent works.</p>
       </div>
     </div>
 
-    <div style=&quot;display: flex; gap: 32pt; color: #666;&quot;>
-      <div style=&quot;text-align: center;&quot;>
-        <p style=&quot;font-size: 28pt; font-weight: 600; color: #005bbf;&quot;>~10s</p>
-        <p style=&quot;font-size: 9pt; color: #888;&quot;>Overview loads</p>
+    <!-- Right: What the agent did -->
+    <div>
+      <h3 style=&quot;font-size: 11pt; font-weight: 600; color: #1a1a1a; margin-bottom: 8pt;&quot;>What the Agent Did</h3>
+      <div style=&quot;display: flex; flex-direction: column; gap: 5pt;&quot;>
+        <div style=&quot;background: #f0f7ff; border-radius: 6pt; padding: 8pt 10pt; display: flex; align-items: center; gap: 8pt;&quot;>
+          <div style=&quot;width: 18pt; height: 18pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;&quot;>
+            <p style=&quot;color: #fff; font-size: 7pt; font-weight: 600;&quot;>1</p>
+          </div>
+          <p style=&quot;font-size: 8pt; color: #444;&quot;><strong>Read spec</strong> → generated implementation plan</p>
+        </div>
+        <div style=&quot;background: #f0f7ff; border-radius: 6pt; padding: 8pt 10pt; display: flex; align-items: center; gap: 8pt;&quot;>
+          <div style=&quot;width: 18pt; height: 18pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;&quot;>
+            <p style=&quot;color: #fff; font-size: 7pt; font-weight: 600;&quot;>2</p>
+          </div>
+          <p style=&quot;font-size: 8pt; color: #444;&quot;><strong>Built 4 rounds</strong> — BE + FE, commit after each</p>
+        </div>
+        <div style=&quot;background: #fff7ed; border-radius: 6pt; padding: 8pt 10pt; display: flex; align-items: center; gap: 8pt;&quot;>
+          <div style=&quot;width: 18pt; height: 18pt; background: #c2410c; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;&quot;>
+            <p style=&quot;color: #fff; font-size: 7pt; font-weight: 600;&quot;>3</p>
+          </div>
+          <p style=&quot;font-size: 8pt; color: #444;&quot;><strong>Ran tests → failed → read error → fixed → retested</strong></p>
+        </div>
+        <div style=&quot;background: #f0fdf4; border-radius: 6pt; padding: 8pt 10pt; display: flex; align-items: center; gap: 8pt;&quot;>
+          <div style=&quot;width: 18pt; height: 18pt; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;&quot;>
+            <p style=&quot;color: #fff; font-size: 7pt; font-weight: 600;&quot;>4</p>
+          </div>
+          <p style=&quot;font-size: 8pt; color: #444;&quot;><strong>Browser E2E</strong> — Playwright tested every tab interaction</p>
+        </div>
       </div>
-      <div style=&quot;text-align: center;&quot;>
-        <p style=&quot;font-size: 28pt; font-weight: 600; color: #fff;&quot;>5</p>
-        <p style=&quot;font-size: 9pt; color: #888;&quot;>Learning tabs</p>
-      </div>
-      <div style=&quot;text-align: center;&quot;>
-        <p style=&quot;font-size: 28pt; font-weight: 600; color: #16a34a;&quot;>100%</p>
-        <p style=&quot;font-size: 9pt; color: #888;&quot;>Science-backed</p>
+
+      <div style=&quot;background: #f5f5f0; border-radius: 8pt; padding: 10pt; margin-top: 8pt;&quot;>
+        <p style=&quot;font-size: 8pt; color: #666; margin-bottom: 4pt;&quot;>Inspired by:</p>
+        <p style=&quot;font-size: 9pt; color: #1a1a1a; font-weight: 500; line-height: 1.4;&quot;>
+          Anthropic's Harness Design — <strong>Generator-Evaluator</strong> pattern.
+          Separate the builder from the critic. Self-evaluation bias means code can't judge itself.
+        </p>
       </div>
     </div>
   </div>
-
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>

@@ -9,89 +9,83 @@
       height: 405pt;
       font-family: 'Pretendard', sans-serif;
       background: #ffffff;
-      padding: 40pt 48pt;
+      padding: 36pt 44pt;
       display: flex;
       flex-direction: column;
     }
   </style>
 </head>
 <body>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24pt;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14pt;">
     <div style="display: flex; align-items: center; gap: 12pt;">
-      <p style="display: inline-block; padding: 4pt 10pt; background: #1a1a1a; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;">ARCHITECTURE</p>
-      <h2 style="font-size: 24pt; font-weight: 600; color: #1a1a1a;">One Ingest, Parallel Everything</h2>
+      <p style="display: inline-block; padding: 4pt 10pt; background: #005bbf; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;">SOLUTION</p>
+      <h2 style="font-size: 22pt; font-weight: 600; color: #1a1a1a;">Paste Anything. Understand Everything.</h2>
     </div>
     <p style="font-size: 10pt; color: #999;">04</p>
   </div>
 
-  <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 28pt;">
-    <!-- Left: Pipeline -->
-    <div>
-      <h3 style="font-size: 14pt; font-weight: 600; color: #1a1a1a; margin-bottom: 16pt;">Pipeline</h3>
-      <div style="display: flex; flex-direction: column; gap: 8pt;">
-        <div style="background: #f0f7ff; border-radius: 8pt; padding: 12pt 16pt; display: flex; align-items: center; gap: 12pt;">
-          <p style="font-size: 12pt; font-weight: 600; color: #005bbf;">1</p>
-          <div>
-            <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Source Input</p>
-            <p style="font-size: 9pt; color: #666;">URL / YouTube / PDF</p>
-          </div>
-        </div>
-        <div style="text-align: center; color: #ccc; font-size: 14pt;">↓</div>
-        <div style="background: #f0f7ff; border-radius: 8pt; padding: 12pt 16pt; display: flex; align-items: center; gap: 12pt;">
-          <p style="font-size: 12pt; font-weight: 600; color: #005bbf;">2</p>
-          <div>
-            <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Gemini 3 Flash Analysis</p>
-            <p style="font-size: 9pt; color: #666;">→ context.json (concepts, hierarchy, insights)</p>
-          </div>
-        </div>
-        <div style="text-align: center; color: #ccc; font-size: 14pt;">↓</div>
-        <div style="background: #1a1a1a; border-radius: 8pt; padding: 12pt 16pt;">
-          <p style="font-size: 11pt; font-weight: 600; color: #fff;">asyncio.gather() — ALL PARALLEL</p>
-          <div style="display: flex; gap: 6pt; margin-top: 8pt; flex-wrap: wrap;">
-            <p style="font-size: 9pt; background: #333; color: #fff; padding: 3pt 8pt; border-radius: 4pt;">Visual</p>
-            <p style="font-size: 9pt; background: #333; color: #fff; padding: 3pt 8pt; border-radius: 4pt;">Quiz</p>
-            <p style="font-size: 9pt; background: #333; color: #fff; padding: 3pt 8pt; border-radius: 4pt;">Cards</p>
-            <p style="font-size: 9pt; background: #333; color: #fff; padding: 3pt 8pt; border-radius: 4pt;">Podcast</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right: Stack -->
-    <div>
-      <h3 style="font-size: 14pt; font-weight: 600; color: #1a1a1a; margin-bottom: 16pt;">Stack</h3>
-      <div style="display: flex; flex-direction: column; gap: 10pt;">
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;">
-          <p style="font-size: 11pt; color: #666;">Frontend</p>
-          <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Next.js 14 + Tailwind</p>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;">
-          <p style="font-size: 11pt; color: #666;">Backend</p>
-          <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">FastAPI (async)</p>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;">
-          <p style="font-size: 11pt; color: #666;">AI</p>
-          <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Gemini 3 Flash + TTS</p>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;">
-          <p style="font-size: 11pt; color: #666;">Design</p>
-          <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Google Stitch</p>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10pt 0; border-bottom: 1px solid #f0f0f0;">
-          <p style="font-size: 11pt; color: #666;">Diagrams</p>
-          <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Markmap</p>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10pt 0;">
-          <p style="font-size: 11pt; color: #666;">Agent</p>
-          <p style="font-size: 11pt; font-weight: 500; color: #1a1a1a;">Claude Code + oh-my-claudecode</p>
-        </div>
-      </div>
-    </div>
+  <!-- Flow -->
+  <div style="display: flex; align-items: center; gap: 4pt; margin-bottom: 14pt; background: #f5f5f0; border-radius: 8pt; padding: 8pt 12pt;">
+    <p style="font-size: 9pt; font-weight: 500; color: #1a1a1a;">Paste URL</p>
+    <p style="font-size: 9pt; color: #ccc;">→</p>
+    <p style="font-size: 9pt; color: #666;">LLM analyzes</p>
+    <p style="font-size: 9pt; color: #ccc;">→</p>
+    <p style="font-size: 9pt; font-weight: 600; color: #005bbf;">See it</p>
+    <p style="font-size: 9pt; color: #ccc;">→</p>
+    <p style="font-size: 9pt; font-weight: 600; color: #c2410c;">Test it</p>
+    <p style="font-size: 9pt; color: #ccc;">→</p>
+    <p style="font-size: 9pt; font-weight: 600; color: #16a34a;">Prove it</p>
   </div>
 
-  <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 12pt; border-top: 1px solid #eee;">
-    <p style="font-size: 9pt; color: #999;">DigestAnything</p>
-    <p style="font-size: 9pt; color: #999;">Ralphthon Seoul #2</p>
+  <div style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; gap: 8pt;">
+    <div style="background: #f0f7ff; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;">
+        <p style="font-size: 14pt;">🗺️</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #005bbf;">Overview</p>
+      </div>
+      <p style="font-size: 9pt; color: #444; line-height: 1.4;">Interactive mindmap. See the whole structure at once.</p>
+      <p style="font-size: 7pt; color: #999; margin-top: auto;">SEE IT — Dual Coding</p>
+    </div>
+    <div style="background: #fff7ed; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;">
+        <p style="font-size: 14pt;">❓</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Quiz</p>
+      </div>
+      <p style="font-size: 9pt; color: #444; line-height: 1.4;">10 MCQs. Wrong = explanation. Brain must output.</p>
+      <p style="font-size: 7pt; color: #999; margin-top: auto;">TEST IT — Active Recall</p>
+    </div>
+    <div style="background: #f0fdf4; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;">
+        <p style="font-size: 14pt;">🃏</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #16a34a;">Cards</p>
+      </div>
+      <p style="font-size: 9pt; color: #444; line-height: 1.4;">15 flashcards. Review right before you forget.</p>
+      <p style="font-size: 7pt; color: #999; margin-top: auto;">TEST IT — Spaced Repetition</p>
+    </div>
+    <div style="background: #faf5ff; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;">
+        <p style="font-size: 14pt;">🎙️</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #7c3aed;">Podcast</p>
+      </div>
+      <p style="font-size: 9pt; color: #444; line-height: 1.4;">2-host AI conversation. Learn on your commute.</p>
+      <p style="font-size: 7pt; color: #999; margin-top: auto;">SEE IT — Elaborative Interrogation</p>
+    </div>
+    <div style="background: #fefce8; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column; border: 2pt solid #ca8a04;">
+      <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;">
+        <p style="font-size: 14pt;">🎓</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #ca8a04;">Tutor ★</p>
+      </div>
+      <p style="font-size: 9pt; color: #444; line-height: 1.4;">"Explain this." Finds your gaps. Never gives the answer.</p>
+      <p style="font-size: 7pt; color: #999; margin-top: auto;">PROVE IT — Feynman Technique</p>
+    </div>
+    <div style="background: #f5f5f0; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;">
+        <p style="font-size: 14pt;">💬</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #1a1a1a;">Chat</p>
+      </div>
+      <p style="font-size: 9pt; color: #444; line-height: 1.4;">Ask anything about the source. Always there.</p>
+      <p style="font-size: 7pt; color: #999; margin-top: auto;">On-demand reinforcement</p>
+    </div>
   </div>
 </body>
 </html>

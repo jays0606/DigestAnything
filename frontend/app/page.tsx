@@ -140,8 +140,8 @@ export default function Home() {
           {!data && !loading && (
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               {[
-                { label: "Agentic Design Patterns", sub: "Anthropic Engineering Blog", icon: "article", url: "https://www.anthropic.com/engineering/harness-design-long-running-apps" },
-                { label: "Andrej Karpathy on LLMs", sub: "YouTube Talk", icon: "play_circle", url: "https://www.youtube.com/watch?v=zjkBMFhNj_g" },
+                { label: "Harness Design for Long-Running Apps", sub: "Anthropic Engineering Blog", icon: "article", url: "https://www.anthropic.com/engineering/harness-design-long-running-apps" },
+                { label: "Code Agents & the Loopy Era of AI", sub: "Andrej Karpathy — No Priors Podcast", icon: "play_circle", url: "https://www.youtube.com/watch?v=kwSVtQ7dziU" },
                 { label: "Transformer Architecture", sub: "Wikipedia", icon: "public", url: "https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)" },
               ].map((s) => (
                 <button

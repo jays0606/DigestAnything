@@ -8,57 +8,51 @@
       width: 720pt;
       height: 405pt;
       font-family: 'Pretendard', sans-serif;
-      background: #ffffff;
-      padding: 36pt 44pt;
+      background: #f5f5f0;
+      padding: 24pt 32pt;
       display: flex;
       flex-direction: column;
     }
+    .card { border-radius: 6pt; overflow: hidden; position: relative; }
+    .card img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .card .label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.75)); padding: 4pt 6pt; }
+    .card .label p { font-size: 7pt; font-weight: 600; color: #fff; }
   </style>
 </head>
 <body>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20pt;">
-    <div style="display: flex; align-items: center; gap: 12pt;">
-      <p style="display: inline-block; padding: 4pt 10pt; background: #16a34a; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;">IMPACT</p>
-      <h2 style="font-size: 22pt; font-weight: 600; color: #1a1a1a;">The Last Mile of Education</h2>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10pt;">
+    <div style="display: flex; align-items: center; gap: 10pt;">
+      <p style="display: inline-block; padding: 3pt 8pt; background: #16a34a; color: #fff; border-radius: 4pt; font-size: 7pt; font-weight: 600;">WORKING PRODUCT</p>
+      <h2 style="font-size: 18pt; font-weight: 600; color: #1a1a1a;">All 5 Tabs. Live.</h2>
     </div>
     <p style="font-size: 10pt; color: #999;">07</p>
   </div>
 
-  <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 28pt;">
-    <div>
-      <h3 style="font-size: 16pt; font-weight: 600; color: #1a1a1a; margin-bottom: 12pt;">Access is solved.</h3>
-      <p style="font-size: 12pt; color: #666; line-height: 1.6; margin-bottom: 16pt;">
-        MIT OpenCourseWare. YouTube. arXiv. The best lectures in history are <strong style="color: #1a1a1a;">free</strong>.
-      </p>
-      <h3 style="font-size: 16pt; font-weight: 600; color: #1a1a1a; margin-bottom: 12pt;">Understanding is not.</h3>
-      <p style="font-size: 12pt; color: #666; line-height: 1.6; margin-bottom: 16pt;">
-        A professor can't ask every student <em>"explain it back to me."</em> There's 300 of them in the lecture hall.
-      </p>
-      <div style="background: #f0fdf4; border-radius: 8pt; padding: 14pt;">
-        <p style="font-size: 12pt; color: #16a34a; font-weight: 600;">AI can.</p>
-        <p style="font-size: 11pt; color: #444; margin-top: 4pt;">Every student. Every concept. Infinite patience.</p>
-      </div>
+  <div style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 150pt 150pt; gap: 6pt;">
+    <div class="card">
+      <img src="./assets/overview.png">
+      <div class="label"><p>🗺️ Overview + Mindmap</p></div>
     </div>
-    <div>
-      <h3 style="font-size: 13pt; font-weight: 600; color: #1a1a1a; margin-bottom: 12pt;">Who Benefits</h3>
-      <div style="display: flex; flex-direction: column; gap: 8pt;">
-        <div style="background: #f5f5f0; border-radius: 8pt; padding: 12pt;">
-          <p style="font-size: 10pt; font-weight: 600; color: #1a1a1a;">Students</p>
-          <p style="font-size: 9pt; color: #666; line-height: 1.4;">Paste lecture PDF → quiz yourself → tutor catches gaps → actually pass the exam</p>
-        </div>
-        <div style="background: #f5f5f0; border-radius: 8pt; padding: 12pt;">
-          <p style="font-size: 10pt; font-weight: 600; color: #1a1a1a;">Developers</p>
-          <p style="font-size: 9pt; color: #666; line-height: 1.4;">Paste technical blog → mindmap architecture → quiz edge cases → explain to teammates</p>
-        </div>
-        <div style="background: #f5f5f0; border-radius: 8pt; padding: 12pt;">
-          <p style="font-size: 10pt; font-weight: 600; color: #1a1a1a;">Lifelong Learners</p>
-          <p style="font-size: 9pt; color: #666; line-height: 1.4;">Paste YouTube talk → podcast for commute → flashcards for spaced review</p>
-        </div>
-        <div style="background: #f5f5f0; border-radius: 8pt; padding: 12pt;">
-          <p style="font-size: 10pt; font-weight: 600; color: #1a1a1a;">Educators</p>
-          <p style="font-size: 9pt; color: #666; line-height: 1.4;">Generate quiz + cards from any material instantly. AI tutor handles 1-on-1.</p>
-        </div>
-      </div>
+    <div class="card">
+      <img src="./assets/quiz.png">
+      <div class="label"><p>❓ Quiz — Active Recall</p></div>
+    </div>
+    <div class="card">
+      <img src="./assets/flashcards.png">
+      <div class="label"><p>🃏 Flashcards</p></div>
+    </div>
+    <div class="card">
+      <img src="./assets/tutor.png">
+      <div class="label"><p>🎓 Feynman Tutor — "Explain it"</p></div>
+    </div>
+    <div class="card">
+      <img src="./assets/overview-chat.png">
+      <div class="label"><p>💬 Floating Chat</p></div>
+    </div>
+    <div style="border-radius: 6pt; background: #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12pt;">
+      <p style="font-size: 10pt; color: #888; margin-bottom: 6pt;">+ Podcast</p>
+      <p style="font-size: 14pt; color: #fff; font-weight: 600;">🎙️ 2-Host AI Audio</p>
+      <p style="font-size: 8pt; color: #666; margin-top: 4pt;">Multi-speaker TTS</p>
     </div>
   </div>
 </body>

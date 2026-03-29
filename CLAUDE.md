@@ -172,6 +172,20 @@ Each round must be independently demoable. Commit after each.
 10. Do NOT refactor working code. Forward only.
 11. If stuck >15 min on one issue, mock the endpoint and move on.
 
+## Architecture Rules
+
+### Pipeline must be parallel
+`/api/digest` runs ingest first (sequential — needs the context), then fires visual + quiz + cards + podcast ALL at once via `asyncio.gather()` in `orchestrator.py`. Frontend shows Overview tab immediately when ingest+markmap resolve. Other tabs show a spinner until their data arrives. Do NOT lazy-load tabs on click — fire everything upfront.
+
+### TTS segments must be parallel
+`podcast.py` generates 6 TTS segments. Use `asyncio.gather()` to call all 6 TTS endpoints concurrently, then merge PCM in segment order. Sequential TTS takes ~240s; parallel should be ~50-60s.
+
+### Podcast length — demo mode
+Script prompt: **30-40 dialogue turns, ~1000-1200 words, ~5-8 minutes total**. Each of the 6 segments = ~1-2 min of audio max. Do NOT generate 60+ turns or 15-minute scripts — too slow for TTS and too long for demo.
+
+### Port hygiene
+Before starting servers, always kill existing processes: `lsof -ti:8000 | xargs kill -9` and same for :3000. Old processes from previous sessions serve wrong routes silently.
+
 ## Verification
 
 Run `python tests/verify_round{N}.py` after each round. Backend must be running on :8000, frontend on :3000.

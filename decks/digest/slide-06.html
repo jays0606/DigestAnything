@@ -8,40 +8,78 @@
       width: 720pt;
       height: 405pt;
       font-family: 'Pretendard', sans-serif;
-      background: #1a1a1a;
-      padding: 40pt 48pt;
+      background: #ffffff;
+      padding: 28pt 40pt;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
     }
   </style>
 </head>
 <body>
-  <h1 style="font-size: 40pt; font-weight: 600; color: #ffffff; text-align: center; line-height: 1.3; margin-bottom: 20pt;">
-    See it. Test it. <span style="color: #005bbf;">Prove it.</span>
-  </h1>
-
-  <p style="font-size: 14pt; color: #888; text-align: center; margin-bottom: 32pt;">
-    Paste anything. Understand everything.
-  </p>
-
-  <div style="display: flex; gap: 6pt; margin-bottom: 32pt;">
-    <p style="font-size: 10pt; background: #252525; color: #fff; padding: 6pt 14pt; border-radius: 20pt;">🗺️ Map</p>
-    <p style="font-size: 10pt; background: #252525; color: #fff; padding: 6pt 14pt; border-radius: 20pt;">❓ Quiz</p>
-    <p style="font-size: 10pt; background: #252525; color: #fff; padding: 6pt 14pt; border-radius: 20pt;">🃏 Cards</p>
-    <p style="font-size: 10pt; background: #252525; color: #fff; padding: 6pt 14pt; border-radius: 20pt;">🎙️ Podcast</p>
-    <p style="font-size: 10pt; background: #ca8a04; color: #fff; padding: 6pt 14pt; border-radius: 20pt; font-weight: 600;">🎓 "Explain it."</p>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12pt;">
+    <div style="display: flex; align-items: center; gap: 10pt;">
+      <p style="display: inline-block; padding: 3pt 8pt; background: #c2410c; color: #fff; border-radius: 4pt; font-size: 7pt; font-weight: 600;">KILLER FEATURE</p>
+      <h2 style="font-size: 18pt; font-weight: 600; color: #1a1a1a;">Claude Agent SDK — GAN-Inspired Self-Healing</h2>
+    </div>
+    <p style="font-size: 10pt; color: #999;">05</p>
   </div>
 
-  <div style="display: flex; gap: 48pt;">
+  <p style="font-size: 9pt; color: #666; margin-bottom: 10pt;">
+    From Anthropic's <strong style="color: #1a1a1a;">Harness Design for Long-Running Apps</strong> — separate builder from critic. Self-evaluation bias = code can't judge itself.
+  </p>
+
+  <!-- Big GAN diagram -->
+  <div style="background: #1a1a1a; border-radius: 10pt; padding: 16pt; margin-bottom: 10pt; display: flex; align-items: center; justify-content: center; gap: 14pt;">
     <div style="text-align: center;">
-      <p style="font-size: 11pt; font-weight: 500; color: #fff;">Jaeho Shin</p>
-      <p style="font-size: 9pt; color: #666;">Solo</p>
+      <div style="background: #005bbf; border-radius: 8pt; padding: 12pt 20pt;">
+        <p style="font-size: 16pt; font-weight: 700; color: #fff;">Generator</p>
+      </div>
+      <p style="font-size: 8pt; color: #888; margin-top: 4pt;">oh-my-claudecode</p>
+      <p style="font-size: 7pt; color: #555;">/autopilot builds code</p>
     </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 2pt; width: 80pt;">
+      <p style="font-size: 9pt; color: #888;">→ code →</p>
+      <div style="width: 60pt; height: 1pt; background: #333;"></div>
+      <p style="font-size: 9pt; color: #c2410c;">← errors ←</p>
+    </div>
+
     <div style="text-align: center;">
-      <p style="font-size: 11pt; font-weight: 500; color: #fff;">jays0606/DigestAnything</p>
-      <p style="font-size: 9pt; color: #666;">GitHub</p>
+      <div style="background: #c2410c; border-radius: 8pt; padding: 12pt 20pt;">
+        <p style="font-size: 16pt; font-weight: 700; color: #fff;">Discriminator</p>
+      </div>
+      <p style="font-size: 8pt; color: #888; margin-top: 4pt;">Claude Agent SDK</p>
+      <p style="font-size: 7pt; color: #555;">Opus 4.6 tests + fixes</p>
+    </div>
+
+    <div style="width: 30pt; text-align: center;">
+      <p style="font-size: 12pt; color: #666;">→</p>
+    </div>
+
+    <div style="text-align: center;">
+      <div style="background: #16a34a; border-radius: 8pt; padding: 12pt 20pt;">
+        <p style="font-size: 16pt; font-weight: 700; color: #fff;">Ship ✓</p>
+      </div>
+      <p style="font-size: 8pt; color: #888; margin-top: 4pt;">all tests pass</p>
+    </div>
+  </div>
+
+  <!-- 3 capabilities -->
+  <div style="display: flex; gap: 8pt; flex: 1;">
+    <div style="flex: 1; background: #fff7ed; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center;">
+      <p style="font-size: 24pt; margin-bottom: 4pt;">🔄</p>
+      <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Auto-Fix Loop</p>
+      <p style="font-size: 7pt; color: #666; margin-top: 4pt;">Test fails → Opus reads error<br>+ source → patches → retests<br>Up to 5 cycles</p>
+    </div>
+    <div style="flex: 1; background: #fff7ed; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center;">
+      <p style="font-size: 24pt; margin-bottom: 4pt;">🌐</p>
+      <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Browser E2E</p>
+      <p style="font-size: 7pt; color: #666; margin-top: 4pt;">Playwright opens browser<br>clicks tabs, answers quiz<br>flips cards, sends chat</p>
+    </div>
+    <div style="flex: 1; background: #fff7ed; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center;">
+      <p style="font-size: 24pt; margin-bottom: 4pt;">🎧</p>
+      <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Audio Intelligence</p>
+      <p style="font-size: 7pt; color: #666; margin-top: 4pt;">LLM listens to podcast<br>verifies real speech<br>2 speakers, good quality</p>
     </div>
   </div>
 </body>

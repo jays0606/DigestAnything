@@ -114,7 +114,7 @@
     <!-- Navigation -->
     <div class="nav-bar">
       <button id="btn-prev" title="Previous (\u2190)">Prev</button>
-      <span class="slide-counter" id="counter">1 / 6</span>
+      <span class="slide-counter" id="counter">1 / 7</span>
       <button id="btn-next" title="Next (\u2192)">Next</button>
       <button class="btn-fullscreen" id="btn-fs" title="Fullscreen (F)">&#x26F6;</button>
     </div>
@@ -878,6 +878,186 @@
   </style>
 </head>
 <body>
+  <div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 14pt;&quot;>
+    <div style=&quot;display: flex; align-items: center; gap: 10pt;&quot;>
+      <p style=&quot;display: inline-block; padding: 3pt 8pt; background: #1a1a1a; color: #fff; border-radius: 4pt; font-size: 7pt; font-weight: 600;&quot;>UNDER THE HOOD</p>
+      <h2 style=&quot;font-size: 20pt; font-weight: 600; color: #1a1a1a;&quot;>One Source → Five Outputs → All Parallel</h2>
+    </div>
+    <p style=&quot;font-size: 10pt; color: #999;&quot;>04</p>
+  </div>
+
+  <!-- Big flow diagram -->
+  <div style=&quot;flex: 1; display: flex; flex-direction: column; gap: 8pt;&quot;>
+    <!-- Row 1: Source types -->
+    <div style=&quot;display: flex; gap: 6pt; justify-content: center;&quot;>
+      <div style=&quot;background: #f5f5f0; border-radius: 6pt; padding: 8pt 16pt; text-align: center;&quot;>
+        <p style=&quot;font-size: 14pt;&quot;>📝</p>
+        <p style=&quot;font-size: 8pt; font-weight: 600;&quot;>Blog URL</p>
+      </div>
+      <div style=&quot;background: #f5f5f0; border-radius: 6pt; padding: 8pt 16pt; text-align: center;&quot;>
+        <p style=&quot;font-size: 14pt;&quot;>🎬</p>
+        <p style=&quot;font-size: 8pt; font-weight: 600;&quot;>YouTube</p>
+      </div>
+      <div style=&quot;background: #f5f5f0; border-radius: 6pt; padding: 8pt 16pt; text-align: center;&quot;>
+        <p style=&quot;font-size: 14pt;&quot;>📄</p>
+        <p style=&quot;font-size: 8pt; font-weight: 600;&quot;>PDF</p>
+      </div>
+    </div>
+
+    <p style=&quot;text-align: center; color: #ccc; font-size: 10pt;&quot;>↓</p>
+
+    <!-- Row 2: LLM Analysis -->
+    <div style=&quot;background: #f0f7ff; border-radius: 8pt; padding: 10pt; text-align: center;&quot;>
+      <p style=&quot;font-size: 11pt; font-weight: 600; color: #005bbf;&quot;>Gemini 3 Flash — Structured Analysis</p>
+      <p style=&quot;font-size: 8pt; color: #666;&quot;>Concepts, hierarchy, insights, analogies → context.json</p>
+    </div>
+
+    <p style=&quot;text-align: center; color: #ccc; font-size: 10pt;&quot;>↓</p>
+
+    <!-- Row 3: Parallel outputs -->
+    <div style=&quot;background: #1a1a1a; border-radius: 8pt; padding: 10pt;&quot;>
+      <p style=&quot;font-size: 8pt; color: #888; text-align: center; margin-bottom: 8pt;&quot;>asyncio.gather() — ALL AT ONCE</p>
+      <div style=&quot;display: flex; gap: 6pt; justify-content: center;&quot;>
+        <div style=&quot;background: #252525; border-radius: 6pt; padding: 8pt 12pt; text-align: center; flex: 1;&quot;>
+          <p style=&quot;font-size: 12pt;&quot;>🗺️</p>
+          <p style=&quot;font-size: 8pt; font-weight: 600; color: #fff;&quot;>Mindmap</p>
+          <p style=&quot;font-size: 6pt; color: #888;&quot;>Gemini 3 Flash</p>
+        </div>
+        <div style=&quot;background: #252525; border-radius: 6pt; padding: 8pt 12pt; text-align: center; flex: 1;&quot;>
+          <p style=&quot;font-size: 12pt;&quot;>❓</p>
+          <p style=&quot;font-size: 8pt; font-weight: 600; color: #fff;&quot;>Quiz</p>
+          <p style=&quot;font-size: 6pt; color: #888;&quot;>Gemini 3 Flash</p>
+        </div>
+        <div style=&quot;background: #252525; border-radius: 6pt; padding: 8pt 12pt; text-align: center; flex: 1;&quot;>
+          <p style=&quot;font-size: 12pt;&quot;>🃏</p>
+          <p style=&quot;font-size: 8pt; font-weight: 600; color: #fff;&quot;>Cards</p>
+          <p style=&quot;font-size: 6pt; color: #888;&quot;>Gemini 3 Flash</p>
+        </div>
+        <div style=&quot;background: #252525; border-radius: 6pt; padding: 8pt 12pt; text-align: center; flex: 1;&quot;>
+          <p style=&quot;font-size: 12pt;&quot;>🎙️</p>
+          <p style=&quot;font-size: 8pt; font-weight: 600; color: #fff;&quot;>Podcast</p>
+          <p style=&quot;font-size: 6pt; color: #888;&quot;>Flash + TTS</p>
+        </div>
+        <div style=&quot;background: #252525; border-radius: 6pt; padding: 8pt 12pt; text-align: center; flex: 1;&quot;>
+          <p style=&quot;font-size: 12pt;&quot;>🎓</p>
+          <p style=&quot;font-size: 8pt; font-weight: 600; color: #fff;&quot;>Tutor</p>
+          <p style=&quot;font-size: 6pt; color: #888;&quot;>Gemini 3 Flash</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom: Stack -->
+    <div style=&quot;display: flex; gap: 16pt; justify-content: center; padding-top: 4pt;&quot;>
+      <p style=&quot;font-size: 8pt; color: #999;&quot;><strong style=&quot;color: #666;&quot;>Frontend:</strong> Next.js + Tailwind</p>
+      <p style=&quot;font-size: 8pt; color: #999;&quot;><strong style=&quot;color: #666;&quot;>Backend:</strong> FastAPI (async)</p>
+      <p style=&quot;font-size: 8pt; color: #999;&quot;><strong style=&quot;color: #666;&quot;>Design:</strong> Google Stitch</p>
+      <p style=&quot;font-size: 8pt; color: #999;&quot;><strong style=&quot;color: #666;&quot;>TTS:</strong> Gemini 2.5 Flash multi-speaker</p>
+    </div>
+  </div>
+</body>
+</html>
+" sandbox="allow-same-origin"></iframe>
+        <iframe class="slide-frame" data-slide="6" srcdoc="<!DOCTYPE html>
+<html>
+<head>
+<base href=&quot;./&quot;>
+<script>
+(() => {
+  const slideFile = &quot;slide-06.html&quot;;
+  const localAssetPrefix = &quot;./assets/&quot;;
+  const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
+  const prefix = '[slides-grab:image]';
+
+  function describeElement(element) {
+    if (!element || element.nodeType !== Node.ELEMENT_NODE) return '';
+    if (element === document.body) return 'body';
+
+    const parts = [];
+    let current = element;
+    while (current &amp;&amp; current.nodeType === Node.ELEMENT_NODE &amp;&amp; current !== document.body) {
+      let part = current.tagName.toLowerCase();
+      if (current.id) {
+        part += '#' + current.id;
+        parts.unshift(part);
+        break;
+      }
+      if (current.classList.length > 0) {
+        part += '.' + Array.from(current.classList).slice(0, 2).join('.');
+      }
+      parts.unshift(part);
+      current = current.parentElement;
+    }
+    return 'body > ' + parts.join(' > ');
+  }
+
+  function warn(message, detail) {
+    console.warn(prefix + ' ' + slideFile + ': ' + message, detail);
+  }
+
+  function fail(message, detail) {
+    console.error(prefix + ' ' + slideFile + ': ' + message, detail);
+  }
+
+  window.addEventListener('error', (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLImageElement)) return;
+    const src = (target.getAttribute('src') || target.currentSrc || '').trim();
+    if (!src || src.startsWith('data:')) return;
+    if (src.startsWith(localAssetPrefix)) {
+      fail('missing local asset', { src });
+      return;
+    }
+    fail('image failed to load', { src });
+  }, true);
+
+  window.addEventListener('DOMContentLoaded', () => {
+    for (const image of document.querySelectorAll('img[src]')) {
+      const src = (image.getAttribute('src') || '').trim();
+      if (!src || src.startsWith('data:')) continue;
+      if (src.startsWith('https://')) {
+        fail('remote image URL is unsupported in saved slides; download it into ./assets/<file>', { src });
+        continue;
+      }
+      if (src.startsWith('http://')) {
+        fail('remote http:// image URL is unsupported in saved slides; download it into ./assets/<file>', { src });
+        continue;
+      }
+      if (absolutePathRe.test(src) || src.startsWith('/')) {
+        fail('non-portable image path is unsupported', { src });
+        continue;
+      }
+      if (!src.startsWith(localAssetPrefix)) {
+        warn('noncanonical local image path should use ./assets/<file>', { src });
+      }
+    }
+
+    for (const element of document.body.querySelectorAll('*')) {
+      if (element === document.body) continue;
+      const backgroundImage = window.getComputedStyle(element).backgroundImage;
+      if (!backgroundImage || backgroundImage === 'none' || !backgroundImage.includes('url(')) continue;
+      fail('non-body background-image is not supported for slide content', {
+        element: describeElement(element),
+        backgroundImage,
+      });
+    }
+  });
+})();
+</script>
+  <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css&quot;>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Pretendard', sans-serif;
+      background: #ffffff;
+      padding: 28pt 40pt;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
   <div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 12pt;&quot;>
     <div style=&quot;display: flex; align-items: center; gap: 10pt;&quot;>
       <p style=&quot;display: inline-block; padding: 3pt 8pt; background: #c2410c; color: #fff; border-radius: 4pt; font-size: 7pt; font-weight: 600;&quot;>KILLER FEATURE</p>
@@ -947,13 +1127,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="6" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="7" srcdoc="<!DOCTYPE html>
 <html>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-06.html&quot;;
+  const slideFile = &quot;slide-07.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const prefix = '[slides-grab:image]';
@@ -1084,7 +1264,7 @@
   </div>
 
   <script>
-    const TOTAL = 6;
+    const TOTAL = 7;
     let current = 1;
 
     const frames = document.querySelectorAll('.slide-frame');

@@ -117,14 +117,19 @@ async def fetch_source_text(source: str) -> str:
 
 async def analyze(source_text: str) -> dict:
     """Run Gemini analysis on source text → structured context."""
-    response = client.models.generate_content(
-        model="gemini-3-flash-preview",
-        contents=[source_text, ANALYSIS_PROMPT],
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            response_schema=ANALYSIS_SCHEMA,
-            temperature=1.0,
-            thinking_config=types.ThinkingConfig(thinking_level="LOW"),
-        ),
-    )
-    return json.loads(response.text)
+    import asyncio
+
+    def _call():
+        response = client.models.generate_content(
+            model="gemini-3-flash-preview",
+            contents=[source_text, ANALYSIS_PROMPT],
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json",
+                response_schema=ANALYSIS_SCHEMA,
+                temperature=1.0,
+                thinking_config=types.ThinkingConfig(thinking_level="LOW"),
+            ),
+        )
+        return json.loads(response.text)
+
+    return await asyncio.to_thread(_call)

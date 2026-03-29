@@ -26,13 +26,18 @@ OUTPUT: Markdown only. No backticks. Start with #."""
 
 async def generate_markmap(context: dict) -> str:
     """Generate markmap markdown from context hierarchy."""
+    import asyncio
     hierarchy = context.get("hierarchy", {})
-    response = client.models.generate_content(
-        model="gemini-3-flash-preview",
-        contents=MARKMAP_PROMPT.format(hierarchy=json.dumps(hierarchy)),
-        config=types.GenerateContentConfig(
-            temperature=1.0,
-            thinking_config=types.ThinkingConfig(thinking_level="LOW"),
-        ),
-    )
-    return response.text
+
+    def _call():
+        response = client.models.generate_content(
+            model="gemini-3-flash-preview",
+            contents=MARKMAP_PROMPT.format(hierarchy=json.dumps(hierarchy)),
+            config=types.GenerateContentConfig(
+                temperature=1.0,
+                thinking_config=types.ThinkingConfig(thinking_level="LOW"),
+            ),
+        )
+        return response.text
+
+    return await asyncio.to_thread(_call)

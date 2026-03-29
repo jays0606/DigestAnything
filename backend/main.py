@@ -1,7 +1,7 @@
 """FastAPI app — routes + CORS + static mount."""
 import os
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -49,6 +49,42 @@ class TutorRequest(BaseModel):
 
 
 # --- Routes ---
+
+@app.post("/api/upload")
+async def api_upload(file: UploadFile = File(...)):
+    """Upload a file (PDF, txt, etc.) → extract text → Gemini analysis."""
+    content = await file.read()
+    filename = file.filename or "upload"
+
+    if filename.lower().endswith(".pdf"):
+        # Use Gemini to extract text from PDF
+        from google import genai
+        from google.genai import types
+        pdf_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+        response = pdf_client.models.generate_content(
+            model="gemini-3-flash-preview",
+            contents=[
+                types.Part.from_bytes(data=content, mime_type="application/pdf"),
+                "Extract ALL text from this PDF. Return the full text content only, no commentary.",
+            ],
+            config=types.GenerateContentConfig(
+                temperature=0.0,
+            ),
+        )
+        source_text = response.text
+    else:
+        # Plain text / markdown / etc.
+        source_text = content.decode("utf-8", errors="replace")
+
+    if not source_text or len(source_text) < 50:
+        raise HTTPException(status_code=400, detail="Could not extract text from file")
+
+    context = await analyze(source_text)
+    session_id = new_session_id()
+    context["session_id"] = session_id
+    save_context(session_id, context)
+    return context
+
 
 @app.post("/api/ingest")
 async def api_ingest(req: IngestRequest):

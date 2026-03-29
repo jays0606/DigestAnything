@@ -30,31 +30,34 @@ def build_system_prompt(context: dict) -> str:
     )
 
 
-# Store chat histories per session
-_chat_histories: dict[str, list[dict]] = {}
+_chat_histories: dict[str, list[str]] = {}
 
 
 async def chat_response(message: str, session_id: str, context: dict) -> str:
-    """Generate a chat response (non-streaming for simplicity)."""
+    """Generate a chat response."""
     history = _chat_histories.setdefault(session_id, [])
-    history.append({"role": "user", "parts": [{"text": message}]})
+    history.append(f"User: {message}")
 
     system_prompt = build_system_prompt(context)
+    conversation = "\n".join(history)
 
-    response = client.models.generate_content(
-        model="gemini-3-flash-preview",
-        contents=[{"role": h["role"], "parts": h["parts"]} for h in history],
-        config=types.GenerateContentConfig(
-            system_instruction=system_prompt,
-            temperature=1.0,
-            thinking_config=types.ThinkingConfig(thinking_level="LOW"),
-        ),
-    )
+    import asyncio
 
+    def _call():
+        return client.models.generate_content(
+            model="gemini-3-flash-preview",
+            contents=conversation,
+            config=types.GenerateContentConfig(
+                system_instruction=system_prompt,
+                temperature=1.0,
+                thinking_config=types.ThinkingConfig(thinking_level="LOW"),
+            ),
+        )
+
+    response = await asyncio.to_thread(_call)
     reply = response.text
-    history.append({"role": "model", "parts": [{"text": reply}]})
+    history.append(f"Assistant: {reply}")
 
-    # Keep history manageable
     if len(history) > 20:
         _chat_histories[session_id] = history[-16:]
 

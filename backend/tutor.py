@@ -45,34 +45,38 @@ def build_tutor_system(context: dict) -> str:
     )
 
 
-_tutor_histories: dict[str, list[dict]] = {}
+_tutor_histories: dict[str, list[str]] = {}
 
 
 async def tutor_response(message: str, session_id: str, context: dict, concept: str | None = None) -> str:
     """Generate a Socratic tutor response."""
     history = _tutor_histories.setdefault(session_id, [])
 
-    # Add concept context if provided
     full_message = message
     if concept:
-        full_message = f"[Student is focusing on: {concept}] {message}"
+        full_message = f"[Focusing on: {concept}] {message}"
 
-    history.append({"role": "user", "parts": [{"text": full_message}]})
+    history.append(f"Student: {full_message}")
 
     system_prompt = build_tutor_system(context)
+    conversation = "\n".join(history)
 
-    response = client.models.generate_content(
-        model="gemini-3-flash-preview",
-        contents=[{"role": h["role"], "parts": h["parts"]} for h in history],
-        config=types.GenerateContentConfig(
-            system_instruction=system_prompt,
-            temperature=1.0,
-            thinking_config=types.ThinkingConfig(thinking_level="LOW"),
-        ),
-    )
+    import asyncio
 
+    def _call():
+        return client.models.generate_content(
+            model="gemini-3-flash-preview",
+            contents=conversation,
+            config=types.GenerateContentConfig(
+                system_instruction=system_prompt,
+                temperature=1.0,
+                thinking_config=types.ThinkingConfig(thinking_level="LOW"),
+            ),
+        )
+
+    response = await asyncio.to_thread(_call)
     reply = response.text
-    history.append({"role": "model", "parts": [{"text": reply}]})
+    history.append(f"Sage: {reply}")
 
     if len(history) > 20:
         _tutor_histories[session_id] = history[-16:]

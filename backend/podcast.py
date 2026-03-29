@@ -72,32 +72,41 @@ TTS_CONFIG = types.GenerateContentConfig(
 
 async def generate_script(context: dict) -> list[dict]:
     """Generate podcast script from context."""
-    response = client.models.generate_content(
-        model="gemini-3-flash-preview",
-        contents=[json.dumps(context), PODCAST_PROMPT],
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            response_schema=PODCAST_SCHEMA,
-            temperature=1.0,
-            thinking_config=types.ThinkingConfig(thinking_level="LOW"),
-        ),
-    )
-    return json.loads(response.text)
+    import asyncio
+
+    def _call():
+        response = client.models.generate_content(
+            model="gemini-3-flash-preview",
+            contents=[json.dumps(context), PODCAST_PROMPT],
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json",
+                response_schema=PODCAST_SCHEMA,
+                temperature=1.0,
+                thinking_config=types.ThinkingConfig(thinking_level="LOW"),
+            ),
+        )
+        return json.loads(response.text)
+
+    return await asyncio.to_thread(_call)
 
 
 async def tts_segment(segment_num: int, lines: list[dict]) -> bytes:
     """Generate TTS audio for one segment."""
+    import asyncio
     tts_input = ""
     for line in lines:
         speaker = "Alex" if line["speaker"] == "A" else "Sam"
         tts_input += f"\n{speaker}: {line['text']}"
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash-preview-tts",
-        contents=tts_input.strip(),
-        config=TTS_CONFIG,
-    )
-    return response.candidates[0].content.parts[0].inline_data.data
+    def _call():
+        response = client.models.generate_content(
+            model="gemini-2.5-flash-preview-tts",
+            contents=tts_input.strip(),
+            config=TTS_CONFIG,
+        )
+        return response.candidates[0].content.parts[0].inline_data.data
+
+    return await asyncio.to_thread(_call)
 
 
 async def generate_podcast(context: dict, session_id: str) -> dict:

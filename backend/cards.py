@@ -41,14 +41,19 @@ CARDS_SCHEMA = {
 
 async def generate_cards(context: dict) -> dict:
     """Generate 12-15 flashcards from context."""
-    response = client.models.generate_content(
-        model="gemini-3-flash-preview",
-        contents=[json.dumps(context), CARDS_PROMPT],
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            response_schema=CARDS_SCHEMA,
-            temperature=1.0,
-            thinking_config=types.ThinkingConfig(thinking_level="LOW"),
-        ),
-    )
-    return json.loads(response.text)
+    import asyncio
+
+    def _call():
+        response = client.models.generate_content(
+            model="gemini-3-flash-preview",
+            contents=[json.dumps(context), CARDS_PROMPT],
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json",
+                response_schema=CARDS_SCHEMA,
+                temperature=1.0,
+                thinking_config=types.ThinkingConfig(thinking_level="LOW"),
+            ),
+        )
+        return json.loads(response.text)
+
+    return await asyncio.to_thread(_call)

@@ -126,18 +126,58 @@ export default function Home() {
           {/* Hero + Input */}
           {!data && !loading && (
             <div className="text-center mb-12 pt-12">
-              <h1 className="text-5xl font-headline font-extrabold text-on-surface tracking-tight mb-4" style={{ letterSpacing: "-0.02em" }}>
+              <h1 className="text-5xl font-headline font-extrabold text-on-surface tracking-tight mb-3" style={{ letterSpacing: "-0.02em" }}>
                 Any source. Understood.
               </h1>
               <p className="text-lg text-on-surface-variant font-body mb-10">
-                Paste any URL, YouTube link, or text — get AI-powered learning tabs in seconds.
+                Paste any URL, YouTube link, or upload a PDF — get 5 AI-powered learning tools instantly.
               </p>
+            </div>
+          )}
+
+          {/* Sample sources */}
+          {!data && !loading && (
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {[
+                { label: "Blog Post", icon: "article", url: "https://www.anthropic.com/engineering/harness-design-long-running-apps" },
+                { label: "YouTube", icon: "play_circle", url: "https://www.youtube.com/watch?v=zjkBMFhNj_g" },
+                { label: "Wikipedia", icon: "public", url: "https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)" },
+              ].map((s) => (
+                <button
+                  key={s.label}
+                  onClick={() => handleSubmit(s.url)}
+                  className="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest rounded-full text-sm font-headline font-semibold text-on-surface-variant hover:text-primary hover:bg-primary-fixed/30 transition-all card-shadow"
+                  data-preset={s.label.toLowerCase()}
+                >
+                  <span className="material-symbols-outlined text-base">{s.icon}</span>
+                  {s.label}
+                </button>
+              ))}
             </div>
           )}
 
           <div className="mb-8">
             <SourceInput onSubmit={handleSubmit} onFileUpload={handleFileUpload} loading={loading} />
           </div>
+
+          {/* Features */}
+          {!data && !loading && (
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-12">
+              {[
+                { icon: "description", title: "Overview", desc: "Summary + mind map" },
+                { icon: "quiz", title: "Quiz", desc: "10 adaptive MCQs" },
+                { icon: "style", title: "Flashcards", desc: "Spaced repetition" },
+                { icon: "podcasts", title: "Podcast", desc: "AI-generated audio" },
+                { icon: "psychology", title: "Tutor", desc: "Feynman technique" },
+              ].map((f) => (
+                <div key={f.title} className="bg-surface-container-lowest rounded-xl p-4 card-shadow text-center">
+                  <span className="material-symbols-outlined text-primary text-2xl mb-2 block">{f.icon}</span>
+                  <p className="font-headline font-bold text-sm text-on-surface">{f.title}</p>
+                  <p className="text-xs text-on-surface-variant font-body mt-0.5">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* Error */}
           {error && (

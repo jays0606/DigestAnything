@@ -19,80 +19,67 @@
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12pt;">
     <div style="display: flex; align-items: center; gap: 10pt;">
       <p style="display: inline-block; padding: 3pt 8pt; background: #c2410c; color: #fff; border-radius: 4pt; font-size: 7pt; font-weight: 600;">KILLER FEATURE</p>
-      <h2 style="font-size: 20pt; font-weight: 600; color: #1a1a1a;">Claude Agent SDK — Self-Healing Code</h2>
+      <h2 style="font-size: 18pt; font-weight: 600; color: #1a1a1a;">Claude Agent SDK — GAN-Inspired Self-Healing</h2>
     </div>
     <p style="font-size: 10pt; color: #999;">05</p>
   </div>
 
-  <!-- The GAN pattern explanation -->
-  <div style="background: #f5f5f0; border-radius: 10pt; padding: 12pt 16pt; margin-bottom: 12pt;">
-    <p style="font-size: 10pt; color: #666; line-height: 1.5;">
-      Inspired by Anthropic's <strong style="color: #1a1a1a;">Harness Design for Long-Running Apps</strong> — the GAN-inspired pattern:
-      separate the <strong style="color: #005bbf;">Generator</strong> (builds) from the <strong style="color: #c2410c;">Discriminator</strong> (judges).
-      Self-evaluation bias means code can't objectively judge itself.
-    </p>
-  </div>
+  <p style="font-size: 9pt; color: #666; margin-bottom: 10pt;">
+    From Anthropic's <strong style="color: #1a1a1a;">Harness Design for Long-Running Apps</strong> — separate builder from critic. Self-evaluation bias = code can't judge itself.
+  </p>
 
-  <!-- Big visual: the loop -->
-  <div style="flex: 1; display: flex; flex-direction: column; gap: 10pt;">
-    <div style="background: #1a1a1a; border-radius: 10pt; padding: 14pt; display: flex; align-items: center; justify-content: center; gap: 10pt;">
-      <div style="text-align: center;">
-        <div style="background: #005bbf; border-radius: 8pt; padding: 10pt 18pt; margin-bottom: 4pt;">
-          <p style="font-size: 14pt; font-weight: 700; color: #fff;">Generator</p>
-        </div>
-        <p style="font-size: 7pt; color: #888;">oh-my-claudecode</p>
-        <p style="font-size: 7pt; color: #666;">writes code</p>
+  <!-- Big GAN diagram -->
+  <div style="background: #1a1a1a; border-radius: 10pt; padding: 16pt; margin-bottom: 10pt; display: flex; align-items: center; justify-content: center; gap: 14pt;">
+    <div style="text-align: center;">
+      <div style="background: #005bbf; border-radius: 8pt; padding: 12pt 20pt;">
+        <p style="font-size: 16pt; font-weight: 700; color: #fff;">Generator</p>
       </div>
-
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 2pt;">
-        <p style="font-size: 10pt; color: #888;">→ code →</p>
-        <p style="font-size: 10pt; color: #c2410c;">← errors ←</p>
-      </div>
-
-      <div style="text-align: center;">
-        <div style="background: #c2410c; border-radius: 8pt; padding: 10pt 18pt; margin-bottom: 4pt;">
-          <p style="font-size: 14pt; font-weight: 700; color: #fff;">Discriminator</p>
-        </div>
-        <p style="font-size: 7pt; color: #888;">Claude Agent SDK</p>
-        <p style="font-size: 7pt; color: #666;">tests + judges</p>
-      </div>
-
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 2pt;">
-        <p style="font-size: 10pt; color: #666;">→</p>
-      </div>
-
-      <div style="text-align: center;">
-        <div style="background: #16a34a; border-radius: 8pt; padding: 10pt 18pt; margin-bottom: 4pt;">
-          <p style="font-size: 14pt; font-weight: 700; color: #fff;">Ship ✓</p>
-        </div>
-        <p style="font-size: 7pt; color: #888;">all tests pass</p>
-        <p style="font-size: 7pt; color: #666;">verified quality</p>
-      </div>
+      <p style="font-size: 8pt; color: #888; margin-top: 4pt;">oh-my-claudecode</p>
+      <p style="font-size: 7pt; color: #555;">/autopilot builds code</p>
     </div>
 
-    <!-- What the Agent SDK actually does -->
-    <div style="display: flex; gap: 8pt;">
-      <div style="flex: 1; background: #fff7ed; border-radius: 8pt; padding: 10pt; display: flex; align-items: center; gap: 10pt;">
-        <p style="font-size: 24pt;">🔄</p>
-        <div>
-          <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Test → Fix → Retest Loop</p>
-          <p style="font-size: 8pt; color: #666;">Opus 4.6 reads failure + source code → patches → reruns. Autonomous. Up to 5 cycles.</p>
-        </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 2pt; width: 80pt;">
+      <p style="font-size: 9pt; color: #888;">→ code →</p>
+      <div style="width: 60pt; height: 1pt; background: #333;"></div>
+      <p style="font-size: 9pt; color: #c2410c;">← errors ←</p>
+    </div>
+
+    <div style="text-align: center;">
+      <div style="background: #c2410c; border-radius: 8pt; padding: 12pt 20pt;">
+        <p style="font-size: 16pt; font-weight: 700; color: #fff;">Discriminator</p>
       </div>
-      <div style="flex: 1; background: #fff7ed; border-radius: 8pt; padding: 10pt; display: flex; align-items: center; gap: 10pt;">
-        <p style="font-size: 24pt;">🌐</p>
-        <div>
-          <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Playwright Browser E2E</p>
-          <p style="font-size: 8pt; color: #666;">Agent opens real browser → clicks tabs → answers quiz → flips cards → verifies UI works.</p>
-        </div>
+      <p style="font-size: 8pt; color: #888; margin-top: 4pt;">Claude Agent SDK</p>
+      <p style="font-size: 7pt; color: #555;">Opus 4.6 tests + fixes</p>
+    </div>
+
+    <div style="width: 30pt; text-align: center;">
+      <p style="font-size: 12pt; color: #666;">→</p>
+    </div>
+
+    <div style="text-align: center;">
+      <div style="background: #16a34a; border-radius: 8pt; padding: 12pt 20pt;">
+        <p style="font-size: 16pt; font-weight: 700; color: #fff;">Ship ✓</p>
       </div>
-      <div style="flex: 1; background: #fff7ed; border-radius: 8pt; padding: 10pt; display: flex; align-items: center; gap: 10pt;">
-        <p style="font-size: 24pt;">🎧</p>
-        <div>
-          <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Audio Intelligence</p>
-          <p style="font-size: 8pt; color: #666;">LLM listens to podcast WAV → confirms real speech, 2 speakers, good quality.</p>
-        </div>
-      </div>
+      <p style="font-size: 8pt; color: #888; margin-top: 4pt;">all tests pass</p>
+    </div>
+  </div>
+
+  <!-- 3 capabilities -->
+  <div style="display: flex; gap: 8pt; flex: 1;">
+    <div style="flex: 1; background: #fff7ed; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center;">
+      <p style="font-size: 24pt; margin-bottom: 4pt;">🔄</p>
+      <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Auto-Fix Loop</p>
+      <p style="font-size: 7pt; color: #666; margin-top: 4pt;">Test fails → Opus reads error<br>+ source → patches → retests<br>Up to 5 cycles</p>
+    </div>
+    <div style="flex: 1; background: #fff7ed; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center;">
+      <p style="font-size: 24pt; margin-bottom: 4pt;">🌐</p>
+      <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Browser E2E</p>
+      <p style="font-size: 7pt; color: #666; margin-top: 4pt;">Playwright opens browser<br>clicks tabs, answers quiz<br>flips cards, sends chat</p>
+    </div>
+    <div style="flex: 1; background: #fff7ed; border-radius: 8pt; padding: 10pt; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center;">
+      <p style="font-size: 24pt; margin-bottom: 4pt;">🎧</p>
+      <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Audio Intelligence</p>
+      <p style="font-size: 7pt; color: #666; margin-top: 4pt;">LLM listens to podcast<br>verifies real speech<br>2 speakers, good quality</p>
     </div>
   </div>
 </body>

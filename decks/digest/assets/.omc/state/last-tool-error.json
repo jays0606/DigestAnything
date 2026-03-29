@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"npx slides-grab validate --slides-dir /Users/jaehoshin/Code/hackathons/ralphthon-seoul-submission/decks/digest/ 2>&1 && npx slides-grab build-viewer --slides-dir /Users/jaehoshin/Code/hack...",
-  "error": "Exit code 1\nslide-02.html:error[overflow-outside-frame] body > p:nth-of-type(1) - Element exceeds the 720pt x 405pt slide frame. (bbox=64,-14.56 832x18)\nslide-02.html:error[overflow-outside-frame] body > p:nth-of-type(2) - Element exceeds the 720pt x 405pt slide frame. (bbox=64,535.56 832x19)\nslide-02.html:error[overflow-outside-frame] body > p:nth-of-type(2) > span - Element exceeds the 720pt x 405pt slide frame. (bbox=451.06,535.56 84.39x19)\nsummary: 6 slide(s) checked, 5 passed, 1 failed, 3 e...",
-  "timestamp": "2026-03-29T08:43:03.784Z",
-  "retry_count": 1
-}

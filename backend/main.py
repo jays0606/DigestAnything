@@ -11,6 +11,8 @@ from ingest import fetch_source_text, analyze
 from visual import generate_markmap
 from quiz import generate_quiz
 from cards import generate_cards
+from chat import chat_response
+from tutor import tutor_response
 from orchestrator import run_pipeline
 
 app = FastAPI(title="DigestAnything API")
@@ -88,6 +90,26 @@ async def api_cards(context: dict):
     """Context → 12-15 flashcards."""
     result = await generate_cards(context)
     return result
+
+
+@app.post("/api/chat")
+async def api_chat(req: ChatRequest):
+    """Streaming text chat."""
+    ctx = load_context(req.session_id)
+    if ctx is None:
+        ctx = {"title": "General", "key_concepts": [], "key_insights": []}
+    reply = await chat_response(req.message, req.session_id, ctx)
+    return {"response": reply}
+
+
+@app.post("/api/tutor")
+async def api_tutor(req: TutorRequest):
+    """Socratic tutor."""
+    ctx = load_context(req.session_id)
+    if ctx is None:
+        ctx = {"title": "General", "key_concepts": [], "key_insights": [], "analogies": []}
+    reply = await tutor_response(req.message, req.session_id, ctx, req.concept)
+    return {"response": reply}
 
 
 @app.post("/api/digest")

@@ -7,6 +7,8 @@ import Overview from "../components/Overview";
 import LoadingState from "../components/LoadingState";
 import QuizMode from "../components/QuizMode";
 import FlashCards from "../components/FlashCards";
+import TutorTab from "../components/TutorTab";
+import FloatingChat from "../components/FloatingChat";
 
 type DigestData = {
   context: any;
@@ -132,16 +134,22 @@ export default function Home() {
                     <LoadingState message="Generating podcast..." />
                   )
                 )}
-                {activeTab === "tutor" && (
-                  <div data-component="tutor-placeholder" className="bg-surface-container-lowest rounded-xl p-8 card-shadow text-center text-on-surface-variant">
-                    Tutor — Round 3
-                  </div>
+                {activeTab === "tutor" && data.context && (
+                  <TutorTab
+                    sessionId={data.context.session_id || "default"}
+                    concepts={data.context.key_concepts || []}
+                  />
                 )}
               </div>
             </div>
           )}
         </div>
       </main>
+
+      {/* Floating Chat */}
+      {data && !loading && (
+        <FloatingChat sessionId={data.context?.session_id || "default"} />
+      )}
     </div>
   );
 }

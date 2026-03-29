@@ -27,6 +27,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("overview");
   const [readyTabs, setReadyTabs] = useState<Set<string>>(new Set());
   const [error, setError] = useState<string | null>(null);
+  const [prefill, setPrefill] = useState("");
 
   const processContext = useCallback(async (context: any) => {
     // Show overview immediately (without markmap yet)
@@ -145,7 +146,7 @@ export default function Home() {
               ].map((s) => (
                 <button
                   key={s.label}
-                  onClick={() => handleSubmit(s.url)}
+                  onClick={() => setPrefill(s.url)}
                   className="flex items-center gap-3 px-5 py-3 bg-surface-container-lowest rounded-xl text-left font-body hover:bg-primary-fixed/30 transition-all card-shadow"
                   data-preset={s.label.toLowerCase()}
                 >
@@ -160,7 +161,7 @@ export default function Home() {
           )}
 
           <div className="mb-8">
-            <SourceInput onSubmit={handleSubmit} onFileUpload={handleFileUpload} loading={loading} />
+            <SourceInput onSubmit={handleSubmit} onFileUpload={handleFileUpload} loading={loading} prefill={prefill} />
           </div>
 
           {/* Features */}

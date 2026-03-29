@@ -1,16 +1,21 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 interface SourceInputProps {
   onSubmit: (source: string) => void;
   onFileUpload: (file: File) => void;
   loading: boolean;
+  prefill?: string;
 }
 
-export default function SourceInput({ onSubmit, onFileUpload, loading }: SourceInputProps) {
+export default function SourceInput({ onSubmit, onFileUpload, loading, prefill }: SourceInputProps) {
   const [source, setSource] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (prefill) setSource(prefill);
+  }, [prefill]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

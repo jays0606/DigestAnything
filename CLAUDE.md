@@ -186,9 +186,38 @@ Script prompt: **30-40 dialogue turns, ~1000-1200 words, ~5-8 minutes total**. E
 ### Port hygiene
 Before starting servers, always kill existing processes: `lsof -ti:8000 | xargs kill -9` and same for :3000. Old processes from previous sessions serve wrong routes silently.
 
-## Verification
+## Verification — 3 Stages
 
-Run `python tests/verify_round{N}.py` after each round. Backend must be running on :8000, frontend on :3000.
+### Stage 1: Per-round API tests (during build)
+Run `python tests/verify_round{N}.py` after each round. Backend on :8000, frontend on :3000.
+
+### Stage 2: Agent test loop (after all rounds built)
+Self-healing loop: runs tests → spawns Opus agent to fix failures → retests. Up to 5 cycles.
+```bash
+# Kill old servers first
+lsof -ti:8000 | xargs kill -9 2>/dev/null; lsof -ti:3000 | xargs kill -9 2>/dev/null
+
+# Run all rounds + auto-fix
+uv run python tests/agents/loop.py --start-servers
+
+# Then E2E browser test across multiple sources
+uv run python tests/agents/loop.py --e2e --source all --start-servers
+```
+
+The agent loop uses Claude Agent SDK (Opus 4.6, bypassPermissions). It reads errors + source code, makes targeted fixes, and retests. See `tests/agents/` for details:
+- `loop.py` — main orchestrator (test → fix → retest)
+- `e2e_agent.py` — Playwright browser test with exact DOM selectors for all data-* attributes
+- `fixer.py` — spawns Opus agent to diagnose + fix code
+- `config.py` — model config, paths, system prompts
+
+### Stage 3: Audio quality check (after podcast works)
+```bash
+uv run python tests/verify_audio.py
+```
+Uses Gemini audio understanding to verify: real speech (not buzz), 2 speakers, good quality.
+
+### IMPORTANT: After building all 4 rounds, you MUST run Stage 2 and Stage 3 before declaring done.
+The per-round verify scripts only test API responses. The agent loop tests the full browser UI + fixes issues. The audio check verifies podcast quality. All 3 stages must pass.
 
 ## Dependencies
 

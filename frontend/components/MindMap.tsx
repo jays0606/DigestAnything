@@ -8,7 +8,7 @@ interface MindMapProps {
 
 export default function MindMap({ markdown }: MindMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [error, setError] = useState(false);
+  const [fallback, setFallback] = useState(false);
 
   useEffect(() => {
     if (!markdown || !containerRef.current) return;
@@ -25,27 +25,29 @@ export default function MindMap({ markdown }: MindMapProps) {
         const transformer = new Transformer();
         const { root } = transformer.transform(markdown);
 
-        // Create SVG with explicit dimensions to avoid SVGLength error
-        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.setAttribute("width", "100%");
-        svg.setAttribute("height", "400");
-        svg.style.width = "100%";
-        svg.style.height = "400px";
-
+        // Create SVG with absolute pixel dimensions (avoids SVGLength error)
         containerRef.current.innerHTML = "";
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("width", String(containerRef.current.clientWidth || 800));
+        svg.setAttribute("height", "400");
         containerRef.current.appendChild(svg);
 
-        // Small delay to ensure SVG is in DOM and has dimensions
-        requestAnimationFrame(() => {
-          if (cancelled) return;
+        // Suppress d3-zoom SVGLength errors
+        const origError = window.onerror;
+        window.onerror = (msg) => {
+          if (typeof msg === "string" && msg.includes("SVGLength")) return true;
+          return origError ? origError.call(window, msg) : false;
+        };
+
+        setTimeout(() => {
+          if (cancelled || !svg.isConnected) return;
           try {
-            Markmap.create(svg, { autoFit: true, duration: 500, maxWidth: 300 }, root);
-          } catch {
-            setError(true);
-          }
-        });
+            Markmap.create(svg, { autoFit: true, duration: 0, maxWidth: 300 }, root);
+          } catch { /* swallow d3 errors */ }
+          window.onerror = origError;
+        }, 100);
       } catch {
-        setError(true);
+        setFallback(true);
       }
     }
 
@@ -53,7 +55,7 @@ export default function MindMap({ markdown }: MindMapProps) {
     return () => { cancelled = true; };
   }, [markdown]);
 
-  if (error) {
+  if (fallback) {
     return (
       <div className="w-full bg-surface-container-lowest rounded-xl card-shadow p-6" data-component="mindmap">
         <pre className="text-sm text-on-surface-variant whitespace-pre-wrap font-body">{markdown}</pre>

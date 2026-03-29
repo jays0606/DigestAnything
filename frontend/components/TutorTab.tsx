@@ -16,7 +16,6 @@ export default function TutorTab({ sessionId, concepts }: TutorTabProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [selectedConcept, setSelectedConcept] = useState(concepts[0]?.term || "");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const initialized = useRef(false);
 
@@ -24,20 +23,17 @@ export default function TutorTab({ sessionId, concepts }: TutorTabProps) {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+  useEffect(() => { scrollToBottom(); }, [messages]);
 
-  // Auto-start: immediately prompt the user
+  // Auto-start
   useEffect(() => {
     if (initialized.current || concepts.length === 0) return;
     initialized.current = true;
     const concept = concepts[0]?.term || "the main topic";
-    const introMessage: Message = {
+    setMessages([{
       role: "tutor",
-      text: `Hey! Let's use the Feynman technique. Try explaining "${concept}" in your own words — as if you're teaching it to a friend. What would you say?`,
-    };
-    setMessages([introMessage]);
+      text: `Hey! I'm Feynman, your Socratic tutor. Let's use the Feynman technique — try explaining "${concept}" in your own words, as if you're teaching it to a friend. What would you say?`,
+    }]);
   }, [concepts]);
 
   const handleSend = async () => {
@@ -51,11 +47,7 @@ export default function TutorTab({ sessionId, concepts }: TutorTabProps) {
       const res = await fetch("http://localhost:8000/api/tutor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: userMsg,
-          session_id: sessionId,
-          concept: selectedConcept || undefined,
-        }),
+        body: JSON.stringify({ message: userMsg, session_id: sessionId }),
       });
       const data = await res.json();
       setMessages((prev) => [...prev, { role: "tutor", text: data.response }]);
@@ -68,23 +60,6 @@ export default function TutorTab({ sessionId, concepts }: TutorTabProps) {
 
   return (
     <div className="space-y-4" data-component="tutor">
-      {/* Concept selector */}
-      {concepts.length > 0 && (
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-label text-on-surface-variant">Focus on:</span>
-          <select
-            value={selectedConcept}
-            onChange={(e) => setSelectedConcept(e.target.value)}
-            className="px-3 py-1.5 bg-surface-container-high rounded-lg text-sm font-body text-on-surface focus:outline-none focus:ring-2 focus:ring-primary"
-            data-select="concept"
-          >
-            {concepts.map((c) => (
-              <option key={c.term} value={c.term}>{c.term}</option>
-            ))}
-          </select>
-        </div>
-      )}
-
       {/* Chat messages */}
       <div className="bg-surface-container-lowest rounded-xl card-shadow p-6 h-[500px] overflow-y-auto">
         <div className="space-y-4">
@@ -96,7 +71,7 @@ export default function TutorTab({ sessionId, concepts }: TutorTabProps) {
                   : "bg-surface-container-low text-on-surface"
               }`}>
                 {msg.role === "tutor" && (
-                  <span className="text-xs font-bold text-primary font-label block mb-1">Sage</span>
+                  <span className="text-xs font-bold text-primary font-label block mb-1">Feynman</span>
                 )}
                 <p className="font-body text-sm whitespace-pre-wrap">{msg.text}</p>
               </div>

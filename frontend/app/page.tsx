@@ -29,62 +29,37 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
 
   const processContext = useCallback(async (context: any) => {
-    // Step 2: Get markmap immediately (fast)
-    const visualRes = await fetch(`${API}/api/visual`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(context),
-    });
-    const visual = await visualRes.json();
-
-    // Show overview immediately
-    const initial: DigestData = {
-      context,
-      markmap: visual.markdown || null,
-      quiz: null,
-      cards: null,
-      podcast: null,
-    };
-    setData(initial);
+    // Show overview immediately (without markmap yet)
+    setData({ context, markmap: null, quiz: null, cards: null, podcast: null });
     setLoading(false);
     setReadyTabs(new Set(["overview", "tutor"]));
 
-    // Step 3: Fire quiz, cards, podcast in parallel
-    const [quizRes, cardsRes, podcastRes] = await Promise.allSettled([
-      fetch(`${API}/api/quiz`, {
+    const post = (path: string) =>
+      fetch(`${API}${path}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(context),
-      }).then(r => r.json()),
-      fetch(`${API}/api/cards`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(context),
-      }).then(r => r.json()),
-      fetch(`${API}/api/podcast`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(context),
-      }).then(r => r.json()),
-    ]);
+      }).then(r => r.json());
 
-    setData(prev => {
-      if (!prev) return prev;
-      return {
-        ...prev,
-        quiz: quizRes.status === "fulfilled" ? quizRes.value : null,
-        cards: cardsRes.status === "fulfilled" ? cardsRes.value : null,
-        podcast: podcastRes.status === "fulfilled" ? podcastRes.value : null,
-      };
-    });
+    // Fire ALL 4 in parallel — each updates state independently when done
+    post("/api/visual").then(v => {
+      setData(prev => prev ? { ...prev, markmap: v.markdown || null } : prev);
+    }).catch(() => {});
 
-    setReadyTabs(prev => {
-      const next = new Set(prev);
-      if (quizRes.status === "fulfilled") next.add("quiz");
-      if (cardsRes.status === "fulfilled") next.add("cards");
-      if (podcastRes.status === "fulfilled") next.add("podcast");
-      return next;
-    });
+    post("/api/quiz").then(q => {
+      setData(prev => prev ? { ...prev, quiz: q } : prev);
+      setReadyTabs(prev => new Set([...prev, "quiz"]));
+    }).catch(() => {});
+
+    post("/api/cards").then(c => {
+      setData(prev => prev ? { ...prev, cards: c } : prev);
+      setReadyTabs(prev => new Set([...prev, "cards"]));
+    }).catch(() => {});
+
+    post("/api/podcast").then(p => {
+      setData(prev => prev ? { ...prev, podcast: p } : prev);
+      setReadyTabs(prev => new Set([...prev, "podcast"]));
+    }).catch(() => {});
   }, []);
 
   const handleSubmit = useCallback(async (source: string) => {

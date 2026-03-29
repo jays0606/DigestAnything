@@ -16,65 +16,62 @@
   </style>
 </head>
 <body>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16pt;">
-    <h2 style="font-size: 22pt; font-weight: 600; color: #1a1a1a;">The problem isn't access. It's the last mile.</h2>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20pt;">
+    <h2 style="font-size: 22pt; font-weight: 600; color: #1a1a1a;">What Actually Makes Learning Stick</h2>
     <p style="font-size: 10pt; color: #999;">03</p>
   </div>
 
-  <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 24pt;">
-    <div>
-      <div style="background: #f0fdf4; border-radius: 10pt; padding: 16pt; margin-bottom: 12pt;">
-        <p style="font-size: 10pt; color: #16a34a; font-weight: 600; margin-bottom: 6pt;">ACCESS IS SOLVED</p>
-        <p style="font-size: 12pt; color: #444; line-height: 1.5;">
-          MIT OCW. YouTube. arXiv. The best lectures in human history are <strong style="color: #1a1a1a;">free</strong>.
-        </p>
+  <!-- Visual diagram: the learning gap -->
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 16pt;">
+    <!-- Top: the gap diagram -->
+    <div style="display: flex; align-items: center; gap: 16pt; justify-content: center;">
+      <div style="background: #fee2e2; border-radius: 10pt; padding: 14pt 24pt; text-align: center; width: 200pt;">
+        <p style="font-size: 24pt; font-weight: 700; color: #ba1a1a;">Passive</p>
+        <p style="font-size: 10pt; color: #666; margin-top: 4pt;">Read, watch, highlight</p>
+        <p style="font-size: 9pt; color: #999; margin-top: 2pt;">10% retained</p>
       </div>
-      <div style="background: #fff7ed; border-radius: 10pt; padding: 16pt; margin-bottom: 12pt;">
-        <p style="font-size: 10pt; color: #c2410c; font-weight: 600; margin-bottom: 6pt;">UNDERSTANDING IS NOT</p>
-        <p style="font-size: 12pt; color: #444; line-height: 1.5;">
-          Reading ≠ learning. Watching ≠ understanding. You need someone to ask: <em>"explain it back to me."</em>
-        </p>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 2pt;">
+        <p style="font-size: 24pt; color: #ccc;">→</p>
+        <p style="font-size: 8pt; color: #999; font-weight: 600;">THE GAP</p>
+        <p style="font-size: 24pt; color: #ccc;">→</p>
       </div>
-      <div style="background: #f5f5f0; border-radius: 10pt; padding: 16pt;">
-        <p style="font-size: 10pt; color: #1a1a1a; font-weight: 600; margin-bottom: 6pt;">THE BOTTLENECK</p>
-        <p style="font-size: 12pt; color: #444; line-height: 1.5;">
-          A professor can't ask 300 students to explain one by one. But AI can. <strong style="color: #1a1a1a;">Every student. Every concept. Infinitely.</strong>
-        </p>
-      </div>
-    </div>
-    <div>
-      <p style="font-size: 11pt; color: #666; margin-bottom: 12pt; font-weight: 500;">What cognitive science says works:</p>
-      <div style="display: flex; flex-direction: column; gap: 8pt;">
-        <div style="display: flex; gap: 10pt; align-items: center; background: #f0f7ff; border-radius: 8pt; padding: 10pt 14pt;">
-          <p style="font-size: 20pt;">👁️</p>
-          <div>
-            <p style="font-size: 10pt; font-weight: 600; color: #005bbf;">Dual Coding</p>
-            <p style="font-size: 9pt; color: #666;">Visual + verbal together = 2x retention</p>
-          </div>
-        </div>
-        <div style="display: flex; gap: 10pt; align-items: center; background: #fff7ed; border-radius: 8pt; padding: 10pt 14pt;">
-          <p style="font-size: 20pt;">🧠</p>
-          <div>
-            <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Active Recall</p>
-            <p style="font-size: 9pt; color: #666;">Output > input. Brain must retrieve to remember.</p>
-          </div>
-        </div>
-        <div style="display: flex; gap: 10pt; align-items: center; background: #f0fdf4; border-radius: 8pt; padding: 10pt 14pt;">
-          <p style="font-size: 20pt;">🔄</p>
-          <div>
-            <p style="font-size: 10pt; font-weight: 600; color: #16a34a;">Spaced Repetition</p>
-            <p style="font-size: 9pt; color: #666;">Review right before you forget = long-term memory</p>
-          </div>
-        </div>
-        <div style="display: flex; gap: 10pt; align-items: center; background: #fefce8; border-radius: 8pt; padding: 10pt 14pt; border: 1.5pt solid #ca8a04;">
-          <p style="font-size: 20pt;">💪</p>
-          <div>
-            <p style="font-size: 10pt; font-weight: 600; color: #ca8a04;">Desirable Difficulty</p>
-            <p style="font-size: 9pt; color: #666;">Struggle = learning. The brain must sweat.</p>
-          </div>
-        </div>
+      <div style="background: #dcfce7; border-radius: 10pt; padding: 14pt 24pt; text-align: center; width: 200pt;">
+        <p style="font-size: 24pt; font-weight: 700; color: #16a34a;">Active</p>
+        <p style="font-size: 10pt; color: #666; margin-top: 4pt;">Quiz, explain, recall</p>
+        <p style="font-size: 9pt; color: #999; margin-top: 2pt;">90% retained</p>
       </div>
     </div>
+
+    <!-- Bottom: 4 principles as a flow -->
+    <div style="display: flex; gap: 8pt; justify-content: center;">
+      <div style="background: #f0f7ff; border-radius: 8pt; padding: 12pt; text-align: center; width: 140pt;">
+        <p style="font-size: 20pt; margin-bottom: 4pt;">👁️</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #005bbf;">Dual Coding</p>
+        <p style="font-size: 8pt; color: #666; margin-top: 4pt; line-height: 1.3;">See it two ways:<br>visual + verbal</p>
+      </div>
+      <p style="font-size: 16pt; color: #ddd; align-self: center;">→</p>
+      <div style="background: #fff7ed; border-radius: 8pt; padding: 12pt; text-align: center; width: 140pt;">
+        <p style="font-size: 20pt; margin-bottom: 4pt;">🧠</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #c2410c;">Active Recall</p>
+        <p style="font-size: 8pt; color: #666; margin-top: 4pt; line-height: 1.3;">Output > input.<br>Brain must retrieve.</p>
+      </div>
+      <p style="font-size: 16pt; color: #ddd; align-self: center;">→</p>
+      <div style="background: #f0fdf4; border-radius: 8pt; padding: 12pt; text-align: center; width: 140pt;">
+        <p style="font-size: 20pt; margin-bottom: 4pt;">🔄</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #16a34a;">Spaced Rep.</p>
+        <p style="font-size: 8pt; color: #666; margin-top: 4pt; line-height: 1.3;">Review before<br>you forget</p>
+      </div>
+      <p style="font-size: 16pt; color: #ddd; align-self: center;">→</p>
+      <div style="background: #fefce8; border-radius: 8pt; padding: 12pt; text-align: center; width: 140pt; border: 2pt solid #ca8a04;">
+        <p style="font-size: 20pt; margin-bottom: 4pt;">💪</p>
+        <p style="font-size: 10pt; font-weight: 600; color: #ca8a04;">Feynman</p>
+        <p style="font-size: 8pt; color: #666; margin-top: 4pt; line-height: 1.3;">"Explain it."<br>Brain must sweat.</p>
+      </div>
+    </div>
+
+    <p style="font-size: 10pt; color: #999; text-align: center; font-style: italic;">
+      A professor can't ask 300 students to explain one by one. AI can — every student, every concept, infinitely.
+    </p>
   </div>
 </body>
 </html>

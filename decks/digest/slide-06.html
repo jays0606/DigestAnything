@@ -9,88 +9,91 @@
       height: 405pt;
       font-family: 'Pretendard', sans-serif;
       background: #ffffff;
-      padding: 28pt 40pt;
+      padding: 32pt 40pt;
       display: flex;
       flex-direction: column;
     }
   </style>
 </head>
 <body>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12pt;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16pt;">
     <div style="display: flex; align-items: center; gap: 12pt;">
       <p style="display: inline-block; padding: 4pt 10pt; background: #005bbf; color: #fff; border-radius: 4pt; font-size: 8pt; font-weight: 600;">RALPH</p>
-      <h2 style="font-size: 20pt; font-weight: 600; color: #1a1a1a;">895 Lines of Spec. Zero Lines of Manual Code.</h2>
+      <h2 style="font-size: 20pt; font-weight: 600; color: #1a1a1a;">Spec → Agent → Ship</h2>
     </div>
     <p style="font-size: 10pt; color: #999;">06</p>
   </div>
 
-  <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16pt;">
-    <!-- Left: What I wrote -->
-    <div>
-      <h3 style="font-size: 11pt; font-weight: 600; color: #1a1a1a; margin-bottom: 8pt;">What I Wrote (the spec)</h3>
-      <div style="background: #f5f5f0; border-radius: 8pt; padding: 10pt; margin-bottom: 6pt;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 4pt;">
-          <p style="font-size: 9pt; font-weight: 600; color: #1a1a1a;">SPEC.md</p>
-          <p style="font-size: 8pt; color: #999;">895 lines</p>
+  <!-- Big flow diagram -->
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 12pt;">
+    <!-- Row 1: Human work -->
+    <div style="display: flex; align-items: center; gap: 8pt;">
+      <div style="background: #f5f5f0; border-radius: 8pt; padding: 12pt 16pt; flex: 1; display: flex; align-items: center; gap: 10pt;">
+        <div style="width: 28pt; height: 28pt; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <p style="color: #fff; font-size: 11pt;">👤</p>
         </div>
-        <p style="font-size: 8pt; color: #666; line-height: 1.4;">Every prompt, API structure, build order, verification criteria, fallback strategy</p>
-      </div>
-      <div style="background: #f5f5f0; border-radius: 8pt; padding: 10pt; margin-bottom: 6pt;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 4pt;">
-          <p style="font-size: 9pt; font-weight: 600; color: #1a1a1a;">VERIFIED-API.md</p>
-          <p style="font-size: 8pt; color: #999;">504 lines</p>
+        <div>
+          <p style="font-size: 11pt; font-weight: 600; color: #1a1a1a;">Human writes spec</p>
+          <p style="font-size: 8pt; color: #666;">SPEC.md (895 lines) + VERIFIED-API.md (504 lines) + 17 test scripts</p>
         </div>
-        <p style="font-size: 8pt; color: #666; line-height: 1.4;">Every LLM call tested and passing before implementation started</p>
       </div>
-      <div style="background: #f5f5f0; border-radius: 8pt; padding: 10pt; margin-bottom: 6pt;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 4pt;">
-          <p style="font-size: 9pt; font-weight: 600; color: #1a1a1a;">17 Test Scripts</p>
-          <p style="font-size: 8pt; color: #999;">1,500+ lines</p>
+      <p style="font-size: 16pt; color: #ccc;">→</p>
+      <div style="background: #f5f5f0; border-radius: 8pt; padding: 12pt 16pt; flex: 1; display: flex; align-items: center; gap: 10pt;">
+        <div style="width: 28pt; height: 28pt; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <p style="color: #fff; font-size: 11pt;">🚶</p>
         </div>
-        <p style="font-size: 8pt; color: #666; line-height: 1.4;">API tests, browser E2E (Playwright), audio quality verification — all written before code</p>
-      </div>
-      <div style="background: #1a1a1a; border-radius: 8pt; padding: 10pt;">
-        <p style="font-size: 9pt; color: #fff; font-weight: 500;">Then I walked away.</p>
-        <p style="font-size: 8pt; color: #888; margin-top: 4pt;">Ralph rule: don't touch the laptop while the agent works.</p>
+        <div>
+          <p style="font-size: 11pt; font-weight: 600; color: #1a1a1a;">Walk away</p>
+          <p style="font-size: 8pt; color: #666;">Ralph rule: don't touch the laptop</p>
+        </div>
       </div>
     </div>
 
-    <!-- Right: What the agent did -->
-    <div>
-      <h3 style="font-size: 11pt; font-weight: 600; color: #1a1a1a; margin-bottom: 8pt;">What the Agent Did</h3>
-      <div style="display: flex; flex-direction: column; gap: 5pt;">
-        <div style="background: #f0f7ff; border-radius: 6pt; padding: 8pt 10pt; display: flex; align-items: center; gap: 8pt;">
-          <div style="width: 18pt; height: 18pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <p style="color: #fff; font-size: 7pt; font-weight: 600;">1</p>
-          </div>
-          <p style="font-size: 8pt; color: #444;"><strong>Read spec</strong> → generated implementation plan</p>
+    <p style="font-size: 12pt; color: #ccc; text-align: center;">↓</p>
+
+    <!-- Row 2: Agent loop (the GAN diagram) -->
+    <div style="background: #1a1a1a; border-radius: 12pt; padding: 16pt 20pt;">
+      <p style="font-size: 9pt; color: #888; margin-bottom: 10pt;">GENERATOR-EVALUATOR LOOP (GAN-inspired, from Anthropic's Harness Design)</p>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12pt;">
+        <div style="background: #005bbf; border-radius: 8pt; padding: 10pt 16pt; text-align: center;">
+          <p style="font-size: 10pt; font-weight: 600; color: #fff;">Generator</p>
+          <p style="font-size: 8pt; color: rgba(255,255,255,0.6);">Agent writes code</p>
         </div>
-        <div style="background: #f0f7ff; border-radius: 6pt; padding: 8pt 10pt; display: flex; align-items: center; gap: 8pt;">
-          <div style="width: 18pt; height: 18pt; background: #005bbf; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <p style="color: #fff; font-size: 7pt; font-weight: 600;">2</p>
-          </div>
-          <p style="font-size: 8pt; color: #444;"><strong>Built 4 rounds</strong> — BE + FE, commit after each</p>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <p style="font-size: 9pt; color: #888;">code →</p>
+          <p style="font-size: 9pt; color: #c2410c;">← errors</p>
         </div>
-        <div style="background: #fff7ed; border-radius: 6pt; padding: 8pt 10pt; display: flex; align-items: center; gap: 8pt;">
-          <div style="width: 18pt; height: 18pt; background: #c2410c; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <p style="color: #fff; font-size: 7pt; font-weight: 600;">3</p>
-          </div>
-          <p style="font-size: 8pt; color: #444;"><strong>Ran tests → failed → read error → fixed → retested</strong></p>
+        <div style="background: #c2410c; border-radius: 8pt; padding: 10pt 16pt; text-align: center;">
+          <p style="font-size: 10pt; font-weight: 600; color: #fff;">Evaluator</p>
+          <p style="font-size: 8pt; color: rgba(255,255,255,0.6);">17 tests verify</p>
         </div>
-        <div style="background: #f0fdf4; border-radius: 6pt; padding: 8pt 10pt; display: flex; align-items: center; gap: 8pt;">
-          <div style="width: 18pt; height: 18pt; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <p style="color: #fff; font-size: 7pt; font-weight: 600;">4</p>
-          </div>
-          <p style="font-size: 8pt; color: #444;"><strong>Browser E2E</strong> — Playwright tested every tab interaction</p>
+        <p style="font-size: 9pt; color: #888;">→</p>
+        <div style="background: #16a34a; border-radius: 8pt; padding: 10pt 16pt; text-align: center;">
+          <p style="font-size: 10pt; font-weight: 600; color: #fff;">Ship</p>
+          <p style="font-size: 8pt; color: rgba(255,255,255,0.6);">All tests pass</p>
         </div>
       </div>
+    </div>
 
-      <div style="background: #f5f5f0; border-radius: 8pt; padding: 10pt; margin-top: 8pt;">
-        <p style="font-size: 8pt; color: #666; margin-bottom: 4pt;">Inspired by:</p>
-        <p style="font-size: 9pt; color: #1a1a1a; font-weight: 500; line-height: 1.4;">
-          Anthropic's Harness Design — <strong>Generator-Evaluator</strong> pattern.
-          Separate the builder from the critic. Self-evaluation bias means code can't judge itself.
-        </p>
+    <p style="font-size: 12pt; color: #ccc; text-align: center;">↓</p>
+
+    <!-- Row 3: Result -->
+    <div style="display: flex; gap: 16pt; justify-content: center;">
+      <div style="background: #f0f7ff; border-radius: 8pt; padding: 10pt 20pt; text-align: center;">
+        <p style="font-size: 20pt; font-weight: 700; color: #005bbf;">20+</p>
+        <p style="font-size: 8pt; color: #666;">commits</p>
+      </div>
+      <div style="background: #f0fdf4; border-radius: 8pt; padding: 10pt 20pt; text-align: center;">
+        <p style="font-size: 20pt; font-weight: 700; color: #16a34a;">5K+</p>
+        <p style="font-size: 8pt; color: #666;">lines of code</p>
+      </div>
+      <div style="background: #fefce8; border-radius: 8pt; padding: 10pt 20pt; text-align: center;">
+        <p style="font-size: 20pt; font-weight: 700; color: #ca8a04;">0</p>
+        <p style="font-size: 8pt; color: #666;">manual code</p>
+      </div>
+      <div style="background: #f5f5f0; border-radius: 8pt; padding: 10pt 20pt; text-align: center;">
+        <p style="font-size: 20pt; font-weight: 700; color: #1a1a1a;">4</p>
+        <p style="font-size: 8pt; color: #666;">verification stages</p>
       </div>
     </div>
   </div>

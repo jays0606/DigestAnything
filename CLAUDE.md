@@ -1,25 +1,27 @@
-# DIGEST — Agent Instructions
+# DigestAnything — Agent Instructions
 
 > Any source → See it. Test it. Prove it.
 
 ## Project
 
-DIGEST is a learning platform. Paste any URL/YouTube/PDF → get 5 AI-powered learning tabs + chatbot.
+DigestAnything is a learning platform. Paste any URL/YouTube/PDF → get 5 AI-powered learning tabs + chatbot.
 
 ## Models
 
-| Purpose | Model ID | Temp |
-|---------|----------|------|
-| Source analysis | `gemini-3-flash-preview` | 0.2 |
-| Markmap visual | `gemini-3-flash-preview` | 0.2 |
-| Quiz generation | `gemini-3-flash-preview` | 0.4 |
-| Flashcard generation | `gemini-3-flash-preview` | 0.3 |
-| Podcast script | `gemini-2.5-pro-preview-05-06` | 0.8 |
-| Podcast TTS | `gemini-2.5-flash-preview-tts` | N/A |
-| Chat | `gemini-3-flash-preview` | 0.7 |
-| Tutor | `gemini-3-flash-preview` | 1.0 |
+ALL stages use `gemini-3-flash-preview` (except TTS audio).
 
-All models use `response_mime_type="application/json"` except TTS and streaming chat.
+| Purpose | Model ID | Config |
+|---------|----------|--------|
+| Source analysis | `gemini-3-flash-preview` | temp=1.0, thinking=LOW, response_mime_type=application/json |
+| Markmap visual | `gemini-3-flash-preview` | temp=1.0, thinking=LOW (plain text output) |
+| Quiz generation | `gemini-3-flash-preview` | temp=1.0, thinking=LOW, response_mime_type=application/json + response_schema |
+| Flashcard generation | `gemini-3-flash-preview` | same as quiz |
+| Podcast script | `gemini-3-flash-preview` | same as quiz |
+| Podcast TTS | `gemini-2.5-flash-preview-tts` | response_modalities=["AUDIO"], MultiSpeakerVoiceConfig |
+| Chat | `gemini-3-flash-preview` | temp=1.0, thinking=LOW, streaming |
+| Tutor | `gemini-3-flash-preview` | temp=1.0, thinking=LOW |
+
+All JSON outputs use `response_schema` with enum constraints — enforced at API level, not just prompt.
 
 ## Stack
 

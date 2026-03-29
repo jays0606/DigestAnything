@@ -1,4 +1,4 @@
-# DIGEST
+# DigestAnything
 
 > Any source → See it. Test it. Prove it.
 

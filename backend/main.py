@@ -57,21 +57,10 @@ async def api_upload(file: UploadFile = File(...)):
     filename = file.filename or "upload"
 
     if filename.lower().endswith(".pdf"):
-        # Use Gemini to extract text from PDF
-        from google import genai
-        from google.genai import types
-        pdf_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
-        response = pdf_client.models.generate_content(
-            model="gemini-3-flash-preview",
-            contents=[
-                types.Part.from_bytes(data=content, mime_type="application/pdf"),
-                "Extract ALL text from this PDF. Return the full text content only, no commentary.",
-            ],
-            config=types.GenerateContentConfig(
-                temperature=0.0,
-            ),
-        )
-        source_text = response.text
+        import io
+        from pypdf import PdfReader
+        reader = PdfReader(io.BytesIO(content))
+        source_text = "\n".join(page.extract_text() or "" for page in reader.pages)
     else:
         # Plain text / markdown / etc.
         source_text = content.decode("utf-8", errors="replace")

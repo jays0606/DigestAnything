@@ -186,44 +186,66 @@ Script prompt: **30-40 dialogue turns, ~1000-1200 words, ~5-8 minutes total**. E
 ### Port hygiene
 Before starting servers, always kill existing processes: `lsof -ti:8000 | xargs kill -9` and same for :3000. Old processes from previous sessions serve wrong routes silently.
 
-## Verification — 3 Stages
+## Verification — ALL AUTOMATED, ALL IN ONE SESSION
+
+**You MUST run all verification stages yourself within this session. The user cannot touch their laptop. Everything must be fully autonomous — build, test, fix, validate, done.**
 
 ### Stage 1: Per-round API tests (during build)
-Run `python tests/verify_round{N}.py` after each round. Backend on :8000, frontend on :3000.
-
-### Stage 2: Agent test loop (after all rounds built)
-Self-healing loop: runs tests → spawns Opus agent to fix failures → retests. Up to 5 cycles.
+After building each round, start both servers and run the verify script:
 ```bash
-# Kill old servers first
+# Kill any old processes first
 lsof -ti:8000 | xargs kill -9 2>/dev/null; lsof -ti:3000 | xargs kill -9 2>/dev/null
 
-# Run all rounds + auto-fix
-uv run python tests/agents/loop.py --start-servers
+# Start servers
+cd backend && uv run uvicorn main:app --port 8000 --host 0.0.0.0 &
+cd frontend && npm run dev &
+sleep 5
 
-# Then E2E browser test across multiple sources
+# Run verify
+uv run python tests/verify_round{N}.py
+```
+If verify fails → read error → fix code → restart server if needed → retest. Max 5 retries per round.
+
+### Stage 2: Agent test loop (after all 4 rounds built)
+Run the self-healing agent loop. It spawns Opus agents to fix any remaining issues:
+```bash
+uv run python tests/agents/loop.py --start-servers
+```
+This runs ALL verify_round scripts, and if anything fails, an Opus agent reads the error + source code, makes targeted fixes, and retests. Up to 5 cycles.
+
+### Stage 3: E2E browser test (Playwright — tests the ACTUAL UI)
+```bash
 uv run python tests/agents/loop.py --e2e --source all --start-servers
 ```
+This spawns a Claude agent with Playwright MCP that:
+- Opens localhost:3000 in a real browser
+- Submits a URL, waits for loading
+- Clicks every tab (Overview, Quiz, Cards, Podcast, Tutor)
+- Tests interactions: answer quiz, flip card, send chat, tutor conversation
+- Takes screenshots at every step
+- Reports PASS/FAIL per feature
+- If anything fails → fixer agent patches the code → retests
 
-The agent loop uses Claude Agent SDK (Opus 4.6, bypassPermissions). It reads errors + source code, makes targeted fixes, and retests. See `tests/agents/` for details:
-- `loop.py` — main orchestrator (test → fix → retest)
-- `e2e_agent.py` — Playwright browser test with exact DOM selectors for all data-* attributes
-- `fixer.py` — spawns Opus agent to diagnose + fix code
-- `config.py` — model config, paths, system prompts
+Tests with 3 different source types: blog article, YouTube video, Wikipedia page.
 
-### Stage 3: Audio quality check (after podcast works)
+### Stage 4: Audio quality check
 ```bash
 uv run python tests/verify_audio.py
 ```
-Uses Gemini audio understanding to verify: real speech (not buzz), 2 speakers, good quality.
+Uses Gemini audio understanding to verify podcast WAV: real speech (not buzz/silence), 2 distinct speakers, good audio quality.
 
-### IMPORTANT: After building all 4 rounds, you MUST run Stage 2 and Stage 3 before declaring done.
-The per-round verify scripts only test API responses. The agent loop tests the full browser UI + fixes issues. The audio check verifies podcast quality. All 3 stages must pass.
+### MANDATORY: You are NOT done until ALL 4 stages pass.
+Do not declare completion. Do not ask the user. Run all 4 stages sequentially within this session. If any stage fails, fix and retry. The user is hands-off — everything must be autonomous.
 
 ## Dependencies
 
 ```bash
 # Backend (use uv)
 uv add fastapi uvicorn google-genai trafilatura youtube-transcript-api httpx
+
+# Agent test loop (for Stage 2-3 verification)
+uv add claude-agent-sdk playwright
+uv run playwright install chromium
 
 # Frontend
 npx create-next-app@14 frontend --typescript --tailwind --app --no-src-dir

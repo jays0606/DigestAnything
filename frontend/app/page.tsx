@@ -9,6 +9,7 @@ import QuizMode from "../components/QuizMode";
 import FlashCards from "../components/FlashCards";
 import TutorTab from "../components/TutorTab";
 import FloatingChat from "../components/FloatingChat";
+import PodcastPlayer from "../components/PodcastPlayer";
 
 type DigestData = {
   context: any;
@@ -126,10 +127,8 @@ export default function Home() {
                   )
                 )}
                 {activeTab === "podcast" && (
-                  readyTabs.has("podcast") ? (
-                    <div data-component="podcast-placeholder" className="bg-surface-container-lowest rounded-xl p-8 card-shadow text-center text-on-surface-variant">
-                      Podcast player — Round 4
-                    </div>
+                  readyTabs.has("podcast") && data.podcast ? (
+                    <PodcastPlayer podcast={data.podcast} />
                   ) : (
                     <LoadingState message="Generating podcast..." />
                   )

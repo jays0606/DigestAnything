@@ -13,6 +13,7 @@ from quiz import generate_quiz
 from cards import generate_cards
 from chat import chat_response
 from tutor import tutor_response
+from podcast import generate_podcast
 from orchestrator import run_pipeline
 
 app = FastAPI(title="DigestAnything API")
@@ -89,6 +90,14 @@ async def api_quiz(context: dict):
 async def api_cards(context: dict):
     """Context → 12-15 flashcards."""
     result = await generate_cards(context)
+    return result
+
+
+@app.post("/api/podcast")
+async def api_podcast(context: dict):
+    """Context → podcast script + TTS audio."""
+    session_id = context.get("session_id", new_session_id())
+    result = await generate_podcast(context, session_id)
     return result
 
 

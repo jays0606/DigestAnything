@@ -9,6 +9,8 @@ from pydantic import BaseModel
 from context import save_context, load_context, new_session_id, ensure_dir
 from ingest import fetch_source_text, analyze
 from visual import generate_markmap
+from quiz import generate_quiz
+from cards import generate_cards
 from orchestrator import run_pipeline
 
 app = FastAPI(title="DigestAnything API")
@@ -72,6 +74,20 @@ async def api_context(session_id: str):
     if ctx is None:
         raise HTTPException(status_code=404, detail="Session not found")
     return ctx
+
+
+@app.post("/api/quiz")
+async def api_quiz(context: dict):
+    """Context → 10 MCQ questions."""
+    result = await generate_quiz(context)
+    return result
+
+
+@app.post("/api/cards")
+async def api_cards(context: dict):
+    """Context → 12-15 flashcards."""
+    result = await generate_cards(context)
+    return result
 
 
 @app.post("/api/digest")

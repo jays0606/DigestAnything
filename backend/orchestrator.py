@@ -2,19 +2,23 @@
 import asyncio
 
 from visual import generate_markmap
+from quiz import generate_quiz
+from cards import generate_cards
 
 
 async def run_pipeline(context: dict) -> dict:
     """Run all generation tasks in parallel after ingest.
 
     Returns dict with keys: markmap, quiz, cards, podcast
-    Currently only markmap is implemented (Round 1).
     """
-    markmap_task = asyncio.create_task(generate_markmap(context))
-
-    # Future rounds will add more tasks here via asyncio.gather()
-    markmap = await markmap_task
+    markmap, quiz, cards = await asyncio.gather(
+        generate_markmap(context),
+        generate_quiz(context),
+        generate_cards(context),
+    )
 
     return {
         "markmap": markmap,
+        "quiz": quiz,
+        "cards": cards,
     }

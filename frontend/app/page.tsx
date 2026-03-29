@@ -5,6 +5,8 @@ import SourceInput from "../components/SourceInput";
 import TabBar from "../components/TabBar";
 import Overview from "../components/Overview";
 import LoadingState from "../components/LoadingState";
+import QuizMode from "../components/QuizMode";
+import FlashCards from "../components/FlashCards";
 
 type DigestData = {
   context: any;
@@ -108,19 +110,15 @@ export default function Home() {
                   <Overview context={data.context} markmap={data.markmap || ""} />
                 )}
                 {activeTab === "quiz" && (
-                  readyTabs.has("quiz") ? (
-                    <div data-component="quiz-placeholder" className="bg-surface-container-lowest rounded-xl p-8 card-shadow text-center text-on-surface-variant">
-                      Quiz component — Round 2
-                    </div>
+                  readyTabs.has("quiz") && data.quiz ? (
+                    <QuizMode quiz={data.quiz} />
                   ) : (
                     <LoadingState message="Generating quiz questions..." />
                   )
                 )}
                 {activeTab === "cards" && (
-                  readyTabs.has("cards") ? (
-                    <div data-component="cards-placeholder" className="bg-surface-container-lowest rounded-xl p-8 card-shadow text-center text-on-surface-variant">
-                      Flashcards component — Round 2
-                    </div>
+                  readyTabs.has("cards") && data.cards ? (
+                    <FlashCards cards={data.cards} />
                   ) : (
                     <LoadingState message="Creating flashcards..." />
                   )
